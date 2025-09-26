@@ -131,8 +131,8 @@ export function ServiceOverviewSection({ className }: ServiceOverviewSectionProp
               className={cn(
                 "pill flex-shrink-0 px-4 h-[44px] text-sm font-medium rounded-full border-2 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500/50 scroll-snap-align-start",
                 selectedFilter === 'all' 
-                  ? "pill--active bg-emerald-600 text-white border-emerald-600" 
-                  : "border-emerald-200 text-emerald-700 hover:bg-emerald-50"
+                  ? "pill--active bg-accent text-accent-foreground border-accent" 
+                  : "border-border text-muted hover:bg-surface"
               )}
               onClick={() => {
                 setSelectedFilter('all')

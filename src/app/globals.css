@@ -48,11 +48,11 @@
 
 /* Dark theme (toggled on <html data-theme="dark">) */
 html[data-theme="dark"] {
-  --bg: hsl(224 52% 6%);      /* page */
-  --surface: hsl(220 40% 12%); /* card surface (+2% L) */
+  --bg: hsl(224 52% 4%);      /* darker page background */
+  --surface: hsl(220 40% 8%); /* darker card surface */
   --text: hsl(210 40% 98%);
-  --muted: hsl(215 16% 72%);
-  --border: hsl(215 14% 28%);  /* crisper hairline */
+  --muted: hsl(215 16% 65%);  /* slightly less bright muted text */
+  --border: hsl(215 14% 20%); /* darker border */
   --accent: hsl(156 72% 45%);
   --accent-foreground: hsl(0 0% 100%);
   --ring: hsl(156 72% 45% / 40%);
@@ -298,6 +298,59 @@ a:focus-visible,
   width: 100%;
   border-radius: 2px;
   background: var(--gradient-accent);
+}
+
+/* Dark theme consistency enforcement */
+html[data-theme="dark"] {
+  /* Ensure no white backgrounds leak through */
+  --white: var(--surface);
+  --gray-50: var(--surface);
+  --gray-100: var(--surface);
+  
+  /* Override any remaining hard-coded whites */
+  background-color: var(--bg) !important;
+}
+
+/* Only target specific problematic white backgrounds, not all elements */
+html[data-theme="dark"] .bg-white {
+  background-color: var(--surface) !important;
+}
+
+html[data-theme="dark"] .text-white {
+  color: var(--text) !important;
+}
+
+/* Ensure scroll spy navigation components are fully dark */
+html[data-theme="dark"] .scroll-spy-nav {
+  background-color: var(--bg) !important;
+  border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] .scroll-spy-nav button {
+  color: var(--muted) !important;
+}
+
+html[data-theme="dark"] .scroll-spy-nav button:hover {
+  color: var(--text) !important;
+  background-color: var(--surface) !important;
+}
+
+html[data-theme="dark"] .scroll-spy-nav button[aria-current="page"] {
+  color: var(--accent) !important;
+  background-color: var(--surface) !important;
+}
+
+/* Force backdrop blur components to use proper dark backgrounds */
+html[data-theme="dark"] .backdrop-blur {
+  background-color: var(--bg) !important;
+}
+
+html[data-theme="dark"] .bg-background\/95 {
+  background-color: hsl(var(--bg) / 0.95) !important;
+}
+
+html[data-theme="dark"] .bg-background\/60 {
+  background-color: hsl(var(--bg) / 0.60) !important;
 }
 
 /* Motion safety */

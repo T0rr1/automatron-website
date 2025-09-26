@@ -60,23 +60,23 @@ export function ScrollSpyNav({
         return cn(
           baseClasses,
           isActive
-            ? 'bg-primary text-primary-foreground shadow-sm'
-            : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+            ? 'bg-accent text-accent-foreground shadow-sm'
+            : 'text-muted hover:text-foreground hover:bg-surface'
         )
       case 'underline':
         return cn(
           baseClasses,
           'relative border-b-2 border-transparent',
           isActive
-            ? 'text-primary border-primary'
-            : 'text-muted-foreground hover:text-foreground hover:border-muted-foreground/50'
+            ? 'text-accent border-accent'
+            : 'text-muted hover:text-foreground hover:border-muted/50'
         )
       default:
         return cn(
           baseClasses,
           isActive
-            ? 'text-primary font-medium'
-            : 'text-muted-foreground hover:text-foreground'
+            ? 'text-accent font-medium'
+            : 'text-muted hover:text-foreground'
         )
     }
   }
@@ -93,9 +93,9 @@ export function ScrollSpyNav({
   }
 
   const containerClasses = cn(
-    'flex',
+    'scroll-spy-nav flex',
     orientation === 'vertical' ? 'flex-col space-y-1' : 'flex-row space-x-1',
-    sticky && `sticky top-[${stickyOffset}px] z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b`,
+    sticky && `sticky top-[${stickyOffset}px] z-40 bg-bg/95 backdrop-blur supports-[backdrop-filter]:bg-bg/60 border-b border-border`,
     className
   )
 
@@ -109,7 +109,7 @@ export function ScrollSpyNav({
             key={section.id}
             onClick={() => handleSectionClick(section)}
             className={cn(
-              'rounded-md font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+              'rounded-md font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg',
               getSizeClasses(),
               getVariantClasses(isActive)
             )}
@@ -158,7 +158,7 @@ export function FloatingScrollSpyNav({
         className
       )}
     >
-      <div className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border rounded-lg shadow-lg p-2">
+      <div className="scroll-spy-nav bg-bg/95 backdrop-blur supports-[backdrop-filter]:bg-bg/60 border border-border rounded-lg shadow-lg p-2">
         <ScrollSpyNav
           sections={sections}
           orientation="vertical"
@@ -200,7 +200,7 @@ export function ScrollProgress({
   return (
     <div
       className={cn(
-        'fixed top-0 left-0 z-50 bg-muted/20',
+        'fixed top-0 left-0 z-50 bg-muted/10',
         className
       )}
       style={{
@@ -236,7 +236,7 @@ export function TableOfContents({
   const [isCollapsed, setIsCollapsed] = React.useState(false)
 
   return (
-    <div className={cn('border rounded-lg p-4', className)}>
+    <div className={cn('border border-border bg-card rounded-lg p-4', className)}>
       <div className="flex items-center justify-between mb-3">
         <h3 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground">
           {title}

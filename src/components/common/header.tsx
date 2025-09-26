@@ -58,16 +58,26 @@ export function Header({ className }: HeaderProps = {}) {
     <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300",
+        "bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800",
         isScrolled 
-          ? "py-2 shadow-md bg-surface border-border" 
-          : "py-4 bg-surface/80 border-transparent",
+          ? "py-2 shadow-md" 
+          : "py-4 backdrop-blur-sm",
         className
       )}
+      style={{ 
+        backgroundColor: 'var(--surface, #ffffff)',
+        borderColor: 'var(--border, #e5e7eb)',
+        color: 'var(--text, #111827)'
+      }}
     >
       <nav role="navigation" className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
+          <Link 
+            href="/" 
+            className="text-xl font-bold text-gray-900 dark:text-white hover:text-emerald-600 transition-colors"
+            style={{ color: 'var(--text, #111827)' }}
+          >
             Automatron.ai
           </Link>
           
@@ -78,25 +88,29 @@ export function Header({ className }: HeaderProps = {}) {
             <div className="flex items-center space-x-6">
               <Link 
                 href="/services" 
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 transition-colors font-medium"
+                style={{ color: 'var(--text, #374151)' }}
               >
                 Services
               </Link>
               <Link 
                 href="/work" 
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 transition-colors font-medium"
+                style={{ color: 'var(--text, #374151)' }}
               >
                 Work
               </Link>
               <Link 
                 href="/about" 
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 transition-colors font-medium"
+                style={{ color: 'var(--text, #374151)' }}
               >
                 About
               </Link>
               <Link 
                 href="/contact" 
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 transition-colors font-medium"
+                style={{ color: 'var(--text, #374151)' }}
               >
                 Contact
               </Link>
@@ -134,7 +148,9 @@ export function Header({ className }: HeaderProps = {}) {
             </Link>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-md hover:bg-muted transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+              className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              style={{ color: 'var(--text, #374151)' }}
+            
               aria-label="Toggle navigation menu"
               aria-expanded={isMobileMenuOpen}
             >
@@ -150,32 +166,39 @@ export function Header({ className }: HeaderProps = {}) {
 
         {/* Mobile Navigation Menu - Only show when menu is open and on mobile */}
         {isMobileMenuOpen && isMobile && (
-          <div className="mt-4 pb-4 border-t bg-surface">
+          <div 
+            className="mt-4 pb-4 border-t bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800"
+            style={{ backgroundColor: 'var(--surface, #ffffff)', borderColor: 'var(--border, #e5e7eb)' }}
+          >
             <div className="flex flex-col space-y-3 pt-4">
               <Link 
                 href="/services" 
-                className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2 rounded-md hover:bg-muted"
+                className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
+                style={{ color: 'var(--text, #374151)' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Services
               </Link>
               <Link 
                 href="/work" 
-                className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2 rounded-md hover:bg-muted"
+                className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
+                style={{ color: 'var(--text, #374151)' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Work
               </Link>
               <Link 
                 href="/about" 
-                className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2 rounded-md hover:bg-muted"
+                className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
+                style={{ color: 'var(--text, #374151)' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link 
                 href="/contact" 
-                className="text-foreground hover:text-primary transition-colors font-medium py-2 px-2 rounded-md hover:bg-muted"
+                className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
+                style={{ color: 'var(--text, #374151)' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact
@@ -194,7 +217,12 @@ export function Header({ className }: HeaderProps = {}) {
               </div>
               
               <div className="flex items-center justify-between pt-2 border-t">
-                <span className="text-sm text-muted-foreground">Theme:</span>
+                <span 
+                  className="text-sm text-gray-500 dark:text-gray-400"
+                  style={{ color: 'var(--muted, #6b7280)' }}
+                >
+                  Theme:
+                </span>
                 <ThemeToggle />
               </div>
             </div>

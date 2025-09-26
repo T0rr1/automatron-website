@@ -42,10 +42,7 @@ export function StickyCTA() {
       <div className="p-3 bg-gradient-to-t from-background/95 via-background/90 to-transparent backdrop-blur-sm border-t">
         <Link href="/contact" className="block">
           <Button 
-            className="w-full h-[56px] text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-200 text-white group"
-            style={{ backgroundColor: '#059669' }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#047857'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#059669'}
+            className="w-full h-[56px] text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-200 text-accent-foreground bg-accent hover:shadow-glow group"
           >
             {ctaText}
             <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />

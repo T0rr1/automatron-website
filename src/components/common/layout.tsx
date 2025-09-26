@@ -1,102 +1,45 @@
 'use client'
 
 import * as React from 'react'
-import { cn } from '@/lib/utils'
-import { Header } from './header'
-import { Footer } from './footer'
-import { StickyCTA } from './sticky-cta'
-import { ChatbotProvider } from './chatbot-provider'
-import { SkipLinks } from '@/components/ui/skip-links'
 
-interface LayoutProps {
-  children: React.ReactNode
-  className?: string
-  headerClassName?: string
-  footerClassName?: string
-  includeHeader?: boolean
-  includeFooter?: boolean
+// Re-export ScrollSpyNav from scroll-spy-nav
+export { 
+  ScrollSpyNav,
+  FloatingScrollSpyNav,
+  ScrollProgress,
+  TableOfContents
+} from './scroll-spy-nav'
+
+interface UseScrollSpyOptions {
+  offset?: number
+  threshold?: number
 }
 
-export function Layout({
-  children,
-  className,
-  headerClassName,
-  footerClassName,
-  includeHeader = true,
-  includeFooter = true,
-}: LayoutProps) {
-  return (
-    <ChatbotProvider>
-      <div className={cn('min-h-screen flex flex-col', className)}>
-        {/* Enhanced skip links for accessibility */}
-        <SkipLinks />
-        
-        {includeHeader && <Header className={headerClassName} />}
-        
-        <main id="main-content" className="flex-1 pt-20" tabIndex={-1}>
-          {children}
-        </main>
-        
-        {/* Sticky CTA for mobile */}
-        <StickyCTA />
-        
-        {includeFooter && <Footer className={footerClassName} />}
-      </div>
-    </ChatbotProvider>
-  )
-}
-
-// Enhanced scroll spy hook for navigation highlighting
 export function useScrollSpy(
   sectionIds: string[],
-  options: {
-    offset?: number
-    threshold?: number
-    rootMargin?: string
-  } = {}
+  options: UseScrollSpyOptions = {}
 ) {
-  const [activeSection, setActiveSection] = React.useState<string>('')
-  const { offset = 100, threshold = 0.5, rootMargin = '0px 0px -50% 0px' } = options
+  const { offset = 100, threshold = 0.5 } = options
+  const [activeSection, setActiveSection] = React.useState<string | null>(null)
 
   React.useEffect(() => {
-    // Use Intersection Observer for better performance
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
-        })
-      },
-      {
-        rootMargin,
-        threshold,
-      }
-    )
-
-    // Observe all sections
-    sectionIds.forEach((id) => {
-      const element = document.getElementById(id)
-      if (element) {
-        observer.observe(element)
-      }
-    })
-
-    // Fallback scroll listener for edge cases
     const handleScroll = () => {
       const scrollPosition = window.scrollY + offset
 
+      // Find the section that's currently in view
       for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sectionIds[i])
-        if (section) {
-          const sectionTop = section.offsetTop
-          const sectionHeight = section.offsetHeight
+        const sectionId = sectionIds[i]
+        const element = document.getElementById(sectionId)
+        
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          const elementTop = rect.top + window.scrollY
+          const elementHeight = rect.height
           
-          if (
-            scrollPosition >= sectionTop &&
-            scrollPosition < sectionTop + sectionHeight
-          ) {
-            setActiveSection(sectionIds[i])
+          // Check if the section is in view based on threshold
+          if (scrollPosition >= elementTop - offset && 
+              scrollPosition < elementTop + elementHeight * threshold) {
+            setActiveSection(sectionId)
             break
           }
         }
@@ -106,86 +49,41 @@ export function useScrollSpy(
     // Initial check
     handleScroll()
 
-    // Add scroll listener as fallback
     window.addEventListener('scroll', handleScroll, { passive: true })
-    
-    return () => {
-      observer.disconnect()
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [sectionIds, offset, threshold, rootMargin])
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [sectionIds, offset, threshold])
 
   return activeSection
 }
 
-// Enhanced smooth scroll utility with better UX
-export function scrollToSection(sectionId: string, offset: number = 80) {
+export function scrollToSection(sectionId: string, offset: number = 100) {
   const element = document.getElementById(sectionId)
   if (element) {
-    const elementPosition = element.offsetTop - offset
-    
-    // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    
+    const elementTop = element.getBoundingClientRect().top + window.scrollY
+    const offsetPosition = elementTop - offset
+
     window.scrollTo({
-      top: elementPosition,
-      behavior: prefersReducedMotion ? 'auto' : 'smooth'
+      top: offsetPosition,
+      behavior: 'smooth'
     })
-    
-    // Update URL hash without triggering scroll
-    if (history.pushState) {
-      history.pushState(null, '', `#${sectionId}`)
-    }
-    
-    // Focus management for accessibility
-    element.focus({ preventScroll: true })
-    element.setAttribute('tabindex', '-1')
   }
 }
 
-// Scroll spy navigation component
-interface ScrollSpyNavProps {
-  sections: Array<{
-    id: string
-    label: string
-  }>
+// Layout component
+interface LayoutProps {
+  children: React.ReactNode
   className?: string
-  offset?: number
-  threshold?: number
 }
 
-export function ScrollSpyNav({ 
-  sections, 
-  className, 
-  offset = 100, 
-  threshold = 0.5 
-}: ScrollSpyNavProps) {
-  const activeSection = useScrollSpy(
-    sections.map(s => s.id), 
-    { offset, threshold }
-  )
-
+export function Layout({ children, className }: LayoutProps) {
   return (
-    <nav className={cn('space-y-2', className)}>
-      {sections.map((section) => (
-        <button
-          key={section.id}
-          onClick={() => scrollToSection(section.id, offset)}
-          className={cn(
-            'block w-full text-left px-3 py-2 text-sm rounded-md transition-colors',
-            activeSection === section.id
-              ? 'bg-primary text-primary-foreground'
-              : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-          )}
-        >
-          {section.label}
-        </button>
-      ))}
-    </nav>
+    <div className={className}>
+      {children}
+    </div>
   )
 }
 
-// Back to top button
+// Back to top component
 interface BackToTopProps {
   className?: string
   showAfter?: number
@@ -215,24 +113,16 @@ export function BackToTop({ className, showAfter = 400 }: BackToTopProps) {
   return (
     <button
       onClick={scrollToTop}
-      className={cn(
-        'fixed bottom-8 right-8 z-50 p-3 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105',
-        className
-      )}
+      className={`fixed bottom-6 right-6 z-50 p-3 bg-accent text-accent-foreground rounded-full shadow-lg hover:opacity-90 transition-opacity ${className}`}
       aria-label="Back to top"
     >
       <svg
-        className="h-5 w-5"
+        className="w-5 h-5"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M5 10l7-7m0 0l7 7m-7-7v18"
-        />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
       </svg>
     </button>
   )

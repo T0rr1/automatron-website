@@ -37,7 +37,10 @@ const config = {
   			bg: "var(--bg)",
   			surface: "var(--surface)",
   			text: "var(--text)",
-  			muted: "var(--muted)",
+  			muted: {
+  				DEFAULT: "var(--muted)",
+  				foreground: "var(--muted)"
+  			},
   			border: "var(--border)",
   			accent: "var(--accent)",
   			"accent-foreground": "var(--accent-foreground)",
