@@ -16,6 +16,18 @@
   --accent: hsl(156 72% 40%);
   --accent-foreground: hsl(0 0% 100%);
   --ring: hsl(156 72% 40% / 40%);
+  
+  /* Status colors */
+  --success: hsl(152 61% 40%);
+  --success-fg: hsl(0 0% 100%);
+  --warning: hsl(38 92% 54%);
+  --warning-fg: hsl(24 100% 15%);
+  --error: hsl(0 72% 51%);
+  --error-fg: hsl(0 0% 100%);
+  
+  /* Elevation */
+  --shadow-card: 0 1px 2px hsl(0 0% 0% / 0.05), 0 8px 24px hsl(0 0% 0% / 0.06);
+  
   color-scheme: light;
 }
 
@@ -29,6 +41,18 @@ html[data-theme="dark"] {
   --accent: hsl(156 72% 45%);
   --accent-foreground: hsl(0 0% 100%);
   --ring: hsl(156 72% 45% / 40%);
+  
+  /* Status colors for dark mode */
+  --success: hsl(152 61% 45%);
+  --success-fg: hsl(0 0% 0%);
+  --warning: hsl(38 92% 60%);
+  --warning-fg: hsl(0 0% 0%);
+  --error: hsl(0 72% 56%);
+  --error-fg: hsl(0 0% 0%);
+  
+  /* No shadows in dark mode */
+  --shadow-card: none;
+  
   color-scheme: dark;
 }
 
@@ -36,7 +60,7 @@ html[data-theme="dark"] {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 /* Prevent theme flash during load */
@@ -48,39 +72,32 @@ html:not(.theme-ready) * {
    VISUAL REFINEMENTS
    ======================================== */
 
-/* Hero: soft radial gradient behind H1 only */
+/* Hero: subtle gradient on background only */
 .hero {
   background: 
-    radial-gradient(1200px 600px at 50% -10%, hsl(156 72% 40% / 0.08), transparent 60%),
+    radial-gradient(1200px 600px at 50% -10%, hsl(156 72% 40% / 0.06), transparent 50%),
     var(--bg);
 }
 
 html[data-theme="dark"] .hero {
   background: 
-    radial-gradient(1200px 600px at 50% -10%, hsl(156 72% 45% / 0.12), transparent 60%),
+    radial-gradient(1200px 600px at 50% -10%, hsl(156 72% 45% / 0.08), transparent 50%),
     var(--bg);
 }
 
-/* Cards: flat surface + border + shadow */
+/* Cards: flat surface + border + elevation */
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
-  box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 8px 24px rgba(0,0,0,.06);
+  box-shadow: var(--shadow-card);
   border-radius: 8px;
   padding: 24px;
 }
 
-/* Dark mode: borders instead of shadows */
-html[data-theme="dark"] .card {
-  box-shadow: none;
-  border: 1px solid var(--border);
-}
-
-/* CTAs: only two button styles */
+/* Buttons: only two variants */
 .btn-primary {
   background: var(--accent);
   color: var(--accent-foreground);
-  border: 1px solid var(--accent);
   border-radius: 8px;
   padding: 12px 20px;
   font-weight: 600;
@@ -102,7 +119,7 @@ html[data-theme="dark"] .card {
 }
 
 .btn-secondary:hover {
-  background: var(--bg);
+  background: hsl(var(--accent) / 0.1);
 }
 
 /* Section alternation: two surfaces max */
@@ -114,53 +131,39 @@ html:not([data-theme="dark"]) .section--alt {
   background: hsl(210 40% 98%);
 }
 
+/* Typography: clear hierarchy with 1.25 modular scale */
+h1 { font-size: 3rem; line-height: 1.2; font-weight: 700; }
+h2 { font-size: 2.25rem; line-height: 1.25; font-weight: 600; }
+h3 { font-size: 1.5rem; line-height: 1.3; font-weight: 600; }
+body { line-height: 1.6; }
+
 /* ========================================
    PERFORMANCE & ACCESSIBILITY
    ======================================== */
 
-/* Focus states */
+/* Focus states: visible rings on all interactive elements */
 *:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px var(--ring);
+  box-shadow: 0 0 0 2px var(--ring);
 }
 
-/* Performance optimizations */
-* {
-  /* Use GPU acceleration for transforms */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-/* Optimize animations */
-.card {
-  will-change: transform;
-}
-
-.card:not(:hover) {
-  will-change: auto;
-}
-
-/* Reduce paint complexity */
-img, video {
-  image-rendering: optimizeQuality;
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
 }
 
 /* Reduced motion: honor user preferences */
 @media (prefers-reduced-motion: reduce) {
   * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation: none !important;
+    transition: none !important;
   }
   
-  /* Remove heavy effects for motion-sensitive users */
+  /* Remove all motion effects */
   .hero {
     background: var(--bg) !important;
-  }
-  
-  /* Disable will-change for reduced motion */
-  .card {
-    will-change: auto !important;
   }
 }
 
@@ -192,9 +195,15 @@ img, video {
     -webkit-tap-highlight-color: transparent;
   }
   
-  /* Reduce complexity on mobile */
+  /* Reduce complexity on mobile - flat background */
   .hero {
-    background: var(--bg);
+    background: var(--bg) !important;
+  }
+  
+  /* Disable hover effects on mobile */
+  .card:hover {
+    transform: none;
+    box-shadow: var(--shadow-card);
   }
 }
 

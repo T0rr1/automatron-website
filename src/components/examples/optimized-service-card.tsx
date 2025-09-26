@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { CheckIcon } from '@/components/ui/icon'
 
 interface ServiceCardProps {
   title: string
@@ -19,16 +19,8 @@ export function OptimizedServiceCard({
   features, 
   ctaText = "Get Started" 
 }: ServiceCardProps) {
-  const [isHovered, setIsHovered] = useState(false)
-
   return (
-    <div 
-      className="bg-surface text-text border border-border rounded-lg shadow-card p-6 transition-transform duration-200 ease-out"
-      style={{
-        transform: isHovered ? 'translateY(-2px)' : 'translateY(0)',
-      }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+    <div className="bg-surface text-text border border-border rounded-lg shadow-card p-6 hover:shadow-lg transition-shadow duration-200"
     >
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
@@ -37,7 +29,7 @@ export function OptimizedServiceCard({
           <p className="text-muted mt-1">{description}</p>
         </div>
         {badge && (
-          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20">
+          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-success/10 text-success border border-success/20">
             {badge}
           </span>
         )}
@@ -52,17 +44,7 @@ export function OptimizedServiceCard({
       <ul className="space-y-2 mb-6">
         {features.map((feature, index) => (
           <li key={index} className="flex items-center text-sm text-text">
-            <svg 
-              className="w-4 h-4 text-accent mr-2 flex-shrink-0" 
-              fill="currentColor" 
-              viewBox="0 0 20 20"
-            >
-              <path 
-                fillRule="evenodd" 
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" 
-                clipRule="evenodd" 
-              />
-            </svg>
+            <CheckIcon className="mr-2 flex-shrink-0 text-success" />
             {feature}
           </li>
         ))}

@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss"
 
 const config = {
-  darkMode: ["class", '[data-theme="dark"]'], // keep both for flexibility
+  darkMode: ["class", '[data-theme="dark"]'],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -41,6 +41,20 @@ const config = {
   			border: "var(--border)",
   			accent: "var(--accent)",
   			"accent-foreground": "var(--accent-foreground)",
+  			
+  			// Status colors
+  			success: { 
+  				DEFAULT: "var(--success)", 
+  				foreground: "var(--success-fg)" 
+  			},
+  			warning: { 
+  				DEFAULT: "var(--warning)", 
+  				foreground: "var(--warning-fg)" 
+  			},
+  			error: { 
+  				DEFAULT: "var(--error)", 
+  				foreground: "var(--error-fg)" 
+  			},
   			
   			// Legacy compatibility
   			background: "var(--bg)",
@@ -231,7 +245,7 @@ const config = {
   			full: "9999px"
   		},
   		boxShadow: {
-  			card: "0 1px 2px rgba(0,0,0,.05), 0 8px 24px rgba(0,0,0,.06)",
+  			card: "var(--shadow-card)",
   			focus: "0 0 0 4px var(--ring)",
   			none: "none"
   		},

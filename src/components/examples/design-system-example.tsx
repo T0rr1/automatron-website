@@ -1,5 +1,7 @@
 "use client"
 
+import { CheckIcon, ArrowRightIcon, StarIcon } from '@/components/ui/icon'
+
 export function DesignSystemExample() {
   return (
     <div className="space-y-8 p-8">
@@ -46,6 +48,25 @@ export function DesignSystemExample() {
         <h3 className="text-xl font-semibold text-text">Heading 3</h3>
         <p className="text-base text-text">Body text with normal weight and color.</p>
         <p className="text-base text-muted">Muted text for secondary information.</p>
+      </div>
+
+      {/* Icon Examples */}
+      <div className="space-y-4">
+        <h3 className="text-xl font-semibold text-text">Unified Icons</h3>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <CheckIcon />
+            <span className="text-text">Success action</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <ArrowRightIcon />
+            <span className="text-text">Navigation</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <StarIcon decorative />
+            <span className="text-text">Decorative (muted)</span>
+          </div>
+        </div>
       </div>
     </div>
   )

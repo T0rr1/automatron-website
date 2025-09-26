@@ -1,6 +1,9 @@
 import { DesignSystemExample } from '@/components/examples/design-system-example'
 import { ServiceCardsExample } from '@/components/examples/optimized-service-card'
+import { StatusExamples } from '@/components/examples/status-examples'
+import { PerformanceShowcase } from '@/components/examples/performance-showcase'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
+import { Button } from '@/components/ui/button'
 
 export default function DesignSystemPage() {
   return (
@@ -23,12 +26,9 @@ export default function DesignSystemPage() {
             Clean, cohesive, and performant. One accent green, two surfaces, instant theming.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-accent text-accent-foreground rounded-lg px-6 py-3 font-semibold hover:opacity-90 transition-opacity">
-              Primary Action
-            </button>
-            <button className="bg-surface text-text border border-border rounded-lg px-6 py-3 font-semibold hover:bg-bg transition-colors">
-              Secondary Action
-            </button>
+            <Button size="lg">Primary Action</Button>
+            <Button variant="secondary" size="lg">Secondary Action</Button>
+            <Button variant="link" size="lg">Link Style</Button>
           </div>
         </div>
       </section>
@@ -40,8 +40,15 @@ export default function DesignSystemPage() {
         </div>
       </section>
 
-      {/* Service Cards */}
+      {/* Status Colors */}
       <section className="py-16">
+        <div className="container mx-auto px-4">
+          <StatusExamples />
+        </div>
+      </section>
+
+      {/* Service Cards */}
+      <section className="section--alt py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-text text-center mb-12">
             Optimized Components
@@ -50,13 +57,17 @@ export default function DesignSystemPage() {
         </div>
       </section>
 
-      {/* Performance Features */}
-      <section className="section--alt py-16">
+      {/* Performance Showcase */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-text text-center mb-12">
               Performance Features
             </h2>
+            
+            <div className="mb-12">
+              <PerformanceShowcase />
+            </div>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-surface border border-border rounded-lg p-6">

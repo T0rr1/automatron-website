@@ -5,7 +5,6 @@ import { locales } from '@/i18n'
 import '../globals.css'
 
 import { ThemeProvider } from '@/components/theme-provider'
-import { ThemePersistence } from '@/components/theme-persistence'
 import { Toaster } from '@/components/ui/toaster'
 import { Analytics } from '@/components/common/analytics'
 import { OrganizationStructuredData, WebsiteStructuredData } from '@/components/common/structured-data'
@@ -14,10 +13,8 @@ import { ClientErrorBoundary } from '@/components/common/client-error-boundary'
 
 const inter = Inter({ 
   subsets: ['latin'],
-  variable: '--font-inter',
   display: 'swap',
-  preload: true,
-  fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+  variable: '--font-sans'
 })
 
 export function generateStaticParams() {
@@ -64,44 +61,14 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning className="scroll-smooth">
       <head>
-        {/* Pre-paint theme script - prevents flash */}
+        {/* Instant theme script - prevents flash */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              (function() {
-                try {
-                  // Read theme from localStorage or system preference
-                  var theme = localStorage.getItem('theme');
-                  var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                  var resolvedTheme = theme || systemTheme;
-                  
-                  // Set data-theme attribute (for new CSS variables)
-                  document.documentElement.setAttribute('data-theme', resolvedTheme);
-                  
-                  // Set class attribute (for existing Tailwind dark: classes)
-                  if (resolvedTheme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
-                  }
-                  
-                  // Set color-scheme
-                  document.documentElement.style.colorScheme = resolvedTheme;
-                  
-                  // Add no-transitions class to prevent animations on load
-                  document.documentElement.classList.add('no-theme-transitions');
-                  
-                  // Remove no-transitions after a brief delay
-                  setTimeout(function() {
-                    document.documentElement.classList.remove('no-theme-transitions');
-                  }, 100);
-                } catch (e) {
-                  // Fallback to dark theme (default)
-                  document.documentElement.setAttribute('data-theme', 'dark');
-                  document.documentElement.classList.add('dark');
-                  document.documentElement.style.colorScheme = 'dark';
-                  document.documentElement.classList.add('no-theme-transitions');
-                }
+              (() => {
+                const t = localStorage.getItem('theme');
+                const sys = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light';
+                document.documentElement.setAttribute('data-theme', t || sys);
               })();
             `,
           }}
@@ -118,13 +85,12 @@ export default async function LocaleLayout({
       </head>
       <body className={`${inter.variable} font-sans antialiased bg-background text-foreground`} dir="ltr" data-locale={locale}>
         <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
+          attribute="data-theme"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
           storageKey="theme"
         >
-          <ThemePersistence />
           <ClientErrorBoundary locale={locale}>
             {children}
           </ClientErrorBoundary>

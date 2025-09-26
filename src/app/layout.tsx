@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
+import { PerformanceMonitor } from '@/components/performance/performance-monitor'
 
-// Optimized font loading: only weights we use, with display swap
+// Optimized font loading: Inter Variable for everything
 const inter = Inter({ 
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
   display: 'swap',
-  variable: '--font-inter'
+  variable: '--font-sans'
 })
 
 export const metadata: Metadata = {
@@ -28,14 +28,10 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              (function(){
-                try {
-                  var key='theme';
-                  var saved=localStorage.getItem(key);
-                  var systemDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  var theme = saved || (systemDark ? 'dark' : 'light');
-                  document.documentElement.setAttribute('data-theme', theme);
-                } catch(e){}
+              (() => {
+                const t = localStorage.getItem('theme');
+                const sys = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light';
+                document.documentElement.setAttribute('data-theme', t || sys);
               })();
             `,
           }}
@@ -46,10 +42,11 @@ export default function RootLayout({
           attribute="data-theme"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange={false}
+          disableTransitionOnChange
           storageKey="theme"
         >
           {children}
+          <PerformanceMonitor />
         </ThemeProvider>
         <script
           dangerouslySetInnerHTML={{
