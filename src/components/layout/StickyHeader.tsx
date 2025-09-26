@@ -19,7 +19,7 @@ export function StickyHeader() {
         "sticky top-0 z-50 transition-all",
         "border-b",
         scrolled 
-          ? "bg-surface/95 border-border backdrop-saturate-150" 
+          ? "bg-surface border-border" 
           : "bg-bg/80 border-transparent",
       ].join(" ")}
     >

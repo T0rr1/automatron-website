@@ -54,7 +54,7 @@ export function ScrollSpyNav({
 
   const getVariantClasses = (isActive: boolean) => {
     const baseClasses = 'transition-all duration-200'
-    
+
     switch (variant) {
       case 'pills':
         return cn(
@@ -103,7 +103,7 @@ export function ScrollSpyNav({
     <nav className={containerClasses} role="navigation" aria-label="Page sections">
       {sections.map((section) => {
         const isActive = activeSection === section.id
-        
+
         return (
           <button
             key={section.id}
@@ -178,10 +178,10 @@ interface ScrollProgressProps {
   color?: string
 }
 
-export function ScrollProgress({ 
-  className, 
-  height = 3, 
-  color = 'hsl(var(--primary))' 
+export function ScrollProgress({
+  className,
+  height = 3,
+  color = 'hsl(var(--primary))'
 }: ScrollProgressProps) {
   const [progress, setProgress] = React.useState(0)
 
@@ -203,9 +203,9 @@ export function ScrollProgress({
         'fixed top-0 left-0 z-50 bg-muted/20',
         className
       )}
-      style={{ 
-        width: '100%', 
-        height: `${height}px` 
+      style={{
+        width: '100%',
+        height: `${height}px`
       }}
     >
       <div
@@ -260,7 +260,7 @@ export function TableOfContents({
           </Button>
         )}
       </div>
-      
+
       {!isCollapsed && (
         <ScrollSpyNav
           sections={sections}

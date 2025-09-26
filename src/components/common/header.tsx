@@ -57,8 +57,10 @@ export function Header({ className }: HeaderProps = {}) {
   return (
     <header 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 border-b bg-surface/95 transition-all duration-300",
-        isScrolled ? "py-2 shadow-md" : "py-4",
+        "fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300",
+        isScrolled 
+          ? "py-2 shadow-md bg-surface border-border" 
+          : "py-4 bg-surface/80 border-transparent",
         className
       )}
     >
