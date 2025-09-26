@@ -6,13 +6,14 @@ import { CaseStudyDetail } from '@/components/case-studies/case-study-detail'
 import { RelatedCaseStudies } from '@/components/case-studies/related-case-studies'
 
 interface CaseStudyPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
-  const caseStudy = getCaseStudyBySlug(params.slug)
+  const { slug } = await params
+  const caseStudy = getCaseStudyBySlug(slug)
   
   if (!caseStudy) {
     return {
@@ -32,14 +33,15 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
   }
 }
 
-export default function CaseStudyPage({ params }: CaseStudyPageProps) {
-  const caseStudy = getCaseStudyBySlug(params.slug)
+export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
+  const { slug } = await params
+  const caseStudy = getCaseStudyBySlug(slug)
   
   if (!caseStudy) {
     notFound()
   }
 
-  const relatedStudies = getRelatedCaseStudies(params.slug, 3)
+  const relatedStudies = getRelatedCaseStudies(slug, 3)
 
   return (
     <Layout>

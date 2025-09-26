@@ -4,10 +4,11 @@ import { ServiceOverviewSection } from '@/components/services'
 import { DemoShowcase } from '@/components/home/demo-showcase'
 
 interface HomeProps {
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }
 
-export default function Home({ params: { locale } }: HomeProps) {
+export default async function Home({ params }: HomeProps) {
+  const { locale } = await params
   return (
     <Layout>
       {/* Hero Section */}

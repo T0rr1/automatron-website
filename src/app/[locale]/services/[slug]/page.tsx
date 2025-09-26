@@ -5,9 +5,9 @@ import { serviceCategories } from '@/lib/constants'
 import { ServiceDetailPage } from '@/components/services/service-detail-page'
 
 interface ServicePageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -17,7 +17,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
-  const service = serviceCategories.find((s) => s.slug === params.slug)
+  const { slug } = await params
+  const service = serviceCategories.find((s) => s.slug === slug)
   
   if (!service) {
     return {
@@ -36,8 +37,9 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   }
 }
 
-export default function ServicePage({ params }: ServicePageProps) {
-  const service = serviceCategories.find((s) => s.slug === params.slug)
+export default async function ServicePage({ params }: ServicePageProps) {
+  const { slug } = await params
+  const service = serviceCategories.find((s) => s.slug === slug)
 
   if (!service) {
     notFound()
