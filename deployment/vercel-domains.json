@@ -1,0 +1,30 @@
+{
+  "domains": [
+    {
+      "name": "automatron.ai",
+      "redirect": null,
+      "gitBranch": "main"
+    },
+    {
+      "name": "www.automatron.ai",
+      "redirect": "automatron.ai",
+      "gitBranch": null
+    }
+  ],
+  "redirects": [
+    {
+      "source": "automatron.com",
+      "destination": "https://automatron.ai",
+      "permanent": true
+    },
+    {
+      "source": "www.automatron.com",
+      "destination": "https://automatron.ai",
+      "permanent": true
+    }
+  ],
+  "ssl": {
+    "auto": true,
+    "provider": "letsencrypt"
+  }
+}

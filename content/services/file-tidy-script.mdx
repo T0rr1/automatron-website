@@ -1,0 +1,156 @@
+---
+title: "File Tidy Script"
+slug: "file-tidy-script"
+description: "One-click file cleanup. Moves/archives messy files by rules (not delete)."
+category: "basic-scripting"
+icon: "folder-organize"
+order: 1
+startingPrice: "$249"
+maxPrice: "$399"
+turnaround: "2-3 days"
+useCases:
+  - "Desktop clutter cleanup"
+  - "Shared drive organization"
+  - "Download folder management"
+  - "Project file sorting"
+targetAudience:
+  - "Busy professionals"
+  - "Small teams"
+  - "Administrative staff"
+deliverables:
+  - "PowerShell script"
+  - "Configuration runbook"
+  - "Folder structure template"
+inputs:
+  - "Folder sample"
+  - "File naming patterns"
+  - "Organization preferences"
+risks:
+  - "Won't restructure complex drives"
+upsells:
+  - "Add Backup Job"
+  - "PC Onboard Kit bundle"
+seo:
+  title: "File Tidy Script - Automated File Organization | Automatron"
+  description: "Clean up desktop clutter and organize files automatically. Safe move-not-delete approach. Starting at $249."
+  ogImage: "/images/services/file-tidy-og.jpg"
+---
+
+# File Tidy Script
+
+**One-click file cleanup.** Moves/archives messy files by rules (not delete).
+
+## What It Does
+
+Transform your chaotic desktop, downloads folder, or shared drives into organized, searchable file systems with a single click. Our File Tidy Script uses intelligent rules to sort, move, and archive files safely—never deleting anything important.
+
+## Ideal Use Cases
+
+- **Desktop Clutter**: Clean up desktops with hundreds of scattered files
+- **Shared Drives**: Organize team folders with consistent structure
+- **Download Folders**: Automatically sort downloads by type and date
+- **Project Archives**: Move completed project files to archive folders
+
+## What You Need to Provide
+
+- **Folder Sample**: Screenshots or access to your messy folders
+- **File Types**: What kinds of files you work with most
+- **Organization Goals**: How you want files grouped (by date, project, type, etc.)
+
+## What You'll Receive
+
+1. **PowerShell Script** - One-click file organization tool
+2. **Configuration Runbook** - Step-by-step setup and customization guide
+3. **Folder Structure Template** - Standardized organization system
+4. **Safety Features** - Dry-run mode and undo capabilities
+
+## Safety-First Approach
+
+- **Move Not Delete**: Files are relocated, never permanently removed
+- **Dry-Run First**: Test the script without making changes
+- **Backup Integration**: Optional backup before any file operations
+- **Undo Capability**: Reverse changes if needed
+
+## Sample Implementation
+
+```powershell
+# File Tidy Script - Safe Organization
+param(
+    [string]$SourcePath = "C:\Users\$env:USERNAME\Desktop",
+    [switch]$DryRun = $true,
+    [switch]$CreateBackup = $false
+)
+
+# Organization rules (customizable)
+$OrganizationRules = @{
+    "Documents" = @{
+        Extensions = @(".pdf", ".docx", ".xlsx", ".pptx")
+        Destination = "C:\Users\$env:USERNAME\Documents\Organized"
+        SubfolderBy = "FileType"
+    }
+    "Images" = @{
+        Extensions = @(".jpg", ".png", ".gif", ".bmp")
+        Destination = "C:\Users\$env:USERNAME\Pictures\Organized"
+        SubfolderBy = "Date"
+    }
+    "Archives" = @{
+        Extensions = @(".zip", ".rar", ".7z")
+        Destination = "C:\Users\$env:USERNAME\Downloads\Archives"
+        SubfolderBy = "None"
+    }
+}
+
+# Safety check and backup
+if ($CreateBackup) {
+    $backupPath = "C:\FileBackups\$(Get-Date -Format 'yyyy-MM-dd_HH-mm')"
+    Write-Host "Creating backup at: $backupPath"
+    Copy-Item $SourcePath -Destination $backupPath -Recurse
+}
+
+# Process files safely
+foreach ($rule in $OrganizationRules.GetEnumerator()) {
+    $category = $rule.Key
+    $config = $rule.Value
+    
+    Get-ChildItem -Path $SourcePath -File | 
+    Where-Object { $config.Extensions -contains $_.Extension.ToLower() } |
+    ForEach-Object {
+        $destFolder = Get-DestinationFolder -File $_ -Config $config
+        
+        if ($DryRun) {
+            Write-Host "[DRY RUN] Would move: $($_.Name) -> $destFolder" -ForegroundColor Yellow
+        } else {
+            if (-not (Test-Path $destFolder)) {
+                New-Item -ItemType Directory -Path $destFolder -Force | Out-Null
+            }
+            Move-Item $_.FullName -Destination $destFolder
+            Write-Host "Moved: $($_.Name) -> $destFolder" -ForegroundColor Green
+        }
+    }
+}
+```
+
+## Turnaround Time
+
+**2-3 days** from requirements to delivery
+
+## Price Range
+
+**$249 - $399** depending on complexity and number of file types
+
+## Risks & Limitations
+
+- Won't restructure complex drives with intricate folder hierarchies
+- Best for standard file types (documents, images, archives)
+- Requires Windows PowerShell environment
+
+## Perfect Upsells
+
+- **Add Backup Job** ($149): Automated backups before file operations
+- **PC Onboard Kit Bundle** ($399): Combine with new computer setup
+
+## Ready to Tidy Up?
+
+Stop wasting time hunting for files in cluttered folders. Get your File Tidy Script and reclaim your digital workspace.
+
+**Estimate: Save 2-5 hours/week** on file searching and organization.

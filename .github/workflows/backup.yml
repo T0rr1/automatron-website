@@ -1,0 +1,86 @@
+name: Automated Backup
+
+on:
+  schedule:
+    # Daily backup at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      backup_type:
+        description: 'Type of backup to create'
+        required: true
+        default: 'full'
+        type: choice
+        options:
+          - full
+          - content-only
+          - config-only
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Full history for complete backup
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'automatron-website/package-lock.json'
+    
+    - name: Install dependencies
+      working-directory: ./automatron-website
+      run: npm ci
+    
+    - name: Create backup
+      working-directory: ./automatron-website
+      run: node scripts/backup.js
+      env:
+        BACKUP_TYPE: ${{ github.event.inputs.backup_type || 'full' }}
+    
+    - name: Upload backup to artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: website-backup-${{ github.run_number }}
+        path: automatron-website/backups/*.tar.gz
+        retention-days: 90
+    
+    - name: Upload to S3 (if configured)
+      if: env.AWS_ACCESS_KEY_ID
+      working-directory: ./automatron-website
+      run: |
+        # Install AWS CLI
+        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+        unzip awscliv2.zip
+        sudo ./aws/install
+        
+        # Upload backup
+        aws s3 cp backups/ s3://${{ secrets.BACKUP_S3_BUCKET }}/automatron-website/ --recursive --exclude "*" --include "*.tar.gz"
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+    
+    - name: Cleanup old backups
+      working-directory: ./automatron-website
+      run: |
+        # Keep only last 7 local backups
+        ls -t backups/*.tar.gz | tail -n +8 | xargs -r rm
+    
+    - name: Notify backup completion
+      if: failure()
+      uses: actions/github-script@v7
+      with:
+        script: |
+          github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: 'Backup Failed - ${{ github.run_number }}',
+            body: 'Automated backup failed. Please check the workflow logs and investigate.',
+            labels: ['backup', 'critical']
+          });

@@ -1,0 +1,1059 @@
+<testsuites id="" name="" tests="45" failures="19" skipped="0" errors="0" time="94.638137">
+<testsuite name="homepage.spec.ts" timestamp="2025-09-25T14:54:17.309Z" hostname="chromium" tests="9" failures="4" skipped="0" time="44.823" errors="0">
+<testcase name="Homepage › should load homepage successfully" classname="homepage.spec.ts" time="4.049">
+</testcase>
+<testcase name="Homepage › should have proper navigation" classname="homepage.spec.ts" time="4.125">
+<failure message="homepage.spec.ts:22:7 should have proper navigation" type="FAILURE">
+<![CDATA[  [chromium] › homepage.spec.ts:22:7 › Homepage › should have proper navigation ────────────────────
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('a[href*="services"], a:has-text("Services")') resolved to 10 elements:
+        1) <a href="/services" class="hover:text-primary">Services</a> aka getByRole('link', { name: 'Services' })
+        2) <a href="/services/basic-scripting" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('.group\\/btn').first()
+        3) <a href="/services/email-file-hygiene" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(2) > .group > .relative.z-10.p-6 > .group\\/btn')
+        4) <a href="/services/reporting-lite" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(3) > .group > .relative.z-10.p-6 > .group\\/btn')
+        5) <a href="/services/websites-landing" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(4) > .group > .relative.z-10.p-6 > .group\\/btn')
+        6) <a href="/services/pc-helpers" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(5) > .group > .relative.z-10.p-6 > .group\\/btn')
+        7) <a href="/services/reusable-templates" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(6) > .group > .relative.z-10.p-6 > .group\\/btn')
+        8) <a href="/services/basic-scripting" class="text-muted-foreground hover:text-foreground">Basic Scripting</a> aka getByRole('link', { name: 'Basic Scripting' })
+        9) <a href="/services/email-automation" class="text-muted-foreground hover:text-foreground">Email Automation</a> aka getByRole('link', { name: 'Email Automation' })
+        10) <a href="/services/reporting" class="text-muted-foreground hover:text-foreground">Reporting</a> aka getByRole('link', { name: 'Reporting' })
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('a[href*="services"], a:has-text("Services")')
+
+
+      29 |
+      30 |     // Check for main navigation items
+    > 31 |     await expect(page.locator('a[href*="services"], a:has-text("Services")')).toBeVisible()
+         |                                                                               ^
+      32 |     await expect(page.locator('a[href*="about"], a:has-text("About")')).toBeVisible()
+      33 |     await expect(page.locator('a[href*="contact"], a:has-text("Contact")')).toBeVisible()
+      34 |   })
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:31:79
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-have-proper-navigation-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-have-proper-navigation-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-have-proper-navigation-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-have-proper-navigation-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-have-proper-navigation-chromium\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-have-proper-navigation-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should display hero section with CTA" classname="homepage.spec.ts" time="9.13">
+<failure message="homepage.spec.ts:36:7 should display hero section with CTA" type="FAILURE">
+<![CDATA[  [chromium] › homepage.spec.ts:36:7 › Homepage › should display hero section with CTA ─────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  locator('a:has-text("Get Started"), button:has-text("Get Started")').first()
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('a:has-text("Get Started"), button:has-text("Get Started")').first()
+
+
+      44 |     // Check for CTA button
+      45 |     const ctaButton = page.locator('a:has-text("Get Started"), button:has-text("Get Started")').first()
+    > 46 |     await expect(ctaButton).toBeVisible()
+         |                             ^
+      47 |     
+      48 |     // Test CTA click
+      49 |     await ctaButton.click()
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:46:29
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-chromium\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should display service overview cards" classname="homepage.spec.ts" time="4.014">
+</testcase>
+<testcase name="Homepage › should be accessible" classname="homepage.spec.ts" time="4.125">
+</testcase>
+<testcase name="Homepage › should be responsive" classname="homepage.spec.ts" time="5.934">
+</testcase>
+<testcase name="Homepage › should have good performance" classname="homepage.spec.ts" time="5.947">
+</testcase>
+<testcase name="Homepage › should handle theme switching" classname="homepage.spec.ts" time="4.465">
+<failure message="homepage.spec.ts:85:7 should handle theme switching" type="FAILURE">
+<![CDATA[  [chromium] › homepage.spec.ts:85:7 › Homepage › should handle theme switching ────────────────────
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "dark"
+    Received string:    "scroll-smooth light"
+
+       at utils.ts:128
+
+      126 |       // Check that theme actually changed
+      127 |       const htmlClass = await this.page.locator('html').getAttribute('class')
+    > 128 |       expect(htmlClass).toContain('dark')
+          |                         ^
+      129 |       
+      130 |       // Switch back
+      131 |       await themeToggle.click()
+        at TestUtils.testThemeSwitch (C:\Users\torri\Downloads\automatron-website\e2e\utils.ts:128:25)
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:88:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-handle-theme-switching-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-handle-theme-switching-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-handle-theme-switching-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-handle-theme-switching-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-handle-theme-switching-chromium\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-handle-theme-switching-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should not have console errors" classname="homepage.spec.ts" time="3.034">
+<failure message="homepage.spec.ts:91:7 should not have console errors" type="FAILURE">
+<![CDATA[  [chromium] › homepage.spec.ts:91:7 › Homepage › should not have console errors ───────────────────
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 0
+    Received length: 6
+    Received array:  ["Warning: Extra attributes from the server: %s%s class,dir,data-locale·
+        at body
+        at html
+        at RootLayout (Server)
+        at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+        at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+        at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)
+        at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+        at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)
+        at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)
+        at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)
+        at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)
+        at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)
+        at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+        at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)
+        at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)
+        at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)", "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self' 'nonce-56586fa3-7a3e-4ffc-ba90-33e2de58eee6' 'unsafe-inline'\". Note that 'unsafe-inline' is ignored if either a hash or nonce value is present in the source list.
+    ", "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self' 'nonce-56586fa3-7a3e-4ffc-ba90-33e2de58eee6' 'unsafe-inline'\". Note that 'unsafe-inline' is ignored if either a hash or nonce value is present in the source list.
+    ", "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self' 'nonce-56586fa3-7a3e-4ffc-ba90-33e2de58eee6' 'unsafe-inline'\". Note that 'unsafe-inline' is ignored if either a hash or nonce value is present in the source list.
+    ", "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self' 'nonce-56586fa3-7a3e-4ffc-ba90-33e2de58eee6' 'unsafe-inline'\". Note that 'unsafe-inline' is ignored if either a hash or nonce value is present in the source list.
+    ", "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self' 'nonce-56586fa3-7a3e-4ffc-ba90-33e2de58eee6' 'unsafe-inline'\". Note that 'unsafe-inline' is ignored if either a hash or nonce value is present in the source list.
+    "]
+
+       at utils.ts:158
+
+      156 |     )
+      157 |     
+    > 158 |     expect(filteredErrors).toHaveLength(0)
+          |                            ^
+      159 |   }
+      160 | }
+        at TestUtils.checkConsoleErrors (C:\Users\torri\Downloads\automatron-website\e2e\utils.ts:158:28)
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:93:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-not-have-console-errors-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-not-have-console-errors-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-not-have-console-errors-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-not-have-console-errors-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-not-have-console-errors-chromium\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-not-have-console-errors-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="homepage.spec.ts" timestamp="2025-09-25T14:54:17.309Z" hostname="firefox" tests="9" failures="5" skipped="0" time="102.395" errors="0">
+<testcase name="Homepage › should load homepage successfully" classname="homepage.spec.ts" time="36.827">
+<failure message="homepage.spec.ts:9:7 should load homepage successfully" type="FAILURE">
+<![CDATA[  [firefox] › homepage.spec.ts:9:7 › Homepage › should load homepage successfully ──────────────────
+
+    Tearing down "context" exceeded the test timeout of 30000ms.
+
+    Error: browserContext.close: Test ended.
+    Browser logs:
+
+    <launching> C:\Users\torri\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe -no-remote -wait-for-browser -foreground -profile C:\Users\torri\AppData\Local\Temp\playwright_firefoxdev_profile-5X1AuF -juggler-pipe -silent
+    <launched> pid=34740
+    [pid=34740][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 116: unreachable code after return statement
+    [pid=34740][out] console.warn: services.settings: Ignoring preference override of remote settings server
+    [pid=34740][out] console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+    [pid=34740][out] 
+    [pid=34740][out] Juggler listening to the pipe
+    [pid=34740][out] console.error: "Warning: unrecognized command line flag" "-foreground"
+    [pid=34740][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]
+    [pid=34740][out] console.error: services.settings: 
+    [pid=34740][out]   Message: EmptyDatabaseError: "main/nimbus-desktop-experiments" has not been synced yet
+    [pid=34740][out]   Stack:
+    [pid=34740][out]     EmptyDatabaseError@resource://services-settings/Database.sys.mjs:19:5
+    [pid=34740][out] list@resource://services-settings/Database.sys.mjs:96:13
+    [pid=34740][out] 
+    [pid=34740][out] console.error: services.settings: 
+    [pid=34740][out]   Message: EmptyDatabaseError: "main/nimbus-secure-experiments" has not been synced yet
+    [pid=34740][out]   Stack:
+    [pid=34740][out]     EmptyDatabaseError@resource://services-settings/Database.sys.mjs:19:5
+    [pid=34740][out] list@resource://services-settings/Database.sys.mjs:96:13
+    [pid=34740][out] 
+    [pid=34740][out] console.warn: services.settings: #fetchAttachment: Forcing fallbackToDump to false due to Utils.LOAD_DUMPS being false
+    [pid=34740][out] console.error: (new NotFoundError("Could not find fa0fc42c-d91d-fca7-34eb-806ff46062dc in cache or dump", "resource://services-settings/Attachments.sys.mjs", 48))
+    [pid=34740][out] console.warn: "Unable to find the attachment for" "fa0fc42c-d91d-fca7-34eb-806ff46062dc"
+    [pid=34740] <gracefully close start>
+    [pid=34740] <kill>
+    [pid=34740] <will force kill>
+    [pid=34740] taskkill stdout: SUCCESS: The process with PID 13532 (child process of PID 26856) has been terminated.
+    SUCCESS: The process with PID 20080 (child process of PID 26856) has been terminated.
+    SUCCESS: The process with PID 22908 (child process of PID 26856) has been terminated.
+    SUCCESS: The process with PID 13396 (child process of PID 26856) has been terminated.
+    SUCCESS: The process with PID 23768 (child process of PID 26856) has been terminated.
+    SUCCESS: The process with PID 13644 (child process of PID 26856) has been terminated.
+    SUCCESS: The process with PID 26856 (child process of PID 34740) has been terminated.
+    SUCCESS: The process with PID 34740 (child process of PID 36884) has been terminated.
+
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-load-homepage-successfully-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-load-homepage-successfully-firefox\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should have proper navigation" classname="homepage.spec.ts" time="8.216">
+<failure message="homepage.spec.ts:22:7 should have proper navigation" type="FAILURE">
+<![CDATA[  [firefox] › homepage.spec.ts:22:7 › Homepage › should have proper navigation ─────────────────────
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('a[href*="services"], a:has-text("Services")') resolved to 10 elements:
+        1) <a href="/services" class="hover:text-primary">Services</a> aka getByRole('link', { name: 'Services' })
+        2) <a href="/services/basic-scripting" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('.group\\/btn').first()
+        3) <a href="/services/email-file-hygiene" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(2) > .group > .relative.z-10.p-6 > .group\\/btn')
+        4) <a href="/services/reporting-lite" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(3) > .group > .relative.z-10.p-6 > .group\\/btn')
+        5) <a href="/services/websites-landing" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(4) > .group > .relative.z-10.p-6 > .group\\/btn')
+        6) <a href="/services/pc-helpers" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(5) > .group > .relative.z-10.p-6 > .group\\/btn')
+        7) <a href="/services/reusable-templates" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(6) > .group > .relative.z-10.p-6 > .group\\/btn')
+        8) <a href="/services/basic-scripting" class="text-muted-foreground hover:text-foreground">Basic Scripting</a> aka getByRole('link', { name: 'Basic Scripting' })
+        9) <a href="/services/email-automation" class="text-muted-foreground hover:text-foreground">Email Automation</a> aka getByRole('link', { name: 'Email Automation' })
+        10) <a href="/services/reporting" class="text-muted-foreground hover:text-foreground">Reporting</a> aka getByRole('link', { name: 'Reporting' })
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('a[href*="services"], a:has-text("Services")')
+
+
+      29 |
+      30 |     // Check for main navigation items
+    > 31 |     await expect(page.locator('a[href*="services"], a:has-text("Services")')).toBeVisible()
+         |                                                                               ^
+      32 |     await expect(page.locator('a[href*="about"], a:has-text("About")')).toBeVisible()
+      33 |     await expect(page.locator('a[href*="contact"], a:has-text("Contact")')).toBeVisible()
+      34 |   })
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:31:79
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-have-proper-navigation-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-have-proper-navigation-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-have-proper-navigation-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-have-proper-navigation-firefox\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-have-proper-navigation-firefox\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-have-proper-navigation-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should display hero section with CTA" classname="homepage.spec.ts" time="11.173">
+<failure message="homepage.spec.ts:36:7 should display hero section with CTA" type="FAILURE">
+<![CDATA[  [firefox] › homepage.spec.ts:36:7 › Homepage › should display hero section with CTA ──────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  locator('a:has-text("Get Started"), button:has-text("Get Started")').first()
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('a:has-text("Get Started"), button:has-text("Get Started")').first()
+
+
+      44 |     // Check for CTA button
+      45 |     const ctaButton = page.locator('a:has-text("Get Started"), button:has-text("Get Started")').first()
+    > 46 |     await expect(ctaButton).toBeVisible()
+         |                             ^
+      47 |     
+      48 |     // Test CTA click
+      49 |     await ctaButton.click()
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:46:29
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-firefox\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-firefox\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should display service overview cards" classname="homepage.spec.ts" time="6.41">
+</testcase>
+<testcase name="Homepage › should be accessible" classname="homepage.spec.ts" time="5.416">
+</testcase>
+<testcase name="Homepage › should be responsive" classname="homepage.spec.ts" time="15.774">
+</testcase>
+<testcase name="Homepage › should have good performance" classname="homepage.spec.ts" time="6.449">
+</testcase>
+<testcase name="Homepage › should handle theme switching" classname="homepage.spec.ts" time="4.524">
+<failure message="homepage.spec.ts:85:7 should handle theme switching" type="FAILURE">
+<![CDATA[  [firefox] › homepage.spec.ts:85:7 › Homepage › should handle theme switching ─────────────────────
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "dark"
+    Received string:    "scroll-smooth light"
+
+       at utils.ts:128
+
+      126 |       // Check that theme actually changed
+      127 |       const htmlClass = await this.page.locator('html').getAttribute('class')
+    > 128 |       expect(htmlClass).toContain('dark')
+          |                         ^
+      129 |       
+      130 |       // Switch back
+      131 |       await themeToggle.click()
+        at TestUtils.testThemeSwitch (C:\Users\torri\Downloads\automatron-website\e2e\utils.ts:128:25)
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:88:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-handle-theme-switching-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-handle-theme-switching-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-handle-theme-switching-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-handle-theme-switching-firefox\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-handle-theme-switching-firefox\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-handle-theme-switching-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should not have console errors" classname="homepage.spec.ts" time="7.606">
+<failure message="homepage.spec.ts:91:7 should not have console errors" type="FAILURE">
+<![CDATA[  [firefox] › homepage.spec.ts:91:7 › Homepage › should not have console errors ────────────────────
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 0
+    Received length: 6
+    Received array:  ["Warning: Prop `style` did not match. Server: \"\" Client: \"background:radial-gradient(circle at 0% 0%, \\n            rgba(14, 165, 233, 0.1) 0%, \\n            rgba(34, 197, 94, 0.05) 50%, \\n            transparent 100%)\"
+    div
+    div
+    AutomationBackground@webpack-internal:///(app-pages-browser)/./src/components/home/hero-section.tsx:113:94
+    div
+    _c@webpack-internal:///(app-pages-browser)/./src/components/common/container.tsx:13:64
+    section
+    Section<@webpack-internal:///(app-pages-browser)/./src/components/common/section.tsx:16:134
+    HomepageHero@webpack-internal:///(app-pages-browser)/./src/components/home/hero-section.tsx:446:84
+    main
+    div
+    ChatbotProvider@webpack-internal:///(app-pages-browser)/./src/components/common/chatbot-provider.tsx:22:24
+    Layout@webpack-internal:///(app-pages-browser)/./src/components/common/layout.tsx:26:113
+    Home (Server)
+    InnerLayoutRouter@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:244:18
+    RedirectErrorBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9
+    RedirectBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:24
+    NotFoundBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:62
+    LoadingBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:76
+    ErrorBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:67
+    InnerScrollAndFocusHandler@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9
+    ScrollAndFocusHandler@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:37
+    RenderFromTemplateContext@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44
+    OuterLayoutRouter@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:157
+    ErrorBoundary@webpack-internal:///(app-pages-browser)/./src/components/common/error-boundary.tsx:164:9
+    ClientErrorBoundary@webpack-internal:///(app-pages-browser)/./src/components/common/client-error-boundary.tsx:16:32
+    O@webpack-internal:///(app-pages-browser)/./node_modules/next-themes/dist/index.mjs:28:258
+    z@webpack-internal:///(app-pages-browser)/./node_modules/next-themes/dist/index.mjs:21:47
+    ThemeProvider@webpack-internal:///(app-pages-browser)/./src/components/theme-provider.tsx:13:34
+    body
+    html
+    LocaleLayout (Server)
+    InnerLayoutRouter@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:244:18
+    RedirectErrorBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9
+    RedirectBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:24
+    NotFoundErrorBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9
+    NotFoundBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:62
+    LoadingBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:76
+    ErrorBoundaryHandler@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9
+    ErrorBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:67
+    InnerScrollAndFocusHandler@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9
+    ScrollAndFocusHandler@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:37
+    RenderFromTemplateContext@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44
+    OuterLayoutRouter@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:157
+    body
+    html
+    RootLayout (Server)
+    RedirectErrorBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9
+    RedirectBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:24
+    NotFoundErrorBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9
+    NotFoundBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:62
+    DevRootNotFoundBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:24
+    ReactDevOverlay@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9
+    HotReload@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:37
+    Router@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:134
+    ErrorBoundaryHandler@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9
+    ErrorBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:67
+    AppRouter@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:47
+    ServerRoot@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27
+    Root@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:24", "[JavaScript Error: \"Content-Security-Policy: The page’s settings blocked an inline style (style-src-elem) from being applied because it violates the following directive: “style-src 'self' 'nonce-5076e9bc-257a-4235-bd95-6fed941c9590' 'unsafe-inline'”. Consider using a hash ('sha256-D33FojIofSxXmMcyQUZ0052Wfmf4r0WxcX5F+qKpGDQ=', requires 'unsafe-hashes' for style attributes) or a nonce.\" {file: \"http://localhost:3000/_next/static/chunks/app/%5Blocale%5D/page.js line 1125 > eval\" line: 224}]", "[JavaScript Error: \"Content-Security-Policy: The page’s settings blocked an inline style (style-src-elem) from being applied because it violates the following directive: “style-src 'self' 'nonce-5076e9bc-257a-4235-bd95-6fed941c9590' 'unsafe-inline'”. Consider using a hash ('sha256-GNF74DLkXb0fH3ILHgILFjk1ozCF3SNXQ5mQb7WLu/Y=', requires 'unsafe-hashes' for style attributes) or a nonce.\" {file: \"http://localhost:3000/_next/static/chunks/app/%5Blocale%5D/page.js line 5063 > eval\" line: 131}]", "[JavaScript Error: \"Content-Security-Policy: The page’s settings blocked an inline style (style-src-elem) from being applied because it violates the following directive: “style-src 'self' 'nonce-5076e9bc-257a-4235-bd95-6fed941c9590' 'unsafe-inline'”. Consider using a hash ('sha256-GNF74DLkXb0fH3ILHgILFjk1ozCF3SNXQ5mQb7WLu/Y=', requires 'unsafe-hashes' for style attributes) or a nonce.\" {file: \"http://localhost:3000/_next/static/chunks/app/%5Blocale%5D/page.js line 5063 > eval\" line: 131}]", "[JavaScript Error: \"Content-Security-Policy: The page’s settings blocked an inline style (style-src-elem) from being applied because it violates the following directive: “style-src 'self' 'nonce-5076e9bc-257a-4235-bd95-6fed941c9590' 'unsafe-inline'”. Consider using a hash ('sha256-GNF74DLkXb0fH3ILHgILFjk1ozCF3SNXQ5mQb7WLu/Y=', requires 'unsafe-hashes' for style attributes) or a nonce.\" {file: \"http://localhost:3000/_next/static/chunks/app/%5Blocale%5D/page.js line 5063 > eval\" line: 131}]", "[JavaScript Error: \"Content-Security-Policy: The page’s settings blocked an inline style (style-src-elem) from being applied because it violates the following directive: “style-src 'self' 'nonce-5076e9bc-257a-4235-bd95-6fed941c9590' 'unsafe-inline'”. Consider using a hash ('sha256-GNF74DLkXb0fH3ILHgILFjk1ozCF3SNXQ5mQb7WLu/Y=', requires 'unsafe-hashes' for style attributes) or a nonce.\" {file: \"http://localhost:3000/_next/static/chunks/app/%5Blocale%5D/page.js line 5063 > eval\" line: 131}]"]
+
+       at utils.ts:158
+
+      156 |     )
+      157 |     
+    > 158 |     expect(filteredErrors).toHaveLength(0)
+          |                            ^
+      159 |   }
+      160 | }
+        at TestUtils.checkConsoleErrors (C:\Users\torri\Downloads\automatron-website\e2e\utils.ts:158:28)
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:93:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-not-have-console-errors-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-not-have-console-errors-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-not-have-console-errors-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-not-have-console-errors-firefox\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-not-have-console-errors-firefox\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-not-have-console-errors-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="homepage.spec.ts" timestamp="2025-09-25T14:54:17.309Z" hostname="webkit" tests="9" failures="3" skipped="0" time="29.833" errors="0">
+<testcase name="Homepage › should load homepage successfully" classname="homepage.spec.ts" time="2.088">
+</testcase>
+<testcase name="Homepage › should have proper navigation" classname="homepage.spec.ts" time="2.214">
+<failure message="homepage.spec.ts:22:7 should have proper navigation" type="FAILURE">
+<![CDATA[  [webkit] › homepage.spec.ts:22:7 › Homepage › should have proper navigation ──────────────────────
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('a[href*="services"], a:has-text("Services")') resolved to 10 elements:
+        1) <a href="/services" class="hover:text-primary">Services</a> aka getByRole('link', { name: 'Services' })
+        2) <a href="/services/basic-scripting" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('.group\\/btn').first()
+        3) <a href="/services/email-file-hygiene" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(2) > .group > .relative.z-10.p-6 > .group\\/btn')
+        4) <a href="/services/reporting-lite" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(3) > .group > .relative.z-10.p-6 > .group\\/btn')
+        5) <a href="/services/websites-landing" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(4) > .group > .relative.z-10.p-6 > .group\\/btn')
+        6) <a href="/services/pc-helpers" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(5) > .group > .relative.z-10.p-6 > .group\\/btn')
+        7) <a href="/services/reusable-templates" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(6) > .group > .relative.z-10.p-6 > .group\\/btn')
+        8) <a href="/services/basic-scripting" class="text-muted-foreground hover:text-foreground">Basic Scripting</a> aka getByRole('link', { name: 'Basic Scripting' })
+        9) <a href="/services/email-automation" class="text-muted-foreground hover:text-foreground">Email Automation</a> aka getByRole('link', { name: 'Email Automation' })
+        10) <a href="/services/reporting" class="text-muted-foreground hover:text-foreground">Reporting</a> aka getByRole('link', { name: 'Reporting' })
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('a[href*="services"], a:has-text("Services")')
+
+
+      29 |
+      30 |     // Check for main navigation items
+    > 31 |     await expect(page.locator('a[href*="services"], a:has-text("Services")')).toBeVisible()
+         |                                                                               ^
+      32 |     await expect(page.locator('a[href*="about"], a:has-text("About")')).toBeVisible()
+      33 |     await expect(page.locator('a[href*="contact"], a:has-text("Contact")')).toBeVisible()
+      34 |   })
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:31:79
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-have-proper-navigation-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-have-proper-navigation-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-have-proper-navigation-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-have-proper-navigation-webkit\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-have-proper-navigation-webkit\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-have-proper-navigation-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should display hero section with CTA" classname="homepage.spec.ts" time="7.153">
+<failure message="homepage.spec.ts:36:7 should display hero section with CTA" type="FAILURE">
+<![CDATA[  [webkit] › homepage.spec.ts:36:7 › Homepage › should display hero section with CTA ───────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  locator('a:has-text("Get Started"), button:has-text("Get Started")').first()
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('a:has-text("Get Started"), button:has-text("Get Started")').first()
+
+
+      44 |     // Check for CTA button
+      45 |     const ctaButton = page.locator('a:has-text("Get Started"), button:has-text("Get Started")').first()
+    > 46 |     await expect(ctaButton).toBeVisible()
+         |                             ^
+      47 |     
+      48 |     // Test CTA click
+      49 |     await ctaButton.click()
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:46:29
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-webkit\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-webkit\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should display service overview cards" classname="homepage.spec.ts" time="1.982">
+</testcase>
+<testcase name="Homepage › should be accessible" classname="homepage.spec.ts" time="2.129">
+</testcase>
+<testcase name="Homepage › should be responsive" classname="homepage.spec.ts" time="4.125">
+</testcase>
+<testcase name="Homepage › should have good performance" classname="homepage.spec.ts" time="3.964">
+</testcase>
+<testcase name="Homepage › should handle theme switching" classname="homepage.spec.ts" time="2.674">
+<failure message="homepage.spec.ts:85:7 should handle theme switching" type="FAILURE">
+<![CDATA[  [webkit] › homepage.spec.ts:85:7 › Homepage › should handle theme switching ──────────────────────
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "dark"
+    Received string:    "scroll-smooth"
+
+       at utils.ts:128
+
+      126 |       // Check that theme actually changed
+      127 |       const htmlClass = await this.page.locator('html').getAttribute('class')
+    > 128 |       expect(htmlClass).toContain('dark')
+          |                         ^
+      129 |       
+      130 |       // Switch back
+      131 |       await themeToggle.click()
+        at TestUtils.testThemeSwitch (C:\Users\torri\Downloads\automatron-website\e2e\utils.ts:128:25)
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:88:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-handle-theme-switching-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-handle-theme-switching-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-handle-theme-switching-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-handle-theme-switching-webkit\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-handle-theme-switching-webkit\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-handle-theme-switching-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should not have console errors" classname="homepage.spec.ts" time="3.504">
+</testcase>
+</testsuite>
+<testsuite name="homepage.spec.ts" timestamp="2025-09-25T14:54:17.309Z" hostname="Mobile Chrome" tests="9" failures="4" skipped="0" time="61.515" errors="0">
+<testcase name="Homepage › should load homepage successfully" classname="homepage.spec.ts" time="2.792">
+</testcase>
+<testcase name="Homepage › should have proper navigation" classname="homepage.spec.ts" time="2.9">
+<failure message="homepage.spec.ts:22:7 should have proper navigation" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › homepage.spec.ts:22:7 › Homepage › should have proper navigation ───────────────
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('a[href*="services"], a:has-text("Services")') resolved to 10 elements:
+        1) <a href="/services" class="hover:text-primary">Services</a> aka getByRole('navigation').getByText('Services')
+        2) <a href="/services/basic-scripting" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('.group\\/btn').first()
+        3) <a href="/services/email-file-hygiene" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(2) > .group > .relative.z-10.p-6 > .group\\/btn')
+        4) <a href="/services/reporting-lite" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(3) > .group > .relative.z-10.p-6 > .group\\/btn')
+        5) <a href="/services/websites-landing" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(4) > .group > .relative.z-10.p-6 > .group\\/btn')
+        6) <a href="/services/pc-helpers" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(5) > .group > .relative.z-10.p-6 > .group\\/btn')
+        7) <a href="/services/reusable-templates" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(6) > .group > .relative.z-10.p-6 > .group\\/btn')
+        8) <a href="/services/basic-scripting" class="text-muted-foreground hover:text-foreground">Basic Scripting</a> aka getByRole('link', { name: 'Basic Scripting' })
+        9) <a href="/services/email-automation" class="text-muted-foreground hover:text-foreground">Email Automation</a> aka getByRole('link', { name: 'Email Automation' })
+        10) <a href="/services/reporting" class="text-muted-foreground hover:text-foreground">Reporting</a> aka getByRole('link', { name: 'Reporting' })
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('a[href*="services"], a:has-text("Services")')
+
+
+      29 |
+      30 |     // Check for main navigation items
+    > 31 |     await expect(page.locator('a[href*="services"], a:has-text("Services")')).toBeVisible()
+         |                                                                               ^
+      32 |     await expect(page.locator('a[href*="about"], a:has-text("About")')).toBeVisible()
+      33 |     await expect(page.locator('a[href*="contact"], a:has-text("Contact")')).toBeVisible()
+      34 |   })
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:31:79
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-have-proper-navigation-Mobile-Chrome\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-have-proper-navigation-Mobile-Chrome\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-have-proper-navigation-Mobile-Chrome\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-have-proper-navigation-Mobile-Chrome\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-have-proper-navigation-Mobile-Chrome\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-have-proper-navigation-Mobile-Chrome\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should display hero section with CTA" classname="homepage.spec.ts" time="7.631">
+<failure message="homepage.spec.ts:36:7 should display hero section with CTA" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › homepage.spec.ts:36:7 › Homepage › should display hero section with CTA ────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  locator('a:has-text("Get Started"), button:has-text("Get Started")').first()
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('a:has-text("Get Started"), button:has-text("Get Started")').first()
+
+
+      44 |     // Check for CTA button
+      45 |     const ctaButton = page.locator('a:has-text("Get Started"), button:has-text("Get Started")').first()
+    > 46 |     await expect(ctaButton).toBeVisible()
+         |                             ^
+      47 |     
+      48 |     // Test CTA click
+      49 |     await ctaButton.click()
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:46:29
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-Mobile-Chrome\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-Mobile-Chrome\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-Mobile-Chrome\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-Mobile-Chrome\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-Mobile-Chrome\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-Mobile-Chrome\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should display service overview cards" classname="homepage.spec.ts" time="2.593">
+</testcase>
+<testcase name="Homepage › should be accessible" classname="homepage.spec.ts" time="2.63">
+</testcase>
+<testcase name="Homepage › should be responsive" classname="homepage.spec.ts" time="4.991">
+</testcase>
+<testcase name="Homepage › should have good performance" classname="homepage.spec.ts" time="4.297">
+</testcase>
+<testcase name="Homepage › should handle theme switching" classname="homepage.spec.ts" time="30.337">
+<failure message="homepage.spec.ts:85:7 should handle theme switching" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › homepage.spec.ts:85:7 › Homepage › should handle theme switching ───────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('[aria-label*="theme"], [data-testid="theme-toggle"]').first()
+        - locator resolved to <button aria-label="Toggle theme" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+          - waiting 100ms
+        52 × waiting for element to be visible, enabled and stable
+           - element is not visible
+         - retrying click action
+           - waiting 500ms
+
+
+       at utils.ts:123
+
+      121 |     
+      122 |     if (await themeToggle.count() > 0) {
+    > 123 |       await themeToggle.click()
+          |                         ^
+      124 |       await this.page.waitForTimeout(500) // Wait for theme transition
+      125 |       
+      126 |       // Check that theme actually changed
+        at TestUtils.testThemeSwitch (C:\Users\torri\Downloads\automatron-website\e2e\utils.ts:123:25)
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:88:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-handle-theme-switching-Mobile-Chrome\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-handle-theme-switching-Mobile-Chrome\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-handle-theme-switching-Mobile-Chrome\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-handle-theme-switching-Mobile-Chrome\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-handle-theme-switching-Mobile-Chrome\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-handle-theme-switching-Mobile-Chrome\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should not have console errors" classname="homepage.spec.ts" time="3.344">
+<failure message="homepage.spec.ts:91:7 should not have console errors" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › homepage.spec.ts:91:7 › Homepage › should not have console errors ──────────────
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 0
+    Received length: 6
+    Received array:  ["Warning: Extra attributes from the server: %s%s class,dir,data-locale·
+        at body
+        at html
+        at RootLayout (Server)
+        at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+        at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+        at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)
+        at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+        at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)
+        at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)
+        at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)
+        at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)
+        at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)
+        at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+        at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)
+        at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)
+        at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)", "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self' 'nonce-d018ef3a-7739-43eb-b547-0e198383f185' 'unsafe-inline'\". Note that 'unsafe-inline' is ignored if either a hash or nonce value is present in the source list.
+    ", "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self' 'nonce-d018ef3a-7739-43eb-b547-0e198383f185' 'unsafe-inline'\". Note that 'unsafe-inline' is ignored if either a hash or nonce value is present in the source list.
+    ", "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self' 'nonce-d018ef3a-7739-43eb-b547-0e198383f185' 'unsafe-inline'\". Note that 'unsafe-inline' is ignored if either a hash or nonce value is present in the source list.
+    ", "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self' 'nonce-d018ef3a-7739-43eb-b547-0e198383f185' 'unsafe-inline'\". Note that 'unsafe-inline' is ignored if either a hash or nonce value is present in the source list.
+    ", "Refused to apply inline style because it violates the following Content Security Policy directive: \"style-src 'self' 'nonce-d018ef3a-7739-43eb-b547-0e198383f185' 'unsafe-inline'\". Note that 'unsafe-inline' is ignored if either a hash or nonce value is present in the source list.
+    "]
+
+       at utils.ts:158
+
+      156 |     )
+      157 |     
+    > 158 |     expect(filteredErrors).toHaveLength(0)
+          |                            ^
+      159 |   }
+      160 | }
+        at TestUtils.checkConsoleErrors (C:\Users\torri\Downloads\automatron-website\e2e\utils.ts:158:28)
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:93:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-not-have-console-errors-Mobile-Chrome\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-not-have-console-errors-Mobile-Chrome\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-not-have-console-errors-Mobile-Chrome\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-not-have-console-errors-Mobile-Chrome\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-not-have-console-errors-Mobile-Chrome\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-not-have-console-errors-Mobile-Chrome\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="homepage.spec.ts" timestamp="2025-09-25T14:54:17.309Z" hostname="Mobile Safari" tests="9" failures="3" skipped="0" time="29.241" errors="0">
+<testcase name="Homepage › should load homepage successfully" classname="homepage.spec.ts" time="2.017">
+</testcase>
+<testcase name="Homepage › should have proper navigation" classname="homepage.spec.ts" time="2.106">
+<failure message="homepage.spec.ts:22:7 should have proper navigation" type="FAILURE">
+<![CDATA[  [Mobile Safari] › homepage.spec.ts:22:7 › Homepage › should have proper navigation ───────────────
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('a[href*="services"], a:has-text("Services")') resolved to 10 elements:
+        1) <a href="/services" class="hover:text-primary">Services</a> aka getByRole('link', { name: 'Services' })
+        2) <a href="/services/basic-scripting" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('.group\\/btn').first()
+        3) <a href="/services/email-file-hygiene" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(2) > .group > .relative.z-10.p-6 > .group\\/btn')
+        4) <a href="/services/reporting-lite" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(3) > .group > .relative.z-10.p-6 > .group\\/btn')
+        5) <a href="/services/websites-landing" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(4) > .group > .relative.z-10.p-6 > .group\\/btn')
+        6) <a href="/services/pc-helpers" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(5) > .group > .relative.z-10.p-6 > .group\\/btn')
+        7) <a href="/services/reusable-templates" class="group/btn relative flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-200 border border-white/20 bg-white/10 backdrop-blur-sm hover:border-white/30 hover:bg-white/20 text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-brand-500/50">…</a> aka locator('div:nth-child(6) > .group > .relative.z-10.p-6 > .group\\/btn')
+        8) <a href="/services/basic-scripting" class="text-muted-foreground hover:text-foreground">Basic Scripting</a> aka getByRole('link', { name: 'Basic Scripting' })
+        9) <a href="/services/email-automation" class="text-muted-foreground hover:text-foreground">Email Automation</a> aka getByRole('link', { name: 'Email Automation' })
+        10) <a href="/services/reporting" class="text-muted-foreground hover:text-foreground">Reporting</a> aka getByRole('link', { name: 'Reporting' })
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('a[href*="services"], a:has-text("Services")')
+
+
+      29 |
+      30 |     // Check for main navigation items
+    > 31 |     await expect(page.locator('a[href*="services"], a:has-text("Services")')).toBeVisible()
+         |                                                                               ^
+      32 |     await expect(page.locator('a[href*="about"], a:has-text("About")')).toBeVisible()
+      33 |     await expect(page.locator('a[href*="contact"], a:has-text("Contact")')).toBeVisible()
+      34 |   })
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:31:79
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-have-proper-navigation-Mobile-Safari\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-have-proper-navigation-Mobile-Safari\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-have-proper-navigation-Mobile-Safari\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-have-proper-navigation-Mobile-Safari\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-have-proper-navigation-Mobile-Safari\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-have-proper-navigation-Mobile-Safari\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should display hero section with CTA" classname="homepage.spec.ts" time="7.012">
+<failure message="homepage.spec.ts:36:7 should display hero section with CTA" type="FAILURE">
+<![CDATA[  [Mobile Safari] › homepage.spec.ts:36:7 › Homepage › should display hero section with CTA ────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  locator('a:has-text("Get Started"), button:has-text("Get Started")').first()
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('a:has-text("Get Started"), button:has-text("Get Started")').first()
+
+
+      44 |     // Check for CTA button
+      45 |     const ctaButton = page.locator('a:has-text("Get Started"), button:has-text("Get Started")').first()
+    > 46 |     await expect(ctaButton).toBeVisible()
+         |                             ^
+      47 |     
+      48 |     // Test CTA click
+      49 |     await ctaButton.click()
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:46:29
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-Mobile-Safari\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-Mobile-Safari\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-Mobile-Safari\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-Mobile-Safari\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-Mobile-Safari\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-display-hero-section-with-CTA-Mobile-Safari\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should display service overview cards" classname="homepage.spec.ts" time="1.95">
+</testcase>
+<testcase name="Homepage › should be accessible" classname="homepage.spec.ts" time="1.979">
+</testcase>
+<testcase name="Homepage › should be responsive" classname="homepage.spec.ts" time="4.104">
+</testcase>
+<testcase name="Homepage › should have good performance" classname="homepage.spec.ts" time="4.003">
+</testcase>
+<testcase name="Homepage › should handle theme switching" classname="homepage.spec.ts" time="2.717">
+<failure message="homepage.spec.ts:85:7 should handle theme switching" type="FAILURE">
+<![CDATA[  [Mobile Safari] › homepage.spec.ts:85:7 › Homepage › should handle theme switching ───────────────
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "dark"
+    Received string:    "scroll-smooth"
+
+       at utils.ts:128
+
+      126 |       // Check that theme actually changed
+      127 |       const htmlClass = await this.page.locator('html').getAttribute('class')
+    > 128 |       expect(htmlClass).toContain('dark')
+          |                         ^
+      129 |       
+      130 |       // Switch back
+      131 |       await themeToggle.click()
+        at TestUtils.testThemeSwitch (C:\Users\torri\Downloads\automatron-website\e2e\utils.ts:128:25)
+        at C:\Users\torri\Downloads\automatron-website\e2e\homepage.spec.ts:88:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-handle-theme-switching-Mobile-Safari\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\homepage-Homepage-should-handle-theme-switching-Mobile-Safari\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\homepage-Homepage-should-handle-theme-switching-Mobile-Safari\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-handle-theme-switching-Mobile-Safari\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-handle-theme-switching-Mobile-Safari\video.webm]]
+
+[[ATTACHMENT|..\test-results\homepage-Homepage-should-handle-theme-switching-Mobile-Safari\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Homepage › should not have console errors" classname="homepage.spec.ts" time="3.353">
+</testcase>
+</testsuite>
+</testsuites>

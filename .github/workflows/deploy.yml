@@ -1,0 +1,206 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'automatron-website/package-lock.json'
+    
+    - name: Install dependencies
+      working-directory: ./automatron-website
+      run: npm ci
+    
+    - name: Run type checking
+      working-directory: ./automatron-website
+      run: npm run type-check
+    
+    - name: Run linting
+      working-directory: ./automatron-website
+      run: npm run lint
+    
+    - name: Run unit tests
+      working-directory: ./automatron-website
+      run: npm run test
+    
+    - name: Build application
+      working-directory: ./automatron-website
+      run: npm run build
+      env:
+        NEXT_PUBLIC_SITE_URL: https://automatron.ai
+        NEXT_TELEMETRY_DISABLED: 1
+
+  deploy-preview:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'automatron-website/package-lock.json'
+    
+    - name: Install Vercel CLI
+      run: npm install --global vercel@latest
+    
+    - name: Pull Vercel Environment Information
+      working-directory: ./automatron-website
+      run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+    
+    - name: Build Project Artifacts
+      working-directory: ./automatron-website
+      run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+    
+    - name: Deploy Project Artifacts to Vercel
+      working-directory: ./automatron-website
+      run: |
+        url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
+        echo "PREVIEW_URL=$url" >> $GITHUB_ENV
+    
+    - name: Comment PR with preview URL
+      uses: actions/github-script@v7
+      if: github.event_name == 'pull_request'
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `🚀 **Preview deployment ready!**
+            
+            ✅ Preview URL: ${{ env.PREVIEW_URL }}
+            
+            📊 **Deployment Details:**
+            - Commit: ${{ github.sha }}
+            - Branch: ${{ github.head_ref }}
+            - Workflow: ${{ github.workflow }}
+            
+            🔍 **What to test:**
+            - [ ] Homepage loads correctly
+            - [ ] Navigation works
+            - [ ] Contact form functions
+            - [ ] Mobile responsiveness
+            - [ ] Dark/light theme toggle
+            - [ ] Language switching (EN/ES)
+            
+            This preview will be automatically updated with new commits.`
+          })
+
+  deploy-production:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'automatron-website/package-lock.json'
+    
+    - name: Install Vercel CLI
+      run: npm install --global vercel@latest
+    
+    - name: Pull Vercel Environment Information
+      working-directory: ./automatron-website
+      run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+    
+    - name: Build Project Artifacts
+      working-directory: ./automatron-website
+      run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+    
+    - name: Deploy Project Artifacts to Vercel
+      working-directory: ./automatron-website
+      run: |
+        url=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})
+        echo "PRODUCTION_URL=$url" >> $GITHUB_ENV
+    
+    - name: Run post-deployment tests
+      working-directory: ./automatron-website
+      run: |
+        # Wait for deployment to be ready
+        sleep 30
+        
+        # Run basic smoke tests
+        curl -f ${{ env.PRODUCTION_URL }} || exit 1
+        curl -f ${{ env.PRODUCTION_URL }}/api/health || echo "Health check endpoint not available"
+    
+    - name: Notify deployment success
+      uses: actions/github-script@v7
+      with:
+        script: |
+          github.rest.repos.createCommitStatus({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            sha: context.sha,
+            state: 'success',
+            target_url: '${{ env.PRODUCTION_URL }}',
+            description: 'Production deployment successful',
+            context: 'vercel/deployment'
+          })
+
+  e2e-tests-production:
+    needs: deploy-production
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'automatron-website/package-lock.json'
+    
+    - name: Install dependencies
+      working-directory: ./automatron-website
+      run: npm ci
+    
+    - name: Install Playwright browsers
+      working-directory: ./automatron-website
+      run: npx playwright install --with-deps
+    
+    - name: Run E2E tests against production
+      working-directory: ./automatron-website
+      run: npm run test:e2e
+      env:
+        PLAYWRIGHT_BASE_URL: https://automatron.ai
+    
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: failure()
+      with:
+        name: production-e2e-results
+        path: automatron-website/test-results/
+        retention-days: 7

@@ -1,0 +1,676 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "getStarted": "Get Started",
+    "freeAssessment": "Free Assessment"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "clear": "Clear",
+    "apply": "Apply",
+    "reset": "Reset"
+  },
+  "hero": {
+    "headline": "Simple automations. Real time saved.",
+    "subheadline": "Bilingual scripts, reports, and websites—built safe and fast.",
+    "cta": "Save 5 hours this week. Get your script now.",
+    "ctaButton": "Show me my quick win",
+    "secondaryCta": "Get free assessment",
+    "secondaryOffers": {
+      "freeAutomationCheck": "Free automation check",
+      "sendMessyCsv": "Send my messy CSV",
+      "miniWebsiteAudit": "Mini website audit"
+    },
+    "leadMagnets": {
+      "inboxAttachmentSaver": "Inbox Attachment Saver (script demo)",
+      "csvExcelStarter": "CSV → Excel Starter Report",
+      "websitePrelaunchChecklist": "Website pre-launch checklist"
+    },
+    "metrics": {
+      "successRate": "95%+ Success Rate",
+      "timeSaved": "2-5 Hours Saved Weekly",
+      "projectsCompleted": "Projects Completed",
+      "clientSatisfaction": "Client Satisfaction"
+    }
+  },
+  "services": {
+    "title": "Automation Services",
+    "subtitle": "Practical solutions for busy professionals and small teams",
+    "summaryBlurbs": {
+      "scripts": "Clean files, merge data, save hours. (Windows & Mac)",
+      "emailHygiene": "Inbox rules that work.",
+      "reports": "Easy Excel/PDF with charts.",
+      "websites": "1–3 page landing sites.",
+      "pcSetup": "System onboarding in a click. (Windows & Mac)",
+      "templates": "Ready-to-use packs."
+    },
+    "guarantees": {
+      "title": "Our Guarantees",
+      "items": [
+        "Dry-run first",
+        "Move not delete",
+        "Free bug fix within 7 days",
+        "Clear scope (no deep custom API builds)"
+      ]
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": [
+        "Pick your quick win",
+        "Fill short form", 
+        "Get script/site + runbook"
+      ]
+    },
+    "timeSavingsCalculator": "Estimate: save 2–5 hrs/week per automation",
+    "categories": {
+      "basicScripting": {
+        "name": "Basic Scripting",
+        "description": "File cleanup, CSV processing, and backup automation",
+        "shortDescription": "Automate file management and data processing tasks",
+        "useCases": [
+          "File cleanup and archiving",
+          "CSV merge and sort operations",
+          "Automated backup routines",
+          "Scheduled maintenance tasks"
+        ],
+        "startingPrice": "$249+",
+        "turnaround": "1-3 days"
+      },
+      "emailFileHygiene": {
+        "name": "Email & File Hygiene",
+        "description": "Inbox organization and file management automation",
+        "shortDescription": "Clean up your email and organize your files automatically",
+        "useCases": [
+          "Automated inbox rules and filtering",
+          "Attachment auto-save and organization",
+          "Standardized file naming conventions",
+          "Folder cleanup and maintenance"
+        ],
+        "startingPrice": "$299+",
+        "turnaround": "2-4 days"
+      },
+      "reportingLite": {
+        "name": "Reporting Lite",
+        "description": "Automated report generation and data visualization",
+        "shortDescription": "Transform your data into professional reports automatically",
+        "useCases": [
+          "CSV cleaning and merging",
+          "Formatted Excel report generation",
+          "PDF reports with charts and graphs",
+          "Data visualization dashboards"
+        ],
+        "startingPrice": "$399+",
+        "turnaround": "3-5 days"
+      },
+      "websitesLanding": {
+        "name": "Simple Websites & Landing Pages",
+        "description": "Basic website setup and landing page creation",
+        "shortDescription": "Get your business online with professional websites",
+        "useCases": [
+          "Static business websites",
+          "WordPress setup and configuration",
+          "Contact forms and lead capture",
+          "SEO basics and analytics setup"
+        ],
+        "startingPrice": "$699+",
+        "turnaround": "5-7 days"
+      },
+      "pcHelpers": {
+        "name": "PC Onboarding Helpers",
+        "description": "Computer setup and configuration automation",
+        "shortDescription": "Streamline new computer setup and configuration",
+        "useCases": [
+          "Automated software installation scripts",
+          "Desktop shortcuts and folder setup",
+          "Default settings configuration",
+          "System optimization and cleanup"
+        ],
+        "startingPrice": "$199+",
+        "turnaround": "1-2 days"
+      },
+      "reusableTemplates": {
+        "name": "Reusable Templates",
+        "description": "Customizable automation templates for common tasks",
+        "shortDescription": "Ready-to-use automation templates you can customize",
+        "useCases": [
+          "File processing templates",
+          "Report generation templates",
+          "Email automation templates",
+          "System maintenance scripts"
+        ],
+        "startingPrice": "$149+",
+        "turnaround": "1-2 days"
+      }
+    },
+    "packages": {
+      "starterFix": {
+        "name": "Starter Fix",
+        "price": "$349 - $599",
+        "description": "Fast ROI test - one quick win",
+        "features": [
+          "1 script OR 1-page landing",
+          "Move not delete safety",
+          "Dry-run first",
+          "Free bug fix within 7 days"
+        ],
+        "turnaround": "2-5 days",
+        "whoFor": "Solo pro testing automation"
+      },
+      "smartBundle": {
+        "name": "Smart Bundle",
+        "price": "$999",
+        "description": "Save 10+ hrs/month with 2-3 automations",
+        "features": [
+          "2-3 automations/reports",
+          "CSV + Email, or File + Report",
+          "Comprehensive documentation",
+          "Clear scope (no deep custom API builds)"
+        ],
+        "turnaround": "~1 week",
+        "whoFor": "Small teams with clear needs"
+      },
+      "websiteBasic": {
+        "name": "Website Basic",
+        "price": "$999 - $1,499",
+        "description": "Complete website solution",
+        "features": [
+          "1-3 pages + form + analytics",
+          "Landing + SEO basics",
+          "Mobile responsive design",
+          "Early adopter discount to $999"
+        ],
+        "turnaround": "1-2 weeks",
+        "whoFor": "Coaches/local shops"
+      },
+      "carePlan": {
+        "name": "Care Plan",
+        "price": "$199 - $499/month",
+        "description": "Set & forget ongoing support",
+        "tiers": {
+          "lite": {
+            "name": "Lite",
+            "price": "$199/mo",
+            "features": ["1 hr/mo small changes"]
+          },
+          "standard": {
+            "name": "Standard", 
+            "price": "$349/mo",
+            "features": ["Up to 3 hrs/mo"]
+          },
+          "premium": {
+            "name": "Premium",
+            "price": "$499/mo", 
+            "features": ["Priority + 5 hrs/mo"]
+          }
+        },
+        "whoFor": "Owners wanting 'set & forget'"
+      }
+    }
+  },
+  "calculator": {
+    "title": "Time Savings Calculator",
+    "subtitle": "See how much time automation can save you",
+    "form": {
+      "tasksPerWeek": "How many times do you do this task per week?",
+      "minutesPerTask": "How many minutes does each task take?",
+      "hourlyRate": "What's your hourly rate? (optional)",
+      "calculate": "Calculate Savings"
+    },
+    "results": {
+      "currentTime": "Current time spent per week",
+      "automatedTime": "Time after automation",
+      "timeSaved": "Time saved per week",
+      "monthlySavings": "Monthly time savings",
+      "yearlySavings": "Yearly time savings",
+      "roiWeekly": "Weekly value saved",
+      "roiMonthly": "Monthly value saved",
+      "roiYearly": "Yearly value saved"
+    }
+  },
+  "caseStudies": {
+    "title": "Success Stories",
+    "subtitle": "Real results from real clients",
+    "filterBy": "Filter by service",
+    "allCategories": "All Categories",
+    "metrics": {
+      "timeSaved": "Time Saved",
+      "successRate": "Success Rate",
+      "turnaroundTime": "Turnaround Time",
+      "clientSatisfaction": "Client Satisfaction"
+    },
+    "testimonials": {
+      "title": "What Our Clients Say"
+    }
+  },
+  "about": {
+    "title": "About Automatron",
+    "mission": {
+      "title": "Our Mission",
+      "description": "We specialize in practical automation solutions for busy professionals and small teams. Our focus is on delivering tangible time savings through reliable, well-documented automation workflows."
+    },
+    "expertise": {
+      "title": "Our Expertise",
+      "description": "We excel in PowerShell, Python, and Excel automation, with a Windows-first approach that extends to cross-platform solutions when needed.",
+      "technologies": [
+        "PowerShell scripting and automation",
+        "Python for data processing and web automation",
+        "Excel VBA and advanced formulas",
+        "Windows system administration",
+        "Cross-platform compatibility"
+      ]
+    },
+    "approach": {
+      "title": "Safety-First Approach",
+      "description": "We prioritize safety and reliability in all our automation solutions.",
+      "principles": [
+        "Move-not-delete practices to prevent data loss",
+        "Dry-run options for testing before execution",
+        "Comprehensive logging for audit trails",
+        "Backup procedures for critical operations",
+        "Thorough testing and validation"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Get Started",
+    "subtitle": "Tell us about your automation needs",
+    "form": {
+      "personalInfo": {
+        "title": "Personal Information",
+        "name": "Full Name",
+        "email": "Email Address",
+        "company": "Company (optional)",
+        "phone": "Phone Number (optional)"
+      },
+      "projectInfo": {
+        "title": "Project Information",
+        "serviceCategory": "Service Category",
+        "selectCategory": "Select a service category",
+        "currentProcess": "Describe your current manual process",
+        "desiredOutcome": "What would you like to automate?",
+        "timeline": "Preferred Timeline",
+        "budget": "Budget Range",
+        "additionalInfo": "Additional Information (optional)"
+      },
+      "timeline": {
+        "asap": "ASAP (Rush fee may apply)",
+        "week": "Within 1 week",
+        "twoWeeks": "Within 2 weeks",
+        "month": "Within 1 month",
+        "flexible": "Flexible"
+      },
+      "budget": {
+        "under500": "Under $500",
+        "500to1000": "$500 - $1,000",
+        "1000to2500": "$1,000 - $2,500",
+        "2500to5000": "$2,500 - $5,000",
+        "over5000": "Over $5,000",
+        "discuss": "Let's discuss"
+      }
+    },
+    "chatbot": {
+      "title": "Quick Help",
+      "placeholder": "Ask about our services...",
+      "send": "Send",
+      "suggestions": [
+        "What services do you offer?",
+        "How much time can I save?",
+        "What's your typical turnaround?",
+        "Can you help with Excel automation?"
+      ]
+    },
+    "success": {
+      "title": "Thank You!",
+      "message": "We've received your request and will get back to you within 24 hours with a detailed proposal.",
+      "nextSteps": "Next Steps:",
+      "steps": [
+        "We'll review your requirements",
+        "Schedule a brief consultation call",
+        "Provide a detailed proposal and timeline",
+        "Begin work upon approval"
+      ]
+    }
+  },
+  "footer": {
+    "services": {
+      "title": "Services",
+      "basicScripting": "Basic Scripting",
+      "emailHygiene": "Email & File Hygiene",
+      "reporting": "Reporting Lite",
+      "websites": "Websites & Landing Pages",
+      "pcHelpers": "PC Helpers",
+      "templates": "Reusable Templates"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "work": "Our Work",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "description": "Get automation tips and updates",
+      "placeholder": "Enter your email",
+      "subscribe": "Subscribe",
+      "success": "Thanks for subscribing!"
+    },
+    "copyright": "© 2024 Automatron. All rights reserved.",
+    "support": "Need help? support@automatron.io | EN/ES support"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light mode",
+    "dark": "Dark mode",
+    "system": "System theme"
+  },
+  "language": {
+    "toggle": "Change language",
+    "english": "English",
+    "spanish": "Español"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "openDialog": "Open dialog",
+    "closeDialog": "Close dialog"
+  },
+  "errors": {
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidPhone": "Please enter a valid phone number",
+    "minLength": "Must be at least {min} characters",
+    "maxLength": "Must be no more than {max} characters",
+    "generic": "Something went wrong. Please try again.",
+    "network": "Network error. Please check your connection.",
+    "validation": "Please check your input and try again."
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy Policy - Automatron.ai",
+      "description": "Learn how Automatron.ai protects your privacy and handles your personal information."
+    },
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated",
+    "sections": {
+      "overview": {
+        "title": "Overview",
+        "content1": "At Automatron.ai, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our automation services.",
+        "content2": "We believe in transparency and will only collect information necessary to provide you with excellent automation solutions and support."
+      },
+      "dataCollection": {
+        "title": "Information We Collect",
+        "intro": "We collect information you provide directly to us and some information automatically when you use our services:",
+        "personalInfo": {
+          "title": "Personal Information",
+          "items": {
+            "name": "Full name and contact information",
+            "email": "Email address for communication",
+            "phone": "Phone number (optional) for project coordination",
+            "company": "Company information (optional) for context"
+          }
+        },
+        "projectInfo": {
+          "title": "Project Information",
+          "items": {
+            "requirements": "Project requirements and automation needs",
+            "processes": "Current manual processes and workflows",
+            "files": "Sample files or documents you share with us",
+            "timeline": "Timeline preferences and budget information"
+          }
+        },
+        "technical": {
+          "title": "Technical Information",
+          "items": {
+            "ip": "IP address and browser information",
+            "browser": "Device type and operating system",
+            "usage": "Website usage patterns and preferences",
+            "performance": "Performance metrics for service improvement"
+          }
+        }
+      },
+      "dataUse": {
+        "title": "How We Use Your Information",
+        "intro": "We use the information we collect for the following purposes:",
+        "purposes": {
+          "service": "Providing automation services and project delivery",
+          "communication": "Communicating about your projects and support",
+          "improvement": "Improving our services and developing new solutions",
+          "legal": "Complying with legal obligations and protecting our rights",
+          "security": "Maintaining security and preventing fraud"
+        }
+      },
+      "dataSharing": {
+        "title": "Information Sharing",
+        "intro": "We do not sell, trade, or rent your personal information. We may share information only in these limited circumstances:",
+        "serviceProviders": {
+          "title": "Service Providers",
+          "items": {
+            "email": "Email service providers for communication",
+            "hosting": "Cloud hosting providers for data storage",
+            "analytics": "Analytics services for website improvement",
+            "monitoring": "Error monitoring services for system reliability"
+          }
+        },
+        "legal": {
+          "title": "Legal Requirements",
+          "content": "We may disclose information when required by law, court order, or to protect our rights and safety."
+        }
+      },
+      "dataSecurity": {
+        "title": "Data Security",
+        "intro": "We implement comprehensive security measures to protect your information:",
+        "measures": {
+          "encryption": "Data encryption in transit and at rest",
+          "access": "Limited access controls and authentication",
+          "monitoring": "Continuous security monitoring and threat detection",
+          "backup": "Secure backup and recovery procedures",
+          "retention": "Data retention policies and secure deletion"
+        }
+      },
+      "cookies": {
+        "title": "Cookies and Tracking",
+        "intro": "We use minimal tracking technologies to improve your experience:",
+        "essential": {
+          "title": "Essential Cookies",
+          "content": "Required for website functionality, language preferences, and security."
+        },
+        "analytics": {
+          "title": "Analytics",
+          "content": "We use privacy-friendly analytics (Plausible) that doesn't require cookie consent and respects your privacy."
+        }
+      },
+      "rights": {
+        "title": "Your Rights",
+        "intro": "You have the following rights regarding your personal information:",
+        "list": {
+          "access": "Access to your personal information we hold",
+          "correction": "Correction of inaccurate or incomplete information",
+          "deletion": "Deletion of your personal information (subject to legal requirements)",
+          "portability": "Data portability in a machine-readable format",
+          "objection": "Objection to processing for legitimate interests"
+        },
+        "contact": "To exercise these rights, please contact us using the information provided below."
+      },
+      "retention": {
+        "title": "Data Retention",
+        "content1": "We retain your information only as long as necessary for the purposes outlined in this policy:",
+        "periods": {
+          "inquiries": "Contact inquiries: 2 years from last contact",
+          "projects": "Project data: 3 years after project completion",
+          "analytics": "Analytics data: 12 months maximum",
+          "logs": "Security logs: 90 days maximum"
+        }
+      },
+      "international": {
+        "title": "International Transfers",
+        "content": "Your information may be processed in countries other than your own. We ensure appropriate safeguards are in place to protect your information during international transfers."
+      },
+      "changes": {
+        "title": "Policy Changes",
+        "content": "We may update this Privacy Policy periodically. We will notify you of significant changes by email or through our website. Your continued use of our services after changes indicates acceptance of the updated policy."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "intro": "If you have questions about this Privacy Policy or our data practices, please contact us:"
+      }
+    }
+  },
+  "terms": {
+    "meta": {
+      "title": "Terms of Service - Automatron.ai",
+      "description": "Terms and conditions for using Automatron.ai automation services."
+    },
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated",
+    "sections": {
+      "acceptance": {
+        "title": "Acceptance of Terms",
+        "content1": "By accessing or using Automatron.ai services, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, please do not use our services.",
+        "content2": "These terms apply to all users of our website and services, including clients, visitors, and anyone who accesses our content."
+      },
+      "services": {
+        "title": "Our Services",
+        "intro": "Automatron.ai provides automation solutions for businesses and individuals, including:",
+        "categories": {
+          "title": "Service Categories",
+          "items": {
+            "scripting": "Basic scripting and file automation",
+            "hygiene": "Email and file hygiene solutions",
+            "reporting": "Automated reporting and data processing",
+            "websites": "Simple websites and landing pages",
+            "helpers": "PC onboarding and setup automation",
+            "templates": "Reusable automation templates"
+          }
+        },
+        "deliverables": {
+          "title": "Deliverables",
+          "content": "Our services typically include scripts, documentation, configuration files, and support materials tailored to your specific needs."
+        }
+      },
+      "engagement": {
+        "title": "Service Engagement Process",
+        "process": {
+          "title": "Typical Process",
+          "steps": {
+            "inquiry": "Initial inquiry and requirements gathering",
+            "assessment": "Free automation assessment and consultation",
+            "proposal": "Detailed proposal with scope, timeline, and pricing",
+            "agreement": "Service agreement and project initiation",
+            "delivery": "Development, testing, and delivery of solutions"
+          }
+        },
+        "timeline": {
+          "title": "Timeline",
+          "content": "Project timelines vary based on complexity, typically ranging from 1-7 days for most services. Rush projects may incur additional fees."
+        }
+      },
+      "pricing": {
+        "title": "Pricing and Payment",
+        "intro": "Our pricing is project-based and depends on complexity and scope:",
+        "packages": {
+          "title": "Service Packages",
+          "items": {
+            "starter": "Starter Package: $249-$499 for single automation tasks",
+            "bundle": "Bundle Package: $699-$1,200 for multiple related automations",
+            "website": "Website Basic: $699-$1,200 for complete website solutions",
+            "care": "Care Plan: $149-$399/month for ongoing automation support"
+          }
+        },
+        "payment": {
+          "title": "Payment Terms",
+          "content": "Payment is typically required before project initiation. We accept various payment methods and can discuss payment plans for larger projects."
+        }
+      },
+      "responsibilities": {
+        "title": "Responsibilities",
+        "client": {
+          "title": "Client Responsibilities",
+          "items": {
+            "information": "Provide accurate and complete project information",
+            "access": "Grant necessary access to systems and data",
+            "feedback": "Provide timely feedback during development",
+            "testing": "Test delivered solutions in your environment",
+            "backup": "Maintain backups of important data before implementation"
+          }
+        },
+        "automatron": {
+          "title": "Automatron Responsibilities",
+          "items": {
+            "quality": "Deliver quality solutions that meet agreed specifications",
+            "documentation": "Provide comprehensive documentation and instructions",
+            "support": "Offer reasonable support during and after delivery",
+            "confidentiality": "Maintain confidentiality of your business information",
+            "safety": "Follow safety-first practices to protect your data"
+          }
+        }
+      },
+      "intellectual": {
+        "title": "Intellectual Property",
+        "content1": "Upon full payment, you own the custom automation solutions we create specifically for your use. This includes scripts, configurations, and documentation developed for your project.",
+        "content2": "We retain rights to our general methodologies, frameworks, and any pre-existing intellectual property used in delivering your solution.",
+        "content3": "You grant us permission to use anonymized examples of your project in our portfolio and marketing materials, unless otherwise agreed."
+      },
+      "confidentiality": {
+        "title": "Confidentiality",
+        "content1": "We understand that your business processes and data are confidential. We commit to maintaining strict confidentiality of all information shared with us.",
+        "content2": "We will not disclose, use, or share your confidential information except as necessary to provide our services or as required by law.",
+        "content3": "This confidentiality obligation continues indefinitely, even after project completion or termination of our relationship."
+      },
+      "warranties": {
+        "title": "Warranties and Disclaimers",
+        "content1": "We warrant that our services will be performed with professional skill and care. We will correct any defects in our work at no additional charge within 30 days of delivery.",
+        "content2": "However, we cannot guarantee that our solutions will be error-free or will meet all your requirements. We recommend thorough testing before full implementation.",
+        "content3": "Our services are provided 'as is' without other warranties, express or implied, including warranties of merchantability or fitness for a particular purpose."
+      },
+      "limitation": {
+        "title": "Limitation of Liability",
+        "content1": "Our liability for any claims related to our services is limited to the amount you paid for the specific service that gave rise to the claim.",
+        "content2": "We are not liable for indirect, incidental, special, or consequential damages, including lost profits, data loss, or business interruption."
+      },
+      "termination": {
+        "title": "Termination",
+        "content1": "Either party may terminate a project with written notice. You will pay for work completed up to the termination date.",
+        "content2": "We reserve the right to terminate services immediately if you breach these terms or engage in prohibited activities.",
+        "content3": "Upon termination, we will deliver any completed work and return or destroy your confidential information as requested."
+      },
+      "governing": {
+        "title": "Governing Law",
+        "content": "These terms are governed by the laws of the jurisdiction where Automatron.ai operates. Any disputes will be resolved through binding arbitration or in the appropriate courts of that jurisdiction."
+      },
+      "changes": {
+        "title": "Changes to Terms",
+        "content": "We may update these terms periodically. We will notify you of significant changes by email or through our website. Continued use of our services after changes indicates acceptance of the updated terms."
+      },
+      "contact": {
+        "title": "Contact Information",
+        "intro": "If you have questions about these Terms of Service, please contact us:"
+      }
+    }
+  }
+}

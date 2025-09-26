@@ -1,0 +1,220 @@
+---
+title: "Email Rules Pack"
+slug: "email-rules-pack"
+description: "Inbox hygiene without stress. Auto-folders, save attachments, label spam."
+category: "email-file-hygiene"
+icon: "mail-check"
+order: 3
+startingPrice: "$199"
+maxPrice: "$349"
+turnaround: "2 days"
+useCases:
+  - "Solo pros drowning in email"
+  - "Inbox organization automation"
+  - "Attachment management"
+  - "Spam filtering"
+targetAudience:
+  - "Busy professionals"
+  - "Consultants"
+  - "Small business owners"
+deliverables:
+  - "Outlook rules file"
+  - "Setup guide"
+  - "Customization instructions"
+inputs:
+  - "Gmail/Outlook access"
+  - "Email patterns sample"
+  - "Organization preferences"
+risks:
+  - "Won't fix 3rd-party APIs"
+upsells:
+  - "Cross-sell Attachment Saver"
+  - "Email automation VBA"
+seo:
+  title: "Email Rules Pack - Automated Inbox Organization | Automatron"
+  description: "Clean up your inbox automatically. Custom Outlook rules for sorting, filtering, and organizing emails. Starting at $199."
+  ogImage: "/images/services/email-rules-og.jpg"
+---
+
+# Email Rules Pack
+
+**Inbox hygiene without stress.** Auto-folders, save attachments, label spam.
+
+## What It Does
+
+Transform your chaotic inbox into an organized, stress-free email system. Our Email Rules Pack creates intelligent Outlook rules that automatically sort, filter, and organize your emails so you can focus on what matters.
+
+## Ideal Use Cases
+
+- **Solo Professionals**: Drowning in client emails, newsletters, and notifications
+- **Inbox Zero Goals**: Want organized email without manual sorting
+- **Attachment Management**: Automatically save and organize email attachments
+- **Spam Control**: Filter promotional emails and unwanted messages
+
+## What You Need to Provide
+
+- **Email Access**: Gmail or Outlook account for rule setup
+- **Email Patterns**: Examples of your typical email types and senders
+- **Organization Goals**: How you want emails categorized and sorted
+
+## What You'll Receive
+
+1. **Outlook Rules File** - Pre-configured rules ready to import
+2. **Setup Guide** - Step-by-step installation instructions
+3. **Customization Guide** - How to modify rules for your needs
+4. **Maintenance Tips** - Keeping your rules working smoothly
+
+## Key Features
+
+### Smart Email Sorting
+- **Sender-Based Rules**: Automatically sort by client, vendor, or contact type
+- **Subject Line Filtering**: Organize by project, priority, or content type
+- **Date-Based Actions**: Archive old emails automatically
+- **Priority Flagging**: Mark important emails for quick attention
+
+### Attachment Automation
+- **Auto-Save**: Save attachments to designated folders
+- **File Naming**: Standardized naming for easy retrieval
+- **Duplicate Prevention**: Avoid saving the same file multiple times
+- **Folder Organization**: Sort attachments by sender or date
+
+### Spam & Clutter Control
+- **Newsletter Management**: Auto-folder promotional emails
+- **Notification Filtering**: Separate system notifications from important emails
+- **Spam Detection**: Enhanced filtering beyond default settings
+- **Unsubscribe Automation**: Flag emails for easy unsubscribing
+
+## Sample Rules Configuration
+
+```vb
+' Example Outlook VBA Rule for Client Email Organization
+Sub OrganizeClientEmails()
+    Dim olApp As Outlook.Application
+    Dim olNamespace As Outlook.Namespace
+    Dim olRules As Outlook.Rules
+    Dim olRule As Outlook.Rule
+    Dim olConditions As Outlook.RuleConditions
+    Dim olActions As Outlook.RuleActions
+    
+    Set olApp = Outlook.Application
+    Set olNamespace = olApp.GetNamespace("MAPI")
+    Set olRules = olNamespace.DefaultStore.GetRules()
+    
+    ' Create rule for client emails
+    Set olRule = olRules.Create("Client Emails - Auto Sort", olRuleReceive)
+    
+    ' Set conditions
+    Set olConditions = olRule.Conditions
+    olConditions.SenderAddress.Enabled = True
+    olConditions.SenderAddress.Address = Array("@clientdomain.com", "@anotherclient.com")
+    
+    ' Set actions
+    Set olActions = olRule.Actions
+    olActions.MoveToFolder.Enabled = True
+    olActions.MoveToFolder.Folder = olNamespace.GetDefaultFolder(olFolderInbox).Folders("Clients")
+    
+    olActions.MarkAsTask.Enabled = True
+    olActions.MarkAsTask.FlagTo = "Follow up"
+    
+    ' Save the rule
+    olRules.Save
+    
+    MsgBox "Client email rule created successfully!"
+End Sub
+```
+
+### PowerShell Email Management
+```powershell
+# Email Rules Configuration Script
+param(
+    [string]$OutlookProfile = "Default",
+    [string]$RulesConfigFile = ".\email-rules-config.json"
+)
+
+# Load configuration
+$config = Get-Content $RulesConfigFile | ConvertFrom-Json
+
+# Connect to Outlook
+$outlook = New-Object -ComObject Outlook.Application
+$namespace = $outlook.GetNamespace("MAPI")
+$rules = $namespace.DefaultStore.GetRules()
+
+foreach ($ruleConfig in $config.Rules) {
+    Write-Host "Creating rule: $($ruleConfig.Name)"
+    
+    # Create new rule
+    $rule = $rules.Create($ruleConfig.Name, 1) # olRuleReceive = 1
+    
+    # Configure conditions
+    if ($ruleConfig.SenderContains) {
+        $rule.Conditions.SenderAddress.Enabled = $true
+        $rule.Conditions.SenderAddress.Address = $ruleConfig.SenderContains
+    }
+    
+    if ($ruleConfig.SubjectContains) {
+        $rule.Conditions.Subject.Enabled = $true
+        $rule.Conditions.Subject.Text = $ruleConfig.SubjectContains
+    }
+    
+    # Configure actions
+    if ($ruleConfig.MoveToFolder) {
+        $targetFolder = $namespace.GetDefaultFolder(6).Folders($ruleConfig.MoveToFolder)
+        $rule.Actions.MoveToFolder.Enabled = $true
+        $rule.Actions.MoveToFolder.Folder = $targetFolder
+    }
+    
+    if ($ruleConfig.MarkAsRead) {
+        $rule.Actions.MarkAsRead.Enabled = $true
+    }
+    
+    if ($ruleConfig.ForwardTo) {
+        $rule.Actions.Forward.Enabled = $true
+        $rule.Actions.Forward.Recipients.Add($ruleConfig.ForwardTo)
+    }
+}
+
+# Save all rules
+$rules.Save()
+Write-Host "Email rules configuration complete!"
+```
+
+## Turnaround Time
+
+**2 days** from email access to configured rules
+
+## Price Range
+
+**$199 - $349** depending on complexity and number of rules
+
+## What's Included
+
+### Basic Package ($199)
+- 5-10 email sorting rules
+- Basic spam filtering
+- Folder organization setup
+- Installation guide
+
+### Advanced Package ($349)
+- 15+ custom rules
+- Attachment automation
+- VBA macros for complex sorting
+- Priority and flagging systems
+- Maintenance documentation
+
+## Risks & Limitations
+
+- **Platform Specific**: Optimized for Outlook (Exchange/Office 365)
+- **API Limitations**: Won't integrate with complex 3rd-party email APIs
+- **Rule Complexity**: Very complex logic may require custom VBA development
+
+## Perfect Upsells
+
+- **Attachment Saver** ($199): Automatically save and organize email attachments
+- **Email Backup System** ($149): Automated email archiving and backup
+- **Advanced VBA Automation** ($299): Custom email processing workflows
+
+## Ready to Tame Your Inbox?
+
+Stop drowning in email chaos. Get organized, automated email management that works 24/7.
+
+**Estimate: Save 5-10 hours/week** on email sorting and organization.

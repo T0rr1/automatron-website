@@ -1,0 +1,169 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches: [ develop, staging ]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to deploy to staging'
+        required: true
+        default: 'develop'
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+jobs:
+  deploy-staging:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.inputs.branch || github.ref }}
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'automatron-website/package-lock.json'
+    
+    - name: Install dependencies
+      working-directory: ./automatron-website
+      run: npm ci
+    
+    - name: Run tests
+      working-directory: ./automatron-website
+      run: |
+        npm run type-check
+        npm run lint
+        npm run test
+    
+    - name: Install Vercel CLI
+      run: npm install --global vercel@latest
+    
+    - name: Pull Vercel Environment Information
+      working-directory: ./automatron-website
+      run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+    
+    - name: Build Project Artifacts
+      working-directory: ./automatron-website
+      run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+      env:
+        NEXT_PUBLIC_SITE_URL: https://automatron-staging.vercel.app
+        NODE_ENV: production
+    
+    - name: Deploy to Staging
+      working-directory: ./automatron-website
+      run: |
+        url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
+        echo "STAGING_URL=$url" >> $GITHUB_ENV
+        
+        # Alias to staging domain
+        vercel alias $url automatron-staging.vercel.app --token=${{ secrets.VERCEL_TOKEN }}
+    
+    - name: Run staging tests
+      working-directory: ./automatron-website
+      run: |
+        # Wait for deployment
+        sleep 30
+        
+        # Basic health checks
+        curl -f ${{ env.STAGING_URL }} || exit 1
+        curl -f ${{ env.STAGING_URL }}/es || exit 1
+        
+        # Check critical pages
+        curl -f ${{ env.STAGING_URL }}/services || exit 1
+        curl -f ${{ env.STAGING_URL }}/about || exit 1
+        curl -f ${{ env.STAGING_URL }}/contact || exit 1
+    
+    - name: Run E2E tests on staging
+      working-directory: ./automatron-website
+      run: |
+        npx playwright install --with-deps
+        npm run test:e2e
+      env:
+        PLAYWRIGHT_BASE_URL: ${{ env.STAGING_URL }}
+    
+    - name: Run Lighthouse audit on staging
+      working-directory: ./automatron-website
+      run: npm run test:lighthouse
+      env:
+        LHCI_BUILD_CONTEXT__CURRENT_HASH: ${{ github.sha }}
+        LHCI_BUILD_CONTEXT__COMMIT_TIME: ${{ github.event.head_commit.timestamp }}
+    
+    - name: Comment with staging URL
+      uses: actions/github-script@v7
+      if: github.event_name == 'push'
+      with:
+        script: |
+          const { owner, repo } = context.repo;
+          const sha = context.sha;
+          
+          // Create or update deployment status
+          await github.rest.repos.createDeploymentStatus({
+            owner,
+            repo,
+            deployment_id: context.payload.deployment?.id || 0,
+            state: 'success',
+            target_url: '${{ env.STAGING_URL }}',
+            description: 'Staging deployment ready for testing'
+          });
+          
+          // Create commit status
+          await github.rest.repos.createCommitStatus({
+            owner,
+            repo,
+            sha,
+            state: 'success',
+            target_url: '${{ env.STAGING_URL }}',
+            description: 'Staging environment ready',
+            context: 'staging/deployment'
+          });
+    
+    - name: Upload test artifacts
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: staging-test-results
+        path: |
+          automatron-website/test-results/
+          automatron-website/playwright-report/
+          automatron-website/lighthouse-reports/
+        retention-days: 14
+
+  notify-team:
+    needs: deploy-staging
+    runs-on: ubuntu-latest
+    if: success()
+    
+    steps:
+    - name: Notify team of staging deployment
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const message = `🚀 **Staging Deployment Complete**
+          
+          📍 **Staging URL:** https://automatron-staging.vercel.app
+          
+          🔍 **Testing Checklist:**
+          - [ ] Homepage functionality
+          - [ ] Service pages load correctly
+          - [ ] Contact form submission
+          - [ ] Language switching (EN/ES)
+          - [ ] Mobile responsiveness
+          - [ ] Dark/light theme toggle
+          - [ ] Performance (Lighthouse scores)
+          - [ ] Accessibility compliance
+          
+          📊 **Branch:** ${{ github.ref_name }}
+          📝 **Commit:** ${{ github.sha }}
+          
+          ✅ All automated tests passed
+          🎯 Ready for manual QA testing`;
+          
+          // You can extend this to post to Slack, Discord, or other notification systems
+          console.log(message);

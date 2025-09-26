@@ -1,0 +1,220 @@
+---
+title: "CSV Merger"
+slug: "csv-merger"
+description: "Turn many CSVs into one clean file. Consolidates, sorts, and dedupes CSVs."
+category: "reporting-lite"
+icon: "table"
+order: 2
+startingPrice: "$249"
+maxPrice: "$399"
+turnaround: "2-3 days"
+useCases:
+  - "Sales reports consolidation"
+  - "Export file merging"
+  - "Data cleanup and deduplication"
+  - "Monthly report preparation"
+targetAudience:
+  - "Sales managers"
+  - "Data analysts"
+  - "Administrative staff"
+deliverables:
+  - "Python/PowerShell script"
+  - "Sample output file"
+  - "Configuration guide"
+inputs:
+  - "Sample CSV files"
+  - "Column mapping requirements"
+  - "Output format preferences"
+risks:
+  - "Limited to ≤50k rows total"
+upsells:
+  - "Add Reporting Lite"
+  - "Scheduled automation"
+seo:
+  title: "CSV Merger Tool - Consolidate Multiple CSV Files | Automatron"
+  description: "Merge, sort, and clean multiple CSV files automatically. Perfect for sales reports and data exports. Starting at $249."
+  ogImage: "/images/services/csv-merger-og.jpg"
+---
+
+# CSV Merger
+
+**Turn many CSVs into one clean file.** Consolidates, sorts, and dedupes CSVs.
+
+## What It Does
+
+Stop manually copying and pasting data from multiple CSV files. Our CSV Merger automatically combines, cleans, and standardizes your data exports into one professional, ready-to-use file.
+
+## Ideal Use Cases
+
+- **Sales Reports**: Combine monthly sales data from different regions or products
+- **Export Consolidation**: Merge data exports from multiple systems or time periods
+- **Data Cleanup**: Remove duplicates and standardize formats across files
+- **Report Preparation**: Create clean datasets for further analysis or reporting
+
+## What You Need to Provide
+
+- **Sample CSV Files**: 2-3 representative files showing your data structure
+- **Column Requirements**: Which columns to keep, merge, or rename
+- **Output Preferences**: Sorting, filtering, and formatting requirements
+
+## What You'll Receive
+
+1. **Merge Script** - Python or PowerShell tool for automated CSV processing
+2. **Sample Output** - Example of your cleaned, merged data
+3. **Configuration Guide** - How to customize for different file sets
+4. **Error Handling** - Built-in validation and error reporting
+
+## Key Features
+
+### Smart Data Handling
+- **Column Mapping**: Automatically align columns with different names
+- **Data Validation**: Check for missing or invalid data
+- **Duplicate Removal**: Intelligent deduplication based on key fields
+- **Format Standardization**: Consistent date, number, and text formatting
+
+### Flexible Processing
+- **Multiple Sources**: Handle files from different systems or exports
+- **Selective Merging**: Choose which columns and rows to include
+- **Custom Sorting**: Order data by any combination of fields
+- **Filtering Options**: Include/exclude data based on criteria
+
+## Sample Implementation
+
+```python
+import pandas as pd
+import glob
+import os
+from datetime import datetime
+
+def merge_csv_files(input_folder, output_file, config):
+    """
+    Merge multiple CSV files with cleaning and validation
+    """
+    print(f"Processing CSV files from: {input_folder}")
+    
+    # Find all CSV files
+    csv_files = glob.glob(os.path.join(input_folder, "*.csv"))
+    
+    if not csv_files:
+        raise ValueError("No CSV files found in the specified folder")
+    
+    merged_data = []
+    
+    for file in csv_files:
+        print(f"Processing: {os.path.basename(file)}")
+        
+        try:
+            # Read CSV with error handling
+            df = pd.read_csv(file, encoding='utf-8')
+            
+            # Apply column mapping if specified
+            if 'column_mapping' in config:
+                df = df.rename(columns=config['column_mapping'])
+            
+            # Add source file information
+            df['source_file'] = os.path.basename(file)
+            df['processed_date'] = datetime.now().strftime('%Y-%m-%d %H:%M')
+            
+            # Data validation and cleaning
+            df = clean_data(df, config)
+            
+            merged_data.append(df)
+            
+        except Exception as e:
+            print(f"Error processing {file}: {str(e)}")
+            continue
+    
+    if not merged_data:
+        raise ValueError("No valid data found in CSV files")
+    
+    # Combine all dataframes
+    final_df = pd.concat(merged_data, ignore_index=True)
+    
+    # Remove duplicates if specified
+    if config.get('remove_duplicates', True):
+        duplicate_cols = config.get('duplicate_columns', None)
+        final_df = final_df.drop_duplicates(subset=duplicate_cols)
+    
+    # Sort data if specified
+    if 'sort_columns' in config:
+        final_df = final_df.sort_values(config['sort_columns'])
+    
+    # Save merged file
+    final_df.to_csv(output_file, index=False)
+    
+    print(f"Merged {len(csv_files)} files into {output_file}")
+    print(f"Total rows: {len(final_df)}")
+    
+    return final_df
+
+def clean_data(df, config):
+    """Clean and validate data"""
+    
+    # Remove empty rows
+    df = df.dropna(how='all')
+    
+    # Standardize date columns
+    date_columns = config.get('date_columns', [])
+    for col in date_columns:
+        if col in df.columns:
+            df[col] = pd.to_datetime(df[col], errors='coerce')
+    
+    # Standardize numeric columns
+    numeric_columns = config.get('numeric_columns', [])
+    for col in numeric_columns:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors='coerce')
+    
+    # Clean text columns
+    text_columns = config.get('text_columns', [])
+    for col in text_columns:
+        if col in df.columns:
+            df[col] = df[col].astype(str).str.strip().str.title()
+    
+    return df
+
+# Example configuration
+config = {
+    'column_mapping': {
+        'Customer Name': 'customer_name',
+        'Sale Amount': 'amount',
+        'Sale Date': 'date'
+    },
+    'date_columns': ['date'],
+    'numeric_columns': ['amount'],
+    'text_columns': ['customer_name'],
+    'remove_duplicates': True,
+    'duplicate_columns': ['customer_name', 'date'],
+    'sort_columns': ['date', 'amount']
+}
+
+# Run the merger
+if __name__ == "__main__":
+    merge_csv_files("./input_csvs", "./merged_output.csv", config)
+```
+
+## Turnaround Time
+
+**2-3 days** from sample files to working script
+
+## Price Range
+
+**$249 - $399** based on complexity and number of data sources
+
+## Risks & Limitations
+
+- **Row Limit**: Optimized for datasets ≤50,000 rows total
+- **Column Complexity**: Works best with standard business data types
+- **File Format**: Designed for standard CSV files (UTF-8 encoding)
+
+## Perfect Upsells
+
+- **Add Reporting Lite** ($199): Turn merged data into professional reports
+- **Scheduled Automation** ($149): Run merging automatically on schedule
+- **Data Validation Plus** ($99): Advanced error checking and data quality reports
+
+## Ready to Merge Your Data?
+
+Stop spending hours manually combining CSV files. Get clean, consolidated data in minutes instead of hours.
+
+**Estimate: Save 3-5 hours/month** on data preparation and cleanup.

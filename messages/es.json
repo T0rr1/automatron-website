@@ -1,0 +1,676 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "work": "Trabajos",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "getStarted": "Comenzar",
+    "freeAssessment": "Evaluación Gratuita"
+  },
+  "common": {
+    "learnMore": "Saber Más",
+    "getStarted": "Comenzar",
+    "contactUs": "Contáctanos",
+    "readMore": "Leer Más",
+    "viewAll": "Ver Todo",
+    "close": "Cerrar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "clear": "Limpiar",
+    "apply": "Aplicar",
+    "reset": "Restablecer"
+  },
+  "hero": {
+    "headline": "Automatizaciones simples. Tiempo real ahorrado.",
+    "subheadline": "Scripts, reportes y sitios web—seguros y rápidos.",
+    "cta": "Ahorra 5 horas esta semana. Obtén tu script ya.",
+    "ctaButton": "Muéstrame mi victoria rápida",
+    "secondaryCta": "Recibe evaluación gratis",
+    "secondaryOffers": {
+      "freeAutomationCheck": "Revisión gratuita de automatización",
+      "sendMessyCsv": "Envía mi CSV desordenado",
+      "miniWebsiteAudit": "Mini auditoría de sitio web"
+    },
+    "leadMagnets": {
+      "inboxAttachmentSaver": "Guardador de Adjuntos de Bandeja (demo de script)",
+      "csvExcelStarter": "CSV → Reporte Inicial de Excel",
+      "websitePrelaunchChecklist": "Lista de verificación pre-lanzamiento de sitio web"
+    },
+    "metrics": {
+      "successRate": "95%+ Tasa de Éxito",
+      "timeSaved": "2-5 Horas Ahorradas Semanalmente",
+      "projectsCompleted": "Proyectos Completados",
+      "clientSatisfaction": "Satisfacción del Cliente"
+    }
+  },
+  "services": {
+    "title": "Servicios de Automatización",
+    "subtitle": "Soluciones prácticas para profesionales ocupados y equipos pequeños",
+    "summaryBlurbs": {
+      "scripts": "Ordena archivos, combina datos, ahorra horas. (Windows y Mac)",
+      "emailHygiene": "Reglas de correo que funcionan.",
+      "reports": "Excel/PDF fáciles con gráficas.",
+      "websites": "Sitios de 1–3 páginas.",
+      "pcSetup": "Configuración de sistema en un clic. (Windows y Mac)",
+      "templates": "Paquetes listos para usar."
+    },
+    "guarantees": {
+      "title": "Nuestras Garantías",
+      "items": [
+        "Ejecución en seco primero",
+        "Mover no eliminar",
+        "Corrección gratuita de errores en 7 días",
+        "Alcance claro (sin construcciones API personalizadas profundas)"
+      ]
+    },
+    "howItWorks": {
+      "title": "Cómo Funciona",
+      "steps": [
+        "Elige tu victoria rápida",
+        "Llena formulario corto",
+        "Recibe script/sitio + manual"
+      ]
+    },
+    "timeSavingsCalculator": "Estimación: ahorra 2–5 hrs/semana por automatización",
+    "categories": {
+      "basicScripting": {
+        "name": "Scripts Básicos",
+        "description": "Limpieza de archivos, procesamiento de CSV y automatización de respaldos",
+        "shortDescription": "Automatiza la gestión de archivos y procesamiento de datos",
+        "useCases": [
+          "Limpieza y archivado de archivos",
+          "Operaciones de fusión y ordenamiento de CSV",
+          "Rutinas de respaldo automatizadas",
+          "Tareas de mantenimiento programadas"
+        ],
+        "startingPrice": "$249+",
+        "turnaround": "1-3 días"
+      },
+      "emailFileHygiene": {
+        "name": "Higiene de Email y Archivos",
+        "description": "Organización de bandeja de entrada y automatización de gestión de archivos",
+        "shortDescription": "Limpia tu email y organiza tus archivos automáticamente",
+        "useCases": [
+          "Reglas automáticas de bandeja de entrada y filtrado",
+          "Auto-guardado y organización de adjuntos",
+          "Convenciones estandarizadas de nomenclatura de archivos",
+          "Limpieza y mantenimiento de carpetas"
+        ],
+        "startingPrice": "$299+",
+        "turnaround": "2-4 días"
+      },
+      "reportingLite": {
+        "name": "Reportes Ligeros",
+        "description": "Generación automatizada de reportes y visualización de datos",
+        "shortDescription": "Transforma tus datos en reportes profesionales automáticamente",
+        "useCases": [
+          "Limpieza y fusión de CSV",
+          "Generación de reportes Excel formateados",
+          "Reportes PDF con gráficos y tablas",
+          "Tableros de visualización de datos"
+        ],
+        "startingPrice": "$399+",
+        "turnaround": "3-5 días"
+      },
+      "websitesLanding": {
+        "name": "Sitios Web y Páginas de Aterrizaje Simples",
+        "description": "Configuración básica de sitios web y creación de páginas de aterrizaje",
+        "shortDescription": "Pon tu negocio en línea con sitios web profesionales",
+        "useCases": [
+          "Sitios web empresariales estáticos",
+          "Configuración y setup de WordPress",
+          "Formularios de contacto y captura de leads",
+          "SEO básico y configuración de analytics"
+        ],
+        "startingPrice": "$699+",
+        "turnaround": "5-7 días"
+      },
+      "pcHelpers": {
+        "name": "Asistentes de Configuración de PC",
+        "description": "Automatización de configuración y setup de computadoras",
+        "shortDescription": "Agiliza la configuración de nuevas computadoras",
+        "useCases": [
+          "Scripts de instalación automática de software",
+          "Creación de accesos directos y configuración de carpetas",
+          "Configuración de ajustes predeterminados",
+          "Optimización y limpieza del sistema"
+        ],
+        "startingPrice": "$199+",
+        "turnaround": "1-2 días"
+      },
+      "reusableTemplates": {
+        "name": "Plantillas Reutilizables",
+        "description": "Plantillas de automatización personalizables para tareas comunes",
+        "shortDescription": "Plantillas de automatización listas para usar que puedes personalizar",
+        "useCases": [
+          "Plantillas de procesamiento de archivos",
+          "Plantillas de generación de reportes",
+          "Plantillas de automatización de email",
+          "Scripts de mantenimiento del sistema"
+        ],
+        "startingPrice": "$149+",
+        "turnaround": "1-2 días"
+      }
+    },
+    "packages": {
+      "starterFix": {
+        "name": "Arreglo Inicial",
+        "price": "$349 - $599",
+        "description": "Prueba de ROI rápida - una victoria rápida",
+        "features": [
+          "1 script O 1 página de aterrizaje",
+          "Seguridad de mover no eliminar",
+          "Ejecución en seco primero",
+          "Corrección gratuita de errores en 7 días"
+        ],
+        "turnaround": "2-5 días",
+        "whoFor": "Profesional solo probando automatización"
+      },
+      "smartBundle": {
+        "name": "Paquete Inteligente",
+        "price": "$999",
+        "description": "Ahorra 10+ hrs/mes con 2-3 automatizaciones",
+        "features": [
+          "2-3 automatizaciones/reportes",
+          "CSV + Email, o Archivo + Reporte",
+          "Documentación completa",
+          "Alcance claro (sin construcciones API personalizadas profundas)"
+        ],
+        "turnaround": "~1 semana",
+        "whoFor": "Equipos pequeños con necesidades claras"
+      },
+      "websiteBasic": {
+        "name": "Sitio Web Básico",
+        "price": "$999 - $1,499",
+        "description": "Solución completa de sitio web",
+        "features": [
+          "1-3 páginas + formulario + analytics",
+          "Aterrizaje + SEO básico",
+          "Diseño responsivo móvil",
+          "Descuento para adoptadores tempranos a $999"
+        ],
+        "turnaround": "1-2 semanas",
+        "whoFor": "Coaches/tiendas locales"
+      },
+      "carePlan": {
+        "name": "Plan de Cuidado",
+        "price": "$199 - $499/mes",
+        "description": "Soporte continuo 'configurar y olvidar'",
+        "tiers": {
+          "lite": {
+            "name": "Ligero",
+            "price": "$199/mes",
+            "features": ["1 hr/mes cambios pequeños"]
+          },
+          "standard": {
+            "name": "Estándar",
+            "price": "$349/mes",
+            "features": ["Hasta 3 hrs/mes"]
+          },
+          "premium": {
+            "name": "Premium",
+            "price": "$499/mes",
+            "features": ["Prioridad + 5 hrs/mes"]
+          }
+        },
+        "whoFor": "Propietarios que quieren 'configurar y olvidar'"
+      }
+    }
+  },
+  "calculator": {
+    "title": "Calculadora de Ahorro de Tiempo",
+    "subtitle": "Ve cuánto tiempo puede ahorrarte la automatización",
+    "form": {
+      "tasksPerWeek": "¿Cuántas veces haces esta tarea por semana?",
+      "minutesPerTask": "¿Cuántos minutos toma cada tarea?",
+      "hourlyRate": "¿Cuál es tu tarifa por hora? (opcional)",
+      "calculate": "Calcular Ahorros"
+    },
+    "results": {
+      "currentTime": "Tiempo actual gastado por semana",
+      "automatedTime": "Tiempo después de la automatización",
+      "timeSaved": "Tiempo ahorrado por semana",
+      "monthlySavings": "Ahorros de tiempo mensuales",
+      "yearlySavings": "Ahorros de tiempo anuales",
+      "roiWeekly": "Valor ahorrado semanalmente",
+      "roiMonthly": "Valor ahorrado mensualmente",
+      "roiYearly": "Valor ahorrado anualmente"
+    }
+  },
+  "caseStudies": {
+    "title": "Historias de Éxito",
+    "subtitle": "Resultados reales de clientes reales",
+    "filterBy": "Filtrar por servicio",
+    "allCategories": "Todas las Categorías",
+    "metrics": {
+      "timeSaved": "Tiempo Ahorrado",
+      "successRate": "Tasa de Éxito",
+      "turnaroundTime": "Tiempo de Entrega",
+      "clientSatisfaction": "Satisfacción del Cliente"
+    },
+    "testimonials": {
+      "title": "Lo Que Dicen Nuestros Clientes"
+    }
+  },
+  "about": {
+    "title": "Acerca de Automatron",
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "Nos especializamos en soluciones de automatización prácticas para profesionales ocupados y equipos pequeños. Nuestro enfoque está en entregar ahorros de tiempo tangibles a través de flujos de trabajo de automatización confiables y bien documentados."
+    },
+    "expertise": {
+      "title": "Nuestra Experiencia",
+      "description": "Sobresalimos en automatización de PowerShell, Python y Excel, con un enfoque Windows-first que se extiende a soluciones multiplataforma cuando es necesario.",
+      "technologies": [
+        "Scripting y automatización de PowerShell",
+        "Python para procesamiento de datos y automatización web",
+        "Excel VBA y fórmulas avanzadas",
+        "Administración de sistemas Windows",
+        "Compatibilidad multiplataforma"
+      ]
+    },
+    "approach": {
+      "title": "Enfoque de Seguridad Primero",
+      "description": "Priorizamos la seguridad y confiabilidad en todas nuestras soluciones de automatización.",
+      "principles": [
+        "Prácticas de mover-no-eliminar para prevenir pérdida de datos",
+        "Opciones de ejecución en seco para pruebas antes de la ejecución",
+        "Registro completo para pistas de auditoría",
+        "Procedimientos de respaldo para operaciones críticas",
+        "Pruebas y validación exhaustivas"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Comenzar",
+    "subtitle": "Cuéntanos sobre tus necesidades de automatización",
+    "form": {
+      "personalInfo": {
+        "title": "Información Personal",
+        "name": "Nombre Completo",
+        "email": "Dirección de Email",
+        "company": "Empresa (opcional)",
+        "phone": "Número de Teléfono (opcional)"
+      },
+      "projectInfo": {
+        "title": "Información del Proyecto",
+        "serviceCategory": "Categoría de Servicio",
+        "selectCategory": "Selecciona una categoría de servicio",
+        "currentProcess": "Describe tu proceso manual actual",
+        "desiredOutcome": "¿Qué te gustaría automatizar?",
+        "timeline": "Cronograma Preferido",
+        "budget": "Rango de Presupuesto",
+        "additionalInfo": "Información Adicional (opcional)"
+      },
+      "timeline": {
+        "asap": "Lo antes posible (puede aplicar tarifa urgente)",
+        "week": "Dentro de 1 semana",
+        "twoWeeks": "Dentro de 2 semanas",
+        "month": "Dentro de 1 mes",
+        "flexible": "Flexible"
+      },
+      "budget": {
+        "under500": "Menos de $500",
+        "500to1000": "$500 - $1,000",
+        "1000to2500": "$1,000 - $2,500",
+        "2500to5000": "$2,500 - $5,000",
+        "over5000": "Más de $5,000",
+        "discuss": "Hablemos"
+      }
+    },
+    "chatbot": {
+      "title": "Ayuda Rápida",
+      "placeholder": "Pregunta sobre nuestros servicios...",
+      "send": "Enviar",
+      "suggestions": [
+        "¿Qué servicios ofrecen?",
+        "¿Cuánto tiempo puedo ahorrar?",
+        "¿Cuál es su tiempo de entrega típico?",
+        "¿Pueden ayudar con automatización de Excel?"
+      ]
+    },
+    "success": {
+      "title": "¡Gracias!",
+      "message": "Hemos recibido tu solicitud y te responderemos dentro de 24 horas con una propuesta detallada.",
+      "nextSteps": "Próximos Pasos:",
+      "steps": [
+        "Revisaremos tus requerimientos",
+        "Programaremos una breve llamada de consulta",
+        "Proporcionaremos una propuesta detallada y cronograma",
+        "Comenzaremos el trabajo una vez aprobado"
+      ]
+    }
+  },
+  "footer": {
+    "services": {
+      "title": "Servicios",
+      "basicScripting": "Scripts Básicos",
+      "emailHygiene": "Higiene de Email y Archivos",
+      "reporting": "Reportes Ligeros",
+      "websites": "Sitios Web y Páginas de Aterrizaje",
+      "pcHelpers": "Asistentes de PC",
+      "templates": "Plantillas Reutilizables"
+    },
+    "company": {
+      "title": "Empresa",
+      "about": "Acerca de Nosotros",
+      "work": "Nuestro Trabajo",
+      "contact": "Contacto",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio"
+    },
+    "newsletter": {
+      "title": "Mantente Actualizado",
+      "description": "Recibe consejos de automatización y actualizaciones",
+      "placeholder": "Ingresa tu email",
+      "subscribe": "Suscribirse",
+      "success": "¡Gracias por suscribirte!"
+    },
+    "copyright": "© 2024 Automatron. Todos los derechos reservados.",
+    "support": "¿Necesitas ayuda? support@automatron.io | Soporte EN/ES"
+  },
+  "theme": {
+    "toggle": "Cambiar tema",
+    "light": "Modo claro",
+    "dark": "Modo oscuro",
+    "system": "Tema del sistema"
+  },
+  "language": {
+    "toggle": "Cambiar idioma",
+    "english": "English",
+    "spanish": "Español"
+  },
+  "accessibility": {
+    "skipToContent": "Saltar al contenido principal",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "openDialog": "Abrir diálogo",
+    "closeDialog": "Cerrar diálogo"
+  },
+  "errors": {
+    "required": "Este campo es requerido",
+    "invalidEmail": "Por favor ingresa un email válido",
+    "invalidPhone": "Por favor ingresa un número de teléfono válido",
+    "minLength": "Debe tener al menos {min} caracteres",
+    "maxLength": "No debe tener más de {max} caracteres",
+    "generic": "Algo salió mal. Por favor intenta de nuevo.",
+    "network": "Error de red. Por favor verifica tu conexión.",
+    "validation": "Por favor verifica tu entrada e intenta de nuevo."
+  },
+  "privacy": {
+    "meta": {
+      "title": "Política de Privacidad - Automatron.ai",
+      "description": "Aprende cómo Automatron.ai protege tu privacidad y maneja tu información personal."
+    },
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización",
+    "sections": {
+      "overview": {
+        "title": "Resumen",
+        "content1": "En Automatron.ai, estamos comprometidos a proteger tu privacidad y garantizar la seguridad de tu información personal. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos tus datos cuando utilizas nuestros servicios de automatización.",
+        "content2": "Creemos en la transparencia y solo recopilaremos información necesaria para brindarte excelentes soluciones de automatización y soporte."
+      },
+      "dataCollection": {
+        "title": "Información que Recopilamos",
+        "intro": "Recopilamos información que nos proporcionas directamente y cierta información automáticamente cuando usas nuestros servicios:",
+        "personalInfo": {
+          "title": "Información Personal",
+          "items": {
+            "name": "Nombre completo e información de contacto",
+            "email": "Dirección de email para comunicación",
+            "phone": "Número de teléfono (opcional) para coordinación de proyectos",
+            "company": "Información de la empresa (opcional) para contexto"
+          }
+        },
+        "projectInfo": {
+          "title": "Información del Proyecto",
+          "items": {
+            "requirements": "Requisitos del proyecto y necesidades de automatización",
+            "processes": "Procesos manuales actuales y flujos de trabajo",
+            "files": "Archivos de muestra o documentos que compartes con nosotros",
+            "timeline": "Preferencias de cronograma e información de presupuesto"
+          }
+        },
+        "technical": {
+          "title": "Información Técnica",
+          "items": {
+            "ip": "Dirección IP e información del navegador",
+            "browser": "Tipo de dispositivo y sistema operativo",
+            "usage": "Patrones de uso del sitio web y preferencias",
+            "performance": "Métricas de rendimiento para mejora del servicio"
+          }
+        }
+      },
+      "dataUse": {
+        "title": "Cómo Usamos Tu Información",
+        "intro": "Usamos la información que recopilamos para los siguientes propósitos:",
+        "purposes": {
+          "service": "Proporcionar servicios de automatización y entrega de proyectos",
+          "communication": "Comunicarnos sobre tus proyectos y soporte",
+          "improvement": "Mejorar nuestros servicios y desarrollar nuevas soluciones",
+          "legal": "Cumplir con obligaciones legales y proteger nuestros derechos",
+          "security": "Mantener la seguridad y prevenir fraudes"
+        }
+      },
+      "dataSharing": {
+        "title": "Compartir Información",
+        "intro": "No vendemos, intercambiamos o alquilamos tu información personal. Podemos compartir información solo en estas circunstancias limitadas:",
+        "serviceProviders": {
+          "title": "Proveedores de Servicios",
+          "items": {
+            "email": "Proveedores de servicios de email para comunicación",
+            "hosting": "Proveedores de hosting en la nube para almacenamiento de datos",
+            "analytics": "Servicios de analytics para mejora del sitio web",
+            "monitoring": "Servicios de monitoreo de errores para confiabilidad del sistema"
+          }
+        },
+        "legal": {
+          "title": "Requisitos Legales",
+          "content": "Podemos divulgar información cuando sea requerido por ley, orden judicial, o para proteger nuestros derechos y seguridad."
+        }
+      },
+      "dataSecurity": {
+        "title": "Seguridad de Datos",
+        "intro": "Implementamos medidas de seguridad integrales para proteger tu información:",
+        "measures": {
+          "encryption": "Encriptación de datos en tránsito y en reposo",
+          "access": "Controles de acceso limitados y autenticación",
+          "monitoring": "Monitoreo continuo de seguridad y detección de amenazas",
+          "backup": "Procedimientos seguros de respaldo y recuperación",
+          "retention": "Políticas de retención de datos y eliminación segura"
+        }
+      },
+      "cookies": {
+        "title": "Cookies y Seguimiento",
+        "intro": "Usamos tecnologías de seguimiento mínimas para mejorar tu experiencia:",
+        "essential": {
+          "title": "Cookies Esenciales",
+          "content": "Requeridas para funcionalidad del sitio web, preferencias de idioma y seguridad."
+        },
+        "analytics": {
+          "title": "Analytics",
+          "content": "Usamos analytics que respetan la privacidad (Plausible) que no requiere consentimiento de cookies y respeta tu privacidad."
+        }
+      },
+      "rights": {
+        "title": "Tus Derechos",
+        "intro": "Tienes los siguientes derechos con respecto a tu información personal:",
+        "list": {
+          "access": "Acceso a tu información personal que tenemos",
+          "correction": "Corrección de información inexacta o incompleta",
+          "deletion": "Eliminación de tu información personal (sujeto a requisitos legales)",
+          "portability": "Portabilidad de datos en formato legible por máquina",
+          "objection": "Objeción al procesamiento por intereses legítimos"
+        },
+        "contact": "Para ejercer estos derechos, por favor contáctanos usando la información proporcionada abajo."
+      },
+      "retention": {
+        "title": "Retención de Datos",
+        "content1": "Retenemos tu información solo el tiempo necesario para los propósitos descritos en esta política:",
+        "periods": {
+          "inquiries": "Consultas de contacto: 2 años desde el último contacto",
+          "projects": "Datos de proyectos: 3 años después de completar el proyecto",
+          "analytics": "Datos de analytics: máximo 12 meses",
+          "logs": "Logs de seguridad: máximo 90 días"
+        }
+      },
+      "international": {
+        "title": "Transferencias Internacionales",
+        "content": "Tu información puede ser procesada en países distintos al tuyo. Nos aseguramos de que las salvaguardas apropiadas estén en su lugar para proteger tu información durante transferencias internacionales."
+      },
+      "changes": {
+        "title": "Cambios en la Política",
+        "content": "Podemos actualizar esta Política de Privacidad periódicamente. Te notificaremos de cambios significativos por email o a través de nuestro sitio web. Tu uso continuo de nuestros servicios después de los cambios indica aceptación de la política actualizada."
+      },
+      "contact": {
+        "title": "Contáctanos",
+        "intro": "Si tienes preguntas sobre esta Política de Privacidad o nuestras prácticas de datos, por favor contáctanos:"
+      }
+    }
+  },
+  "terms": {
+    "meta": {
+      "title": "Términos de Servicio - Automatron.ai",
+      "description": "Términos y condiciones para usar los servicios de automatización de Automatron.ai."
+    },
+    "title": "Términos de Servicio",
+    "lastUpdated": "Última actualización",
+    "sections": {
+      "acceptance": {
+        "title": "Aceptación de Términos",
+        "content1": "Al acceder o usar los servicios de Automatron.ai, aceptas estar sujeto a estos Términos de Servicio y nuestra Política de Privacidad. Si no estás de acuerdo con estos términos, por favor no uses nuestros servicios.",
+        "content2": "Estos términos se aplican a todos los usuarios de nuestro sitio web y servicios, incluyendo clientes, visitantes y cualquiera que acceda a nuestro contenido."
+      },
+      "services": {
+        "title": "Nuestros Servicios",
+        "intro": "Automatron.ai proporciona soluciones de automatización para empresas e individuos, incluyendo:",
+        "categories": {
+          "title": "Categorías de Servicios",
+          "items": {
+            "scripting": "Scripts básicos y automatización de archivos",
+            "hygiene": "Soluciones de higiene de email y archivos",
+            "reporting": "Reportes automatizados y procesamiento de datos",
+            "websites": "Sitios web simples y páginas de aterrizaje",
+            "helpers": "Automatización de configuración y setup de PC",
+            "templates": "Plantillas de automatización reutilizables"
+          }
+        },
+        "deliverables": {
+          "title": "Entregables",
+          "content": "Nuestros servicios típicamente incluyen scripts, documentación, archivos de configuración y materiales de soporte adaptados a tus necesidades específicas."
+        }
+      },
+      "engagement": {
+        "title": "Proceso de Compromiso de Servicio",
+        "process": {
+          "title": "Proceso Típico",
+          "steps": {
+            "inquiry": "Consulta inicial y recopilación de requisitos",
+            "assessment": "Evaluación gratuita de automatización y consulta",
+            "proposal": "Propuesta detallada con alcance, cronograma y precios",
+            "agreement": "Acuerdo de servicio e iniciación del proyecto",
+            "delivery": "Desarrollo, pruebas y entrega de soluciones"
+          }
+        },
+        "timeline": {
+          "title": "Cronograma",
+          "content": "Los cronogramas de proyectos varían según la complejidad, típicamente van de 1-7 días para la mayoría de servicios. Los proyectos urgentes pueden incurrir en tarifas adicionales."
+        }
+      },
+      "pricing": {
+        "title": "Precios y Pago",
+        "intro": "Nuestros precios están basados en proyectos y dependen de la complejidad y alcance:",
+        "packages": {
+          "title": "Paquetes de Servicios",
+          "items": {
+            "starter": "Paquete Inicial: $249-$499 para tareas de automatización individuales",
+            "bundle": "Paquete Bundle: $699-$1,200 para múltiples automatizaciones relacionadas",
+            "website": "Sitio Web Básico: $699-$1,200 para soluciones completas de sitio web",
+            "care": "Plan de Cuidado: $149-$399/mes para soporte continuo de automatización"
+          }
+        },
+        "payment": {
+          "title": "Términos de Pago",
+          "content": "El pago típicamente se requiere antes de la iniciación del proyecto. Aceptamos varios métodos de pago y podemos discutir planes de pago para proyectos más grandes."
+        }
+      },
+      "responsibilities": {
+        "title": "Responsabilidades",
+        "client": {
+          "title": "Responsabilidades del Cliente",
+          "items": {
+            "information": "Proporcionar información precisa y completa del proyecto",
+            "access": "Otorgar acceso necesario a sistemas y datos",
+            "feedback": "Proporcionar retroalimentación oportuna durante el desarrollo",
+            "testing": "Probar las soluciones entregadas en tu entorno",
+            "backup": "Mantener respaldos de datos importantes antes de la implementación"
+          }
+        },
+        "automatron": {
+          "title": "Responsabilidades de Automatron",
+          "items": {
+            "quality": "Entregar soluciones de calidad que cumplan las especificaciones acordadas",
+            "documentation": "Proporcionar documentación e instrucciones completas",
+            "support": "Ofrecer soporte razonable durante y después de la entrega",
+            "confidentiality": "Mantener confidencialidad de tu información empresarial",
+            "safety": "Seguir prácticas de seguridad primero para proteger tus datos"
+          }
+        }
+      },
+      "intellectual": {
+        "title": "Propiedad Intelectual",
+        "content1": "Tras el pago completo, eres propietario de las soluciones de automatización personalizadas que creamos específicamente para tu uso. Esto incluye scripts, configuraciones y documentación desarrollada para tu proyecto.",
+        "content2": "Retenemos derechos sobre nuestras metodologías generales, marcos de trabajo y cualquier propiedad intelectual preexistente utilizada en la entrega de tu solución.",
+        "content3": "Nos otorgas permiso para usar ejemplos anonimizados de tu proyecto en nuestro portafolio y materiales de marketing, a menos que se acuerde lo contrario."
+      },
+      "confidentiality": {
+        "title": "Confidencialidad",
+        "content1": "Entendemos que tus procesos empresariales y datos son confidenciales. Nos comprometemos a mantener estricta confidencialidad de toda la información compartida con nosotros.",
+        "content2": "No divulgaremos, usaremos o compartiremos tu información confidencial excepto según sea necesario para proporcionar nuestros servicios o según lo requiera la ley.",
+        "content3": "Esta obligación de confidencialidad continúa indefinidamente, incluso después de la finalización del proyecto o terminación de nuestra relación."
+      },
+      "warranties": {
+        "title": "Garantías y Descargos",
+        "content1": "Garantizamos que nuestros servicios se realizarán con habilidad y cuidado profesional. Corregiremos cualquier defecto en nuestro trabajo sin costo adicional dentro de 30 días de la entrega.",
+        "content2": "Sin embargo, no podemos garantizar que nuestras soluciones estarán libres de errores o cumplirán todos tus requisitos. Recomendamos pruebas exhaustivas antes de la implementación completa.",
+        "content3": "Nuestros servicios se proporcionan 'tal como están' sin otras garantías, expresas o implícitas, incluyendo garantías de comerciabilidad o idoneidad para un propósito particular."
+      },
+      "limitation": {
+        "title": "Limitación de Responsabilidad",
+        "content1": "Nuestra responsabilidad por cualquier reclamo relacionado con nuestros servicios está limitada al monto que pagaste por el servicio específico que dio lugar al reclamo.",
+        "content2": "No somos responsables por daños indirectos, incidentales, especiales o consecuentes, incluyendo pérdida de ganancias, pérdida de datos o interrupción del negocio."
+      },
+      "termination": {
+        "title": "Terminación",
+        "content1": "Cualquier parte puede terminar un proyecto con aviso por escrito. Pagarás por el trabajo completado hasta la fecha de terminación.",
+        "content2": "Nos reservamos el derecho de terminar servicios inmediatamente si incumples estos términos o participas en actividades prohibidas.",
+        "content3": "Tras la terminación, entregaremos cualquier trabajo completado y devolveremos o destruiremos tu información confidencial según se solicite."
+      },
+      "governing": {
+        "title": "Ley Aplicable",
+        "content": "Estos términos se rigen por las leyes de la jurisdicción donde opera Automatron.ai. Cualquier disputa se resolverá a través de arbitraje vinculante o en los tribunales apropiados de esa jurisdicción."
+      },
+      "changes": {
+        "title": "Cambios en los Términos",
+        "content": "Podemos actualizar estos términos periódicamente. Te notificaremos de cambios significativos por email o a través de nuestro sitio web. El uso continuo de nuestros servicios después de los cambios indica aceptación de los términos actualizados."
+      },
+      "contact": {
+        "title": "Información de Contacto",
+        "intro": "Si tienes preguntas sobre estos Términos de Servicio, por favor contáctanos:"
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "dashboard": {
+    "title": "Automatron.ai Website Monitoring",
+    "tags": [
+      "automatron",
+      "website",
+      "production"
+    ],
+    "timezone": "UTC",
+    "panels": [
+      {
+        "title": "Site Uptime",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "up{job='automatron-website'} * 100",
+            "legendFormat": "Uptime %"
+          }
+        ],
+        "thresholds": [
+          {
+            "color": "red",
+            "value": 95
+          },
+          {
+            "color": "yellow",
+            "value": 99
+          },
+          {
+            "color": "green",
+            "value": 99.5
+          }
+        ]
+      },
+      {
+        "title": "Response Time",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.50, rate(http_request_duration_seconds_bucket[5m]))",
+            "legendFormat": "p50"
+          },
+          {
+            "expr": "histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m]))",
+            "legendFormat": "p95"
+          }
+        ]
+      },
+      {
+        "title": "Error Rate",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(http_requests_total{status=~'5..'}[5m]) / rate(http_requests_total[5m]) * 100",
+            "legendFormat": "5xx Error Rate"
+          }
+        ]
+      },
+      {
+        "title": "Core Web Vitals",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "web_vitals_lcp",
+            "legendFormat": "LCP (ms)"
+          },
+          {
+            "expr": "web_vitals_fid",
+            "legendFormat": "FID (ms)"
+          },
+          {
+            "expr": "web_vitals_cls * 1000",
+            "legendFormat": "CLS (x1000)"
+          }
+        ]
+      }
+    ]
+  }
+}

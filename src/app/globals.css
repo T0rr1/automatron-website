@@ -1,0 +1,366 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   SEMANTIC DESIGN TOKENS
+   ======================================== */
+
+/* Base tokens - Light theme (default) */
+:root {
+  /* Semantic color tokens */
+  --bg: hsl(210 40% 98%);
+  --surface: hsl(0 0% 100%);
+  --text: hsl(222 47% 11%);
+  --muted: hsl(215 16% 40%);
+  --border: hsl(214 15% 91%);
+  --accent: hsl(156 72% 40%);
+  --accent-foreground: hsl(0 0% 100%);
+  --ring: hsl(156 72% 40% / 40%);
+  
+  /* Tailwind compatibility tokens */
+  --tw-bg: var(--bg);
+  --tw-surface: var(--surface);
+  --tw-text: var(--text);
+  --tw-muted: var(--muted);
+  --tw-border: var(--border);
+  --tw-accent: var(--accent);
+  --tw-accent-foreground: var(--accent-foreground);
+  
+  color-scheme: light;
+}
+
+/* Dark theme tokens */
+html[data-theme="dark"] {
+  --bg: hsl(222 47% 6%);
+  --surface: hsl(220 40% 10%);
+  --text: hsl(210 40% 98%);
+  --muted: hsl(215 16% 72%);
+  --border: hsl(215 14% 25%);
+  --accent: hsl(156 72% 45%);
+  --accent-foreground: hsl(0 0% 100%);
+  --ring: hsl(156 72% 45% / 40%);
+  
+  /* Update Tailwind compatibility tokens */
+  --tw-bg: var(--bg);
+  --tw-surface: var(--surface);
+  --tw-text: var(--text);
+  --tw-muted: var(--muted);
+  --tw-border: var(--border);
+  --tw-accent: var(--accent);
+  --tw-accent-foreground: var(--accent-foreground);
+  
+  color-scheme: dark;
+}
+
+/* ========================================
+   DESIGN SYSTEM TOKENS
+   ======================================== */
+
+/* Typography scale (1.25 modular scale) */
+:root {
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fs-sm: 14px;
+  --fs-base: 16px;
+  --fs-lg: 20px;
+  --fs-xl: 24px;
+  --fs-2xl: 30px;
+  --fs-3xl: 36px;
+  --fs-4xl: 48px;
+  --lh-tight: 1.25;
+  --lh-normal: 1.6;
+  
+  /* Spacing & Layout */
+  --radius-card: 8px;
+  --radius-pill: 9999px;
+  --shadow-card: 0 1px 2px hsl(0 0% 0% / 0.05), 0 8px 24px hsl(0 0% 0% / 0.06);
+  
+  /* Transitions */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --speed: 200ms;
+}
+
+/* Prevent theme flash during load */
+html:not(.theme-ready) * {
+  transition: none !important;
+}
+
+/* Base styles using semantic tokens */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+/* ========================================
+   COMPONENT STYLES
+   ======================================== */
+
+/* Typography hierarchy */
+h1, .text-4xl { 
+  font-size: var(--fs-4xl); 
+  line-height: var(--lh-tight); 
+  color: var(--text);
+  font-weight: 700;
+}
+
+h2, .text-3xl { 
+  font-size: var(--fs-3xl); 
+  line-height: var(--lh-tight); 
+  color: var(--text);
+  font-weight: 600;
+}
+
+h3, .text-xl { 
+  font-size: var(--fs-xl); 
+  line-height: var(--lh-tight); 
+  color: var(--text);
+  font-weight: 600;
+}
+
+body, .text-base { 
+  font-size: var(--fs-base); 
+  line-height: var(--lh-normal); 
+  color: var(--text);
+}
+
+.text-muted { 
+  color: var(--muted); 
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-card);
+  padding: 24px;
+}
+
+/* Dark mode - no shadows, borders only */
+html[data-theme="dark"] .card {
+  box-shadow: none;
+  border: 1px solid var(--border);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: var(--radius-card);
+  font-weight: 600;
+  transition: all var(--speed) var(--ease);
+  min-height: 48px;
+  font-family: var(--font-sans);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-foreground);
+  border: 1px solid var(--accent);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--bg);
+}
+
+/* Pills */
+.pill {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  transition: all var(--speed) var(--ease);
+}
+
+.pill--active {
+  background: var(--accent);
+  color: var(--accent-foreground);
+  border-color: var(--accent);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Light theme badge */
+.badge {
+  background: hsl(156 72% 40% / 0.1);
+  color: hsl(156 72% 30%);
+  border: 1px solid hsl(156 72% 40% / 0.2);
+}
+
+/* Dark theme badge */
+html[data-theme="dark"] .badge {
+  background: hsl(156 72% 45% / 0.15);
+  color: hsl(156 72% 60%);
+  border: 1px solid hsl(156 72% 45% / 0.3);
+}
+
+/* ========================================
+   HERO SECTION ENHANCEMENTS
+   ======================================== */
+
+.hero {
+  background: 
+    radial-gradient(1200px 600px at 50% -10%, hsl(156 72% 40% / 0.08), transparent 60%),
+    var(--bg);
+}
+
+html[data-theme="dark"] .hero {
+  background: 
+    radial-gradient(1200px 600px at 50% -10%, hsl(156 72% 45% / 0.12), transparent 60%),
+    var(--bg);
+}
+
+/* ========================================
+   SECTION ALTERNATION
+   ======================================== */
+
+.section--alt {
+  background: var(--bg);
+}
+
+/* Light theme alternating sections */
+html:not([data-theme="dark"]) .section--alt {
+  background: hsl(210 40% 98%);
+}
+
+/* ========================================
+   ACCESSIBILITY & PERFORMANCE
+   ======================================== */
+
+/* Focus states */
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Form inputs */
+.input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 0 16px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+.input::placeholder {
+  color: var(--muted);
+}
+
+.input:focus {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   TAILWIND INTEGRATION
+   ======================================== */
+
+@layer base {
+  /* Map semantic tokens to Tailwind utilities */
+  :root {
+    --background: var(--bg);
+    --foreground: var(--text);
+    --card: var(--surface);
+    --card-foreground: var(--text);
+    --border: var(--border);
+    --primary: var(--accent);
+    --primary-foreground: var(--accent-foreground);
+    --muted: var(--muted);
+    --muted-foreground: var(--muted);
+  }
+}
+
+/* ========================================
+   MOBILE OPTIMIZATIONS
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Typography adjustments */
+  h1, .text-4xl { font-size: 36px; }
+  h2, .text-3xl { font-size: 28px; }
+  
+  /* Button adjustments */
+  .btn {
+    height: 56px;
+    width: 100%;
+  }
+  
+  /* Card adjustments */
+  .card {
+    padding: 20px;
+  }
+  
+  /* Pills horizontal scroll */
+  .pills {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+  }
+  
+  .pill {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+  
+  /* Touch targets */
+  button, [role="button"], a[href] {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.text-center { text-align: center; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.gap-2 { gap: 8px; }
+.gap-4 { gap: 16px; }
+.p-4 { padding: 16px; }
+.p-6 { padding: 24px; }
+.mt-2 { margin-top: 8px; }
+.mt-4 { margin-top: 16px; }
+.rounded-lg { border-radius: var(--radius-card); }
+.rounded-full { border-radius: var(--radius-pill); }

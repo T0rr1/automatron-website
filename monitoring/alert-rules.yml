@@ -1,0 +1,82 @@
+# Alerting Rules for Automatron.ai
+# These rules can be imported into monitoring services like Grafana, DataDog, etc.
+
+groups:
+  - name: automatron-website
+    rules:
+      
+      - alert: SiteDown
+        expr: uptime < 99%
+        for: 5m
+        labels:
+          severity: critical
+          service: automatron-website
+        annotations:
+          summary: "Site Down detected"
+          description: "Alert condition: uptime < 99%"
+          runbook_url: "https://github.com/automatron-ai/website/wiki/runbooks"
+      
+      - alert: HighErrorRate
+        expr: error_rate > 5%
+        for: 5m
+        labels:
+          severity: high
+          service: automatron-website
+        annotations:
+          summary: "High Error Rate detected"
+          description: "Alert condition: error_rate > 5%"
+          runbook_url: "https://github.com/automatron-ai/website/wiki/runbooks"
+      
+      - alert: SlowResponseTime
+        expr: response_time_p95 > 2000ms
+        for: 5m
+        labels:
+          severity: medium
+          service: automatron-website
+        annotations:
+          summary: "Slow Response Time detected"
+          description: "Alert condition: response_time_p95 > 2000ms"
+          runbook_url: "https://github.com/automatron-ai/website/wiki/runbooks"
+      
+      - alert: PerformanceDegradation
+        expr: lighthouse_performance < 80
+        for: 5m
+        labels:
+          severity: medium
+          service: automatron-website
+        annotations:
+          summary: "Performance Degradation detected"
+          description: "Alert condition: lighthouse_performance < 80"
+          runbook_url: "https://github.com/automatron-ai/website/wiki/runbooks"
+      
+
+# Performance monitoring queries
+performance_queries:
+  - name: response_time_p95
+    query: 'histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m]))'
+  
+  - name: error_rate
+    query: 'rate(http_requests_total{status=~"5.."}[5m]) / rate(http_requests_total[5m]) * 100'
+  
+  - name: uptime
+    query: 'up{job="automatron-website"} * 100'
+
+# Dashboard configuration
+dashboards:
+  - name: "Automatron Website Overview"
+    panels:
+      - title: "Response Time"
+        type: "graph"
+        targets: ["response_time_p95"]
+      
+      - title: "Error Rate"
+        type: "singlestat"
+        targets: ["error_rate"]
+      
+      - title: "Uptime"
+        type: "singlestat"
+        targets: ["uptime"]
+      
+      - title: "Core Web Vitals"
+        type: "graph"
+        targets: ["lcp", "fid", "cls"]

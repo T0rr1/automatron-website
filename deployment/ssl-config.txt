@@ -1,0 +1,35 @@
+# SSL/TLS Configuration for automatron.ai
+
+## Certificate Information
+- Provider: Let's Encrypt (via Vercel)
+- Auto-renewal: Enabled
+- Validity: 90 days (auto-renewed at 60 days)
+- Cipher Suites: Modern (TLS 1.2+)
+
+## Security Headers (implemented in next.config.js)
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 1; mode=block
+Referrer-Policy: strict-origin-when-cross-origin
+
+## HSTS Preload
+To enable HSTS preload:
+1. Ensure HSTS header includes 'preload' directive
+2. Submit domain to https://hstspreload.org/
+3. Wait for inclusion in browser preload lists
+
+## Certificate Transparency
+Certificates are automatically logged to CT logs:
+- Google Argon
+- Cloudflare Nimbus
+- DigiCert Yeti
+
+## Monitoring
+- SSL Labs rating target: A+
+- Certificate expiry monitoring: 30 days before expiry
+- Mixed content detection: Enabled
+
+## Backup Certificate Authority
+Primary: Let's Encrypt
+Backup: ZeroSSL (Vercel fallback)

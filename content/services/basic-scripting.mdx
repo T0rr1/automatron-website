@@ -1,0 +1,145 @@
+---
+title: "Basic Scripting & Automation"
+slug: "basic-scripting"
+description: "File cleanup, CSV processing, backup automation, and scheduled tasks to save 2-5 hours per week"
+category: "basic-scripting"
+icon: "terminal"
+order: 1
+startingPrice: "$249"
+turnaround: "1-3 days"
+useCases:
+  - "File organization and cleanup"
+  - "CSV merging and sorting"
+  - "Automated backups"
+  - "Scheduled maintenance tasks"
+targetAudience:
+  - "Solo business owners"
+  - "Small teams"
+  - "Administrative professionals"
+deliverables:
+  - "PowerShell or Python scripts"
+  - "Configuration files"
+  - "Detailed README documentation"
+  - "Execution logs and error handling"
+inputs:
+  - "Sample files or data"
+  - "Current manual process description"
+  - "Desired automation frequency"
+  - "System specifications"
+seo:
+  title: "Basic Scripting & File Automation Services | Automatron"
+  description: "Save 2-5 hours weekly with custom PowerShell and Python scripts for file cleanup, CSV processing, and backup automation. Starting at $249."
+  ogImage: "/images/services/basic-scripting-og.jpg"
+---
+
+# Basic Scripting & Automation
+
+Transform your repetitive file management and data processing tasks into automated workflows that run reliably in the background.
+
+## What This Service Includes
+
+### File Organization & Cleanup
+- Automated file sorting by date, type, or custom criteria
+- Duplicate file detection and removal
+- Archive old files with configurable retention policies
+- Standardized naming conventions across directories
+
+### CSV Processing & Data Management
+- Merge multiple CSV files with validation
+- Sort and filter data based on business rules
+- Clean and standardize data formats
+- Generate summary reports from raw data
+
+### Backup Automation
+- Scheduled backups to local or cloud storage
+- Incremental backup strategies to save space
+- Verification and integrity checking
+- Automated cleanup of old backup files
+
+### Scheduled Tasks
+- Windows Task Scheduler integration
+- Cron job setup for Linux/Mac systems
+- Email notifications for task completion
+- Error handling and retry logic
+
+## Before & After Scenarios
+
+### Scenario 1: Monthly Report Processing
+**Before:** Spend 3 hours every month manually downloading, organizing, and merging CSV files from different sources.
+
+**After:** Automated script runs on the 1st of each month, downloads files, merges data, and emails the final report. Time saved: 3 hours monthly.
+
+### Scenario 2: File Organization
+**Before:** Weekly manual sorting of downloads folder, moving files to appropriate project folders.
+
+**After:** Script runs daily, automatically organizing files based on naming patterns and file types. Time saved: 2 hours weekly.
+
+## Typical Deliverables
+
+1. **Main Script File** - PowerShell (.ps1) or Python (.py) with full automation logic
+2. **Configuration File** - JSON or XML with customizable settings
+3. **Installation Guide** - Step-by-step setup instructions
+4. **User Manual** - How to run, modify, and troubleshoot
+5. **Log Files** - Execution history and error tracking
+
+## Sample Code Preview
+
+```powershell
+# Example: Automated file organization script
+param(
+    [string]$SourcePath = "C:\Downloads",
+    [string]$DestinationBase = "C:\Organized",
+    [switch]$DryRun
+)
+
+# Configuration
+$FileTypes = @{
+    "Documents" = @(".pdf", ".docx", ".xlsx", ".pptx")
+    "Images" = @(".jpg", ".png", ".gif", ".bmp")
+    "Archives" = @(".zip", ".rar", ".7z")
+}
+
+# Main processing logic with error handling
+try {
+    foreach ($category in $FileTypes.Keys) {
+        $extensions = $FileTypes[$category]
+        $destPath = Join-Path $DestinationBase $category
+        
+        if (-not (Test-Path $destPath)) {
+            New-Item -ItemType Directory -Path $destPath -Force
+        }
+        
+        Get-ChildItem -Path $SourcePath | Where-Object {
+            $extensions -contains $_.Extension.ToLower()
+        } | ForEach-Object {
+            if ($DryRun) {
+                Write-Host "Would move: $($_.Name) to $category"
+            } else {
+                Move-Item $_.FullName -Destination $destPath
+                Write-Log "Moved $($_.Name) to $category"
+            }
+        }
+    }
+} catch {
+    Write-Error "Error during file organization: $($_.Exception.Message)"
+    Send-ErrorNotification -Error $_.Exception
+}
+```
+
+## Frequently Asked Questions
+
+### How long does implementation take?
+Most basic scripting projects are completed within 1-3 business days, depending on complexity.
+
+### What if I need changes later?
+All scripts include clear documentation for modifications. We also offer maintenance packages for ongoing updates.
+
+### Will this work on my system?
+We primarily develop for Windows environments but can create cross-platform solutions using Python when needed.
+
+### How do I know it's working correctly?
+Every script includes comprehensive logging and can send email notifications for successful completion or errors.
+
+## Ready to Automate Your Workflows?
+
+Save 2-5 hours per week with custom automation scripts tailored to your specific needs.

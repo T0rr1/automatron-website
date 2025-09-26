@@ -1,0 +1,37 @@
+# DNS Configuration for automatron.ai
+# Add these records to your DNS provider (Cloudflare, Route53, etc.)
+
+## A Records (IPv4)
+automatron.ai.          A       76.76.19.61
+www.automatron.ai.      A       76.76.19.61
+
+## AAAA Records (IPv6)
+automatron.ai.          AAAA    2606:4700:3030::6815:133d
+www.automatron.ai.      AAAA    2606:4700:3030::6815:133d
+
+## CNAME Records
+# If using Vercel's automatic SSL, use CNAME instead:
+# automatron.ai.        CNAME   cname.vercel-dns.com.
+# www.automatron.ai.    CNAME   cname.vercel-dns.com.
+
+## MX Records (Email)
+automatron.ai.          MX      10 mx1.forwardemail.net.
+automatron.ai.          MX      20 mx2.forwardemail.net.
+
+## TXT Records
+automatron.ai.          TXT     "v=spf1 include:_spf.forwardemail.net ~all"
+_dmarc.automatron.ai.   TXT     "v=DMARC1; p=quarantine; rua=mailto:dmarc@automatron.ai"
+
+## Security Headers (if using Cloudflare)
+# These are handled by Next.js, but can be enforced at DNS level
+automatron.ai.          TXT     "v=spf1 -all"
+
+## Verification Records (add as needed)
+# Google Search Console
+# automatron.ai.        TXT     "google-site-verification=..."
+
+# Bing Webmaster Tools  
+# automatron.ai.        TXT     "msvalidate.01=..."
+
+## Staging Subdomain
+staging.automatron.ai.  CNAME   automatron-staging.vercel.app.

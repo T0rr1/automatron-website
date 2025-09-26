@@ -1,0 +1,457 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+      - link "Skip to navigation" [ref=e5] [cursor=pointer]:
+        - /url: "#navigation"
+      - link "Skip to footer" [ref=e6] [cursor=pointer]:
+        - /url: "#footer"
+    - banner [ref=e7]:
+      - navigation [ref=e8]:
+        - generic [ref=e9]:
+          - link "Automatron" [ref=e10] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e11]:
+            - link "Services" [ref=e12] [cursor=pointer]:
+              - /url: /services
+            - link "About" [ref=e13] [cursor=pointer]:
+              - /url: /about
+            - link "Contact" [ref=e14] [cursor=pointer]:
+              - /url: /contact
+            - button "Toggle theme" [ref=e15] [cursor=pointer]:
+              - generic [ref=e16] [cursor=pointer]: Toggle theme
+              - text: ☀️
+    - main [ref=e17]:
+      - paragraph [ref=e20]: 🇺🇸 Viewing in English - Language switching works!
+      - region "Hero section" [ref=e21]:
+        - generic [ref=e22]:
+          - generic:
+            - generic:
+              - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - generic:
+                  - img
+            - img
+          - banner [ref=e24]:
+            - generic [ref=e26]: ⚡ AI Automation Studio
+            - generic [ref=e27]:
+              - heading "Save 2-5 Hours Per Week Through Smart Automation" [level=1] [ref=e28]:
+                - text: Save
+                - generic [ref=e29]: 2-5 Hours Per Week
+                - text: Through Smart Automation
+              - paragraph [ref=e30]: Professional automation services for solo business owners and small teams. PowerShell, Python, and Excel solutions that eliminate repetitive tasks and boost your productivity—starting at just $249.
+            - generic [ref=e31]:
+              - button "Get free automation assessment" [ref=e32] [cursor=pointer]:
+                - text: Get Free Assessment
+                - img [ref=e33] [cursor=pointer]
+              - button "View our automation services" [ref=e35] [cursor=pointer]: View Our Services
+            - generic [ref=e36]:
+              - generic [ref=e37]:
+                - img [ref=e38]
+                - generic [ref=e41]: No upfront costs
+              - generic [ref=e42]:
+                - img [ref=e43]
+                - generic [ref=e46]: 1-7 day delivery
+              - generic [ref=e47]:
+                - img [ref=e48]
+                - generic [ref=e51]: Money-back guarantee
+            - region "Key metrics and statistics" [ref=e52]:
+              - generic [ref=e53]:
+                - generic [ref=e54]:
+                  - img [ref=e56]
+                  - heading "70%" [level=3] [ref=e59]
+                - paragraph [ref=e60]: Success Rate
+              - generic [ref=e61]:
+                - generic [ref=e62]:
+                  - img [ref=e64]
+                  - heading "3hrs" [level=3] [ref=e67]
+                - paragraph [ref=e68]: Saved Per Week
+              - generic [ref=e69]:
+                - generic [ref=e70]:
+                  - img [ref=e72]
+                  - heading "3days" [level=3] [ref=e75]
+                - paragraph [ref=e76]: Typical Turnaround
+            - generic [ref=e77]:
+              - paragraph [ref=e78]: Trusted by solo entrepreneurs and small teams
+              - generic [ref=e79]:
+                - generic [ref=e80]:
+                  - img [ref=e82]
+                  - generic [ref=e84]: PowerShell
+                - generic [ref=e86]:
+                  - img [ref=e88]
+                  - generic [ref=e91]: Python
+                - generic [ref=e93]:
+                  - img [ref=e95]
+                  - generic [ref=e97]: Excel
+                - generic [ref=e99]:
+                  - img [ref=e101]
+                  - generic [ref=e103]: Windows-First
+            - paragraph [ref=e106]: Scroll to explore
+      - generic [ref=e113]:
+        - generic [ref=e114]:
+          - heading "Our Automation Services" [level=2] [ref=e115]
+          - paragraph [ref=e116]: Six specialized service categories designed to save you 2-5 hours per week through practical automation solutions. From file management to report generation, we handle the repetitive tasks so you can focus on what matters.
+          - generic [ref=e117]:
+            - generic [ref=e120]: 95%+ Success Rate
+            - generic [ref=e123]: 2-5 hours/week Saved Weekly
+            - generic [ref=e126]: 1-7 days Turnaround
+        - generic [ref=e127]:
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - generic [ref=e133]:
+                - generic [ref=e134]: 🔧
+                - generic [ref=e135]:
+                  - heading "Basic Scripting" [level=3] [ref=e136]
+                  - paragraph [ref=e137]: Solo business owners
+              - generic [ref=e138]:
+                - paragraph [ref=e139]: From $249
+                - paragraph [ref=e140]: 1-3 days
+            - paragraph [ref=e141]: File cleanup, archiving, CSV operations, and backup automation to streamline your daily tasks
+            - generic [ref=e142]:
+              - generic [ref=e143]:
+                - paragraph [ref=e144]: "Before:"
+                - paragraph [ref=e145]: Manually sorting through hundreds of files, spending 2+ hours weekly on repetitive CSV tasks
+              - generic [ref=e146]:
+                - paragraph [ref=e147]: "After:"
+                - paragraph [ref=e148]: One-click file organization and automated CSV processing, saving 2-5 hours per week
+              - generic [ref=e150]: ⏱️ Saves 2-5 hrs/week
+            - generic [ref=e151]:
+              - heading "What we automate:" [level=4] [ref=e152]
+              - list [ref=e153]:
+                - listitem [ref=e154]: File cleanup and archiving
+                - listitem [ref=e156]: CSV merge and sort operations
+                - listitem [ref=e158]: Automated backup routines
+                - listitem [ref=e160]: +1 more...
+            - link "Learn More" [ref=e161] [cursor=pointer]:
+              - /url: /services/basic-scripting
+              - generic [ref=e162] [cursor=pointer]: Learn More
+              - img [ref=e163] [cursor=pointer]
+          - generic [ref=e171]:
+            - generic [ref=e172]:
+              - generic [ref=e173]:
+                - generic [ref=e174]: 📧
+                - generic [ref=e175]:
+                  - heading "Email & File Hygiene" [level=3] [ref=e176]
+                  - paragraph [ref=e177]: Busy professionals
+              - generic [ref=e178]:
+                - paragraph [ref=e179]: From $249
+                - paragraph [ref=e180]: 1-3 days
+            - paragraph [ref=e181]: Inbox rules, attachment management, and folder organization to keep your digital workspace clean
+            - generic [ref=e182]:
+              - generic [ref=e183]:
+                - paragraph [ref=e184]: "Before:"
+                - paragraph [ref=e185]: Cluttered inbox with attachments scattered across folders, manual file naming inconsistencies
+              - generic [ref=e186]:
+                - paragraph [ref=e187]: "After:"
+                - paragraph [ref=e188]: Automated inbox rules, organized attachments, and standardized file naming system
+              - generic [ref=e190]: ⏱️ Saves 1-3 hrs/week
+            - generic [ref=e191]:
+              - heading "What we automate:" [level=4] [ref=e192]
+              - list [ref=e193]:
+                - listitem [ref=e194]: Automated inbox rules
+                - listitem [ref=e196]: Auto-save attachments
+                - listitem [ref=e198]: Standardized file naming
+                - listitem [ref=e200]: +1 more...
+            - link "Learn More" [ref=e201] [cursor=pointer]:
+              - /url: /services/email-file-hygiene
+              - generic [ref=e202] [cursor=pointer]: Learn More
+              - img [ref=e203] [cursor=pointer]
+          - generic [ref=e211]:
+            - generic [ref=e212]:
+              - generic [ref=e213]:
+                - generic [ref=e214]: 📊
+                - generic [ref=e215]:
+                  - heading "Reporting Lite" [level=3] [ref=e216]
+                  - paragraph [ref=e217]: Data analysts
+              - generic [ref=e218]:
+                - paragraph [ref=e219]: From $249
+                - paragraph [ref=e220]: 1-3 days
+            - paragraph [ref=e221]: CSV cleaning, Excel formatting, and PDF report generation with charts and data visualization
+            - generic [ref=e222]:
+              - generic [ref=e223]:
+                - paragraph [ref=e224]: "Before:"
+                - paragraph [ref=e225]: Manual Excel formatting, copying data between spreadsheets, creating charts from scratch
+              - generic [ref=e226]:
+                - paragraph [ref=e227]: "After:"
+                - paragraph [ref=e228]: Automated report generation with formatted Excel files and professional PDF outputs
+              - generic [ref=e230]: ⏱️ Saves 3-6 hrs/week
+            - generic [ref=e231]:
+              - heading "What we automate:" [level=4] [ref=e232]
+              - list [ref=e233]:
+                - listitem [ref=e234]: CSV cleaning and merging
+                - listitem [ref=e236]: Formatted Excel generation
+                - listitem [ref=e238]: PDF reports with charts
+                - listitem [ref=e240]: +1 more...
+            - link "Learn More" [ref=e241] [cursor=pointer]:
+              - /url: /services/reporting-lite
+              - generic [ref=e242] [cursor=pointer]: Learn More
+              - img [ref=e243] [cursor=pointer]
+          - generic [ref=e251]:
+            - generic [ref=e252]:
+              - generic [ref=e253]:
+                - generic [ref=e254]: 🌐
+                - generic [ref=e255]:
+                  - heading "Simple Websites/Landing Pages" [level=3] [ref=e256]
+                  - paragraph [ref=e257]: Small businesses
+              - generic [ref=e258]:
+                - paragraph [ref=e259]: From $249
+                - paragraph [ref=e260]: 1-3 days
+            - paragraph [ref=e261]: Static sites, WordPress setups, contact forms, and SEO basics for your online presence
+            - generic [ref=e262]:
+              - generic [ref=e263]:
+                - paragraph [ref=e264]: "Before:"
+                - paragraph [ref=e265]: No online presence or outdated website, missing contact forms and basic SEO
+              - generic [ref=e266]:
+                - paragraph [ref=e267]: "After:"
+                - paragraph [ref=e268]: Professional static site or WordPress setup with contact forms and SEO optimization
+              - generic [ref=e270]: ⏱️ Saves 10-20 hrs setup
+            - generic [ref=e271]:
+              - heading "What we automate:" [level=4] [ref=e272]
+              - list [ref=e273]:
+                - listitem [ref=e274]: Static website creation
+                - listitem [ref=e276]: Basic WordPress setups
+                - listitem [ref=e278]: Contact form integration
+                - listitem [ref=e280]: +2 more...
+            - link "Learn More" [ref=e281] [cursor=pointer]:
+              - /url: /services/websites-landing
+              - generic [ref=e282] [cursor=pointer]: Learn More
+              - img [ref=e283] [cursor=pointer]
+          - generic [ref=e291]:
+            - generic [ref=e292]:
+              - generic [ref=e293]:
+                - generic [ref=e294]: 💻
+                - generic [ref=e295]:
+                  - heading "PC Onboarding Helpers" [level=3] [ref=e296]
+                  - paragraph [ref=e297]: IT administrators
+              - generic [ref=e298]:
+                - paragraph [ref=e299]: From $249
+                - paragraph [ref=e300]: 1-3 days
+            - paragraph [ref=e301]: Setup scripts for app installation, shortcuts, and system configuration to get new PCs ready fast
+            - generic [ref=e302]:
+              - generic [ref=e303]:
+                - paragraph [ref=e304]: "Before:"
+                - paragraph [ref=e305]: Hours spent manually installing software and configuring settings on new computers
+              - generic [ref=e306]:
+                - paragraph [ref=e307]: "After:"
+                - paragraph [ref=e308]: One-click PC setup with all applications, shortcuts, and configurations ready to go
+              - generic [ref=e310]: ⏱️ Saves 4-8 hrs per PC
+            - generic [ref=e311]:
+              - heading "What we automate:" [level=4] [ref=e312]
+              - list [ref=e313]:
+                - listitem [ref=e314]: Automated app installation
+                - listitem [ref=e316]: Desktop shortcuts creation
+                - listitem [ref=e318]: Default settings configuration
+                - listitem [ref=e320]: +1 more...
+            - link "Learn More" [ref=e321] [cursor=pointer]:
+              - /url: /services/pc-helpers
+              - generic [ref=e322] [cursor=pointer]: Learn More
+              - img [ref=e323] [cursor=pointer]
+          - generic [ref=e331]:
+            - generic [ref=e332]:
+              - generic [ref=e333]:
+                - generic [ref=e334]: 📋
+                - generic [ref=e335]:
+                  - heading "Reusable Templates" [level=3] [ref=e336]
+                  - paragraph [ref=e337]: All business types
+              - generic [ref=e338]:
+                - paragraph [ref=e339]: From $249
+                - paragraph [ref=e340]: 1-3 days
+            - paragraph [ref=e341]: Customizable automation templates and scripts that you can adapt for recurring business needs
+            - generic [ref=e342]:
+              - generic [ref=e343]:
+                - paragraph [ref=e344]: "Before:"
+                - paragraph [ref=e345]: Recreating automation solutions from scratch for similar business processes
+              - generic [ref=e346]:
+                - paragraph [ref=e347]: "After:"
+                - paragraph [ref=e348]: Ready-to-use templates that can be quickly customized for your specific needs
+              - generic [ref=e350]: ⏱️ Saves 2-4 hrs per task
+            - generic [ref=e351]:
+              - heading "What we automate:" [level=4] [ref=e352]
+              - list [ref=e353]:
+                - listitem [ref=e354]: Template gallery access
+                - listitem [ref=e356]: Customizable automation scripts
+                - listitem [ref=e358]: Recurring workflow templates
+                - listitem [ref=e360]: +1 more...
+            - link "Learn More" [ref=e361] [cursor=pointer]:
+              - /url: /services/reusable-templates
+              - generic [ref=e362] [cursor=pointer]: Learn More
+              - img [ref=e363] [cursor=pointer]
+        - generic [ref=e369]:
+          - heading "Ready to Save 2-5 Hours Per Week?" [level=3] [ref=e370]
+          - paragraph [ref=e371]: Get a free automation assessment and discover which services can transform your workflow.
+          - generic [ref=e372]:
+            - button "Get Free Assessment" [ref=e373] [cursor=pointer]
+            - button "View All Services" [ref=e374] [cursor=pointer]
+      - region "Interactive automation demos" [ref=e375]:
+        - generic [ref=e377]:
+          - generic [ref=e378]:
+            - generic [ref=e379]: 🔧 Live Examples
+            - heading "See Automation in Action" [level=2] [ref=e380]
+            - paragraph [ref=e381]: Explore real automation examples with sample code, workflows, and outputs. All examples are simulated and run locally for safety.
+            - generic [ref=e382]:
+              - img [ref=e383]
+              - paragraph [ref=e385]: These are demonstration examples that run locally. No code is executed on our servers.
+          - generic [ref=e386]:
+            - button "Automated File Cleanup Organize and archive files based on age, type, and naming patterns scripting Saves 2-3 hours/week" [ref=e387] [cursor=pointer]:
+              - generic [ref=e388] [cursor=pointer]:
+                - img [ref=e390] [cursor=pointer]
+                - heading "Automated File Cleanup" [level=4] [ref=e393] [cursor=pointer]
+              - paragraph [ref=e394] [cursor=pointer]: Organize and archive files based on age, type, and naming patterns
+              - generic [ref=e395] [cursor=pointer]:
+                - generic [ref=e396] [cursor=pointer]: scripting
+                - paragraph [ref=e397] [cursor=pointer]: Saves 2-3 hours/week
+            - button "CSV Data Merging Combine multiple CSV files with data validation and formatting reporting Saves 3-4 hours/week" [ref=e398] [cursor=pointer]:
+              - generic [ref=e399] [cursor=pointer]:
+                - img [ref=e401] [cursor=pointer]
+                - heading "CSV Data Merging" [level=4] [ref=e405] [cursor=pointer]
+              - paragraph [ref=e406] [cursor=pointer]: Combine multiple CSV files with data validation and formatting
+              - generic [ref=e407] [cursor=pointer]:
+                - generic [ref=e408] [cursor=pointer]: reporting
+                - paragraph [ref=e409] [cursor=pointer]: Saves 3-4 hours/week
+            - button "Automated Report Generation Create formatted Excel reports with charts and summaries reporting Saves 4-5 hours/week" [ref=e410] [cursor=pointer]:
+              - generic [ref=e411] [cursor=pointer]:
+                - img [ref=e413] [cursor=pointer]
+                - heading "Automated Report Generation" [level=4] [ref=e415] [cursor=pointer]
+              - paragraph [ref=e416] [cursor=pointer]: Create formatted Excel reports with charts and summaries
+              - generic [ref=e417] [cursor=pointer]:
+                - generic [ref=e418] [cursor=pointer]: reporting
+                - paragraph [ref=e419] [cursor=pointer]: Saves 4-5 hours/week
+          - generic [ref=e420]:
+            - generic [ref=e422]:
+              - button "Overview" [ref=e423] [cursor=pointer]:
+                - img [ref=e424] [cursor=pointer]
+                - text: Overview
+              - button "Sample Code" [ref=e427] [cursor=pointer]:
+                - img [ref=e428] [cursor=pointer]
+                - text: Sample Code
+              - button "Workflow" [ref=e431] [cursor=pointer]:
+                - img [ref=e432] [cursor=pointer]
+                - text: Workflow
+              - button "Input/Output" [ref=e434] [cursor=pointer]:
+                - img [ref=e435] [cursor=pointer]
+                - text: Input/Output
+            - generic [ref=e440]:
+              - generic [ref=e441]:
+                - heading "Automated File Cleanup" [level=3] [ref=e442]
+                - paragraph [ref=e443]: Organize and archive files based on age, type, and naming patterns
+              - generic [ref=e444]:
+                - generic [ref=e446]:
+                  - heading "Before (Manual Process)" [level=4] [ref=e447]
+                  - paragraph [ref=e449]: Manually sorting through hundreds of files in Downloads folder every week
+                - generic [ref=e451]:
+                  - heading "After (Automated)" [level=4] [ref=e452]
+                  - paragraph [ref=e454]: Automated script runs weekly, organizing files into proper folders with backup
+              - generic [ref=e456]:
+                - heading "2-3 hours/week" [level=3] [ref=e457]
+                - paragraph [ref=e458]: Time Saved Per Week
+          - generic [ref=e459]:
+            - heading "Ready to Automate Your Workflows?" [level=3] [ref=e460]
+            - generic [ref=e461]:
+              - button "Get Free Assessment" [ref=e462] [cursor=pointer]:
+                - text: Get Free Assessment
+                - img [ref=e463] [cursor=pointer]
+              - button "Download Sample Scripts" [ref=e465] [cursor=pointer]:
+                - img [ref=e466] [cursor=pointer]
+                - text: Download Sample Scripts
+            - paragraph [ref=e469]: All scripts include documentation, configuration files, and safety features
+      - generic [ref=e471]:
+        - generic [ref=e472]:
+          - heading "✅ SEO and Analytics Implementation Complete" [level=3] [ref=e473]
+          - generic [ref=e474]:
+            - generic [ref=e475]:
+              - paragraph [ref=e476]: Next-SEO
+              - paragraph [ref=e477]: Configured
+            - generic [ref=e478]:
+              - paragraph [ref=e479]: OG Images
+              - paragraph [ref=e480]: Dynamic
+            - generic [ref=e481]:
+              - paragraph [ref=e482]: Sitemap
+              - paragraph [ref=e483]: Generated
+            - generic [ref=e484]:
+              - paragraph [ref=e485]: Analytics
+              - paragraph [ref=e486]: Plausible
+            - generic [ref=e487]:
+              - paragraph [ref=e488]: Structured Data
+              - paragraph [ref=e489]: JSON-LD
+        - paragraph [ref=e491]:
+          - link "Test OG Image Generation" [ref=e492] [cursor=pointer]:
+            - /url: /api/og?title=Test%20Title&description=Test%20Description
+          - text: "|"
+          - link "View Sitemap" [ref=e493] [cursor=pointer]:
+            - /url: /sitemap.xml
+          - text: "|"
+          - link "View Robots.txt" [ref=e494] [cursor=pointer]:
+            - /url: /robots.txt
+    - contentinfo [ref=e495]:
+      - generic [ref=e496]:
+        - generic [ref=e497]:
+          - generic [ref=e498]:
+            - heading "Services" [level=3] [ref=e499]
+            - list [ref=e500]:
+              - listitem [ref=e501]:
+                - link "Basic Scripting" [ref=e502] [cursor=pointer]:
+                  - /url: /services/basic-scripting
+              - listitem [ref=e503]:
+                - link "Email Automation" [ref=e504] [cursor=pointer]:
+                  - /url: /services/email-automation
+              - listitem [ref=e505]:
+                - link "Reporting" [ref=e506] [cursor=pointer]:
+                  - /url: /services/reporting
+          - generic [ref=e507]:
+            - heading "Company" [level=3] [ref=e508]
+            - list [ref=e509]:
+              - listitem [ref=e510]:
+                - link "About" [ref=e511] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=e512]:
+                - link "Contact" [ref=e513] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=e514]:
+            - heading "Legal" [level=3] [ref=e515]
+            - list [ref=e516]:
+              - listitem [ref=e517]:
+                - link "Privacy Policy" [ref=e518] [cursor=pointer]:
+                  - /url: /privacy
+              - listitem [ref=e519]:
+                - link "Terms of Service" [ref=e520] [cursor=pointer]:
+                  - /url: /terms
+          - generic [ref=e521]:
+            - heading "Newsletter" [level=3] [ref=e522]
+            - generic [ref=e523]:
+              - textbox "Email address" [ref=e524]
+              - button "Subscribe" [ref=e525] [cursor=pointer]
+        - paragraph [ref=e527]: © 2024 Automatron. All rights reserved.
+  - generic:
+    - button "Open chat":
+      - generic:
+        - img
+  - region "Notifications (F8)":
+    - list [ref=e528]
+  - alert [ref=e529]
+```

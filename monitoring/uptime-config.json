@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "checks": [
+    {
+      "name": "Homepage",
+      "url": "https://automatron.ai",
+      "method": "GET",
+      "expectedStatus": 200,
+      "interval": "5m"
+    },
+    {
+      "name": "Health Check",
+      "url": "https://automatron.ai/api/health",
+      "method": "GET",
+      "expectedStatus": 200,
+      "interval": "2m"
+    },
+    {
+      "name": "Contact API",
+      "url": "https://automatron.ai/api/contact",
+      "method": "HEAD",
+      "expectedStatus": 405,
+      "interval": "10m"
+    },
+    {
+      "name": "Spanish Homepage",
+      "url": "https://automatron.ai/es",
+      "method": "GET",
+      "expectedStatus": 200,
+      "interval": "10m"
+    }
+  ],
+  "notifications": {
+    "email": {
+      "enabled": true,
+      "recipients": [
+        "alerts@automatron.ai"
+      ]
+    },
+    "webhook": {
+      "enabled": true,
+      "url": "https://hooks.slack.com/services/..."
+    }
+  },
+  "settings": {
+    "timezone": "UTC",
+    "retryCount": 3,
+    "retryDelay": 30
+  }
+}
