@@ -69,8 +69,14 @@ interface LayoutProps {
 export function Layout({ children, className }: LayoutProps) {
   return (
     <div className={className}>
+      <a 
+        href="#main" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-background px-3 py-2 rounded z-50"
+      >
+        Skip to content
+      </a>
       <Header />
-      <main>{children}</main>
+      <main id="main" className="pt-24">{children}</main>
       <Footer />
       <BackToTop />
     </div>

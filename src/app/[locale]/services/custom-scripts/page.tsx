@@ -31,14 +31,22 @@ export default function CustomScripts() {
   })
 
   const onSubmit = async (data: FormData) => {
-    const res = await fetch('/api/quotes', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
+    const q = await fetch('/api/quotes', { 
+      method: 'POST', 
+      headers: { 'Content-Type': 'application/json' }, 
+      body: JSON.stringify(data) 
     })
-    if (!res.ok) { alert('Failed to quote'); return }
-    const quote = await res.json()
-    router.push(`/checkout?cents=${quote.quote_cents}`)
+    if (!q.ok) return alert('Failed to quote')
+    const { quote_cents } = await q.json()
+    
+    const c = await fetch('/api/checkout', { 
+      method: 'POST', 
+      headers: { 'Content-Type': 'application/json' }, 
+      body: JSON.stringify({ cents: quote_cents, payload: data }) 
+    })
+    if (!c.ok) return alert('Failed to start checkout')
+    const { url } = await c.json()
+    window.location.href = url
   }
 
   const os = watch('os', [])
@@ -103,7 +111,7 @@ export default function CustomScripts() {
             <label className="flex items-center gap-2"><input type="checkbox" {...register('needsScheduler')} /> Scheduled (cron/Task Scheduler)</label>
           </fieldset>
 
-          <Button type="submit" className="font-bold">Get Instant Quote</Button>
+          <Button type="submit" className="font-bold">Get Quote & Checkout</Button>
         </form>
       </section>
     </Layout>
