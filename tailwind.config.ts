@@ -245,7 +245,8 @@ const config = {
   			full: "9999px"
   		},
   		boxShadow: {
-  			card: "var(--shadow-card)",
+  			card: "0 1px 2px rgb(0 0 0 / .05), 0 8px 24px rgb(0 0 0 / .06)",
+  			glow: "0 0 0 1px hsl(156 72% 45% / .35), 0 8px 30px hsl(156 72% 45% / .25)",
   			focus: "0 0 0 4px var(--ring)",
   			none: "none"
   		},
@@ -367,6 +368,15 @@ const config = {
   				'50%': {
   					transform: 'translateY(-12px) rotate(2deg)'
   				}
+  			},
+  			fadeUp: {
+  				'0%': { opacity: '0', transform: 'translateY(12px)' },
+  				'100%': { opacity: '1', transform: 'translateY(0)' },
+  			},
+  			pop: { '0%': { transform: 'scale(.98)' }, '100%': { transform: 'scale(1)' } },
+  			aurora: {
+  				'0%': { transform: 'translateY(0) rotate(0deg)' },
+  				'100%': { transform: 'translateY(-4%) rotate(360deg)' },
   			}
   		},
   		animation: {
@@ -383,7 +393,12 @@ const config = {
   			'float-slow': 'float-slow 4s ease-in-out infinite',
   			'float-medium': 'float-medium 3s ease-in-out infinite',
   			'float-fast': 'float-fast 2.5s ease-in-out infinite',
-			'float-gentle': 'float-gentle 5s ease-in-out infinite'
+			'float-gentle': 'float-gentle 5s ease-in-out infinite',
+			fadeUp: 'fadeUp .55s ease-out forwards',
+			pop: 'pop .12s ease-out',
+			shimmer: 'shimmer 2s linear infinite',
+			float: 'float 6s ease-in-out infinite',
+			aurora: 'aurora 18s linear infinite'
   		},
   		transitionTimingFunction: {
   			'ease-out-back': 'cubic-bezier(0.34, 1.56, 0.64, 1)',

@@ -28,6 +28,15 @@
   /* Elevation */
   --shadow-card: 0 1px 2px hsl(0 0% 0% / 0.05), 0 8px 24px hsl(0 0% 0% / 0.06);
   
+  /* Accent gradients */
+  --gradient-accent: linear-gradient(135deg, hsl(156 72% 45%) 0%, hsl(192 74% 44%) 100%);
+  --gradient-aurora: conic-gradient(from 180deg at 50% 50%,
+    hsl(156 72% 45% / .25),
+    hsl(192 74% 44% / .20),
+    hsl(262 83% 58% / .15),
+    hsl(156 72% 45% / .25)
+  );
+  
   color-scheme: light;
 }
 
@@ -58,7 +67,7 @@ html[data-theme="dark"] {
 
 /* Font variable */
 :root {
-  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+  --font-sans: "Sora", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
                Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
 }
 
@@ -180,17 +189,12 @@ a:focus-visible,
   box-shadow: 0 0 0 2px var(--ring);
 }
 
-/* Reduced motion: honor user preferences */
+/* Scroll-reveal helper */
+.reveal-in { animation: fadeUp .6s ease-out forwards; }
+
+/* Motion safety */
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
-  
-  /* Remove all motion effects */
-  .hero {
-    background: var(--bg) !important;
-  }
+  * { animation: none !important; transition: none !important; }
 }
 
 /* ========================================
