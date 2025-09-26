@@ -33,7 +33,7 @@ describe('ContactForm Component', () => {
     // Should show validation errors
     await waitFor(() => {
       const errorMessages = screen.queryAllByRole('alert')
-      const invalidFields = screen.queryAllByAttribute('aria-invalid', 'true')
+      const invalidFields = document.querySelectorAll('[aria-invalid="true"]')
       
       // Should have some form of validation feedback
       expect(errorMessages.length + invalidFields.length).toBeGreaterThan(0)

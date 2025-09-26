@@ -1,9 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
+import { cn } from '@/lib/utils'
 
-export function Footer() {
+interface FooterProps {
+  className?: string
+}
+
+export function Footer({ className }: FooterProps = {}) {
   return (
-    <footer role="contentinfo" className="footer border-t">
+    <footer role="contentinfo" className={cn("footer border-t", className)}>
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>

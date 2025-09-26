@@ -83,10 +83,10 @@ export function ServiceOverviewSection({ className }: ServiceOverviewSectionProp
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-16 text-center animate-fade-in-up">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
+          <h1 className="mb-4 text-3xl font-bold tracking-tight text-text sm:text-4xl lg:text-5xl">
             Our Automation Services
-          </h2>
-          <p className="mx-auto max-w-3xl text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          </h1>
+          <p className="mx-auto max-w-3xl text-lg text-muted leading-relaxed">
             Six specialized automation services designed to save you 2-5 hours per week ($200+ value).
             Safe scripts with dry-run testing — we move files, never delete them.
           </p>
@@ -107,7 +107,7 @@ export function ServiceOverviewSection({ className }: ServiceOverviewSectionProp
             </div>
             <div className="flex items-center space-x-2">
               <div className="h-2 w-2 rounded-full bg-gray-500" />
-              <span className="font-semibold text-gray-600 dark:text-gray-400">
+              <span className="font-semibold text-muted">
                 {successMetrics.typicalTurnaround} Turnaround
               </span>
             </div>
@@ -116,7 +116,7 @@ export function ServiceOverviewSection({ className }: ServiceOverviewSectionProp
 
         {/* Quick win selector with horizontal scroll on mobile */}
         <div className="mb-12 text-center">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+          <h3 className="text-lg font-semibold text-text mb-4">
             What's your quick win?
           </h3>
           <div className="pills flex justify-center gap-2 overflow-x-auto scroll-snap-type-x-mandatory pb-2 lg:flex-wrap lg:overflow-visible">
@@ -277,51 +277,51 @@ export function ServiceOverviewSection({ className }: ServiceOverviewSectionProp
         {/* Slim FAQ - 3 accordions only */}
         <div className="section--alt mt-16 mb-16 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-16">
           <div className="mx-auto max-w-2xl">
-            <h3 className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-8">
+            <h3 className="text-2xl font-bold text-center text-text mb-8">
               Quick Questions
             </h3>
             <div className="faq space-y-4">
-              <details className="faq-item group border border-gray-200 dark:border-gray-700 rounded-lg">
-                <summary className="item flex justify-between items-center p-4 cursor-pointer font-semibold text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 min-h-[48px]">
+              <details className="faq-item group border border-border rounded-lg">
+                <summary className="item flex justify-between items-center p-4 cursor-pointer font-semibold text-text focus:outline-none focus:ring-2 focus:ring-emerald-500/50 min-h-[48px]">
                   <div>
                     <span>Safety</span>
-                    <span className="hint block text-[13px] font-normal text-gray-500 dark:text-gray-400">Dry run. Move-not-delete. Logs.</span>
+                    <span className="hint block text-[13px] font-normal text-muted">Dry run. Move-not-delete. Logs.</span>
                   </div>
                   <svg className="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
-                <div className="p-4 pt-0 text-gray-600 dark:text-gray-400">
+                <div className="p-4 pt-0 text-muted">
                   We test with a dry-run and never delete—only move or copy.
                 </div>
               </details>
               
-              <details className="faq-item group border border-gray-200 dark:border-gray-700 rounded-lg">
-                <summary className="item flex justify-between items-center p-4 cursor-pointer font-semibold text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 min-h-[48px]">
+              <details className="faq-item group border border-border rounded-lg">
+                <summary className="item flex justify-between items-center p-4 cursor-pointer font-semibold text-text focus:outline-none focus:ring-2 focus:ring-emerald-500/50 min-h-[48px]">
                   <div>
                     <span>Timeline</span>
-                    <span className="hint block text-[13px] font-normal text-gray-500 dark:text-gray-400">Most deliver in 2–5 days.</span>
+                    <span className="hint block text-[13px] font-normal text-muted">Most deliver in 2–5 days.</span>
                   </div>
                   <svg className="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
-                <div className="p-4 pt-0 text-gray-600 dark:text-gray-400">
+                <div className="p-4 pt-0 text-muted">
                   Most quick wins deliver in 2–5 days.
                 </div>
               </details>
               
-              <details className="faq-item group border border-gray-200 dark:border-gray-700 rounded-lg">
-                <summary className="item flex justify-between items-center p-4 cursor-pointer font-semibold text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 min-h-[48px]">
+              <details className="faq-item group border border-border rounded-lg">
+                <summary className="item flex justify-between items-center p-4 cursor-pointer font-semibold text-text focus:outline-none focus:ring-2 focus:ring-emerald-500/50 min-h-[48px]">
                   <div>
                     <span>What's included</span>
-                    <span className="hint block text-[13px] font-normal text-gray-500 dark:text-gray-400">Script, runbook, 1 tweak, 7-day bug fix.</span>
+                    <span className="hint block text-[13px] font-normal text-muted">Script, runbook, 1 tweak, 7-day bug fix.</span>
                   </div>
                   <svg className="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
-                <div className="p-4 pt-0 text-gray-600 dark:text-gray-400">
+                <div className="p-4 pt-0 text-muted">
                   Script, runbook, 1 tweak, 7-day bug fix.
                 </div>
               </details>
@@ -344,11 +344,11 @@ export function ServiceOverviewSection({ className }: ServiceOverviewSectionProp
 
         {/* Bottom CTA section */}
         <div className="mt-16 text-center">
-          <div className="mx-auto max-w-2xl rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md shadow-glass dark:border-white/10 dark:bg-black/5 animate-fade-in-up">
-            <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+          <div className="mx-auto max-w-2xl card p-8 animate-fade-in-up">
+            <h3 className="mb-4 text-2xl font-bold text-text">
               Ready to save 2–5 hours per week?
             </h3>
-            <p className="mb-6 text-gray-600 dark:text-gray-400">
+            <p className="mb-6 text-muted">
               Get a free automation assessment (EN/ES). We'll identify your fastest win in 15 minutes.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:items-center">
@@ -356,7 +356,7 @@ export function ServiceOverviewSection({ className }: ServiceOverviewSectionProp
                 Save My Hours Now
               </Link>
               <div className="text-center">
-                <Link href="/services" className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors underline">
+                <Link href="/services" className="text-muted hover:text-text transition-colors underline">
                   View all services
                 </Link>
               </div>

@@ -93,7 +93,7 @@ export { toast, useToast } from '@/hooks/use-toast'
 export { Typography, DisplayText, GradientText } from './typography'
 
 // Theme
-export { ThemeToggle, ThemeToggleDropdown } from './theme-toggle'
+export { ThemeToggle } from './theme-toggle'
 
 // Language
 export { LanguageSwitcher } from './language-switcher'

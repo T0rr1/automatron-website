@@ -1,0 +1,333 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+      - link "Skip to navigation" [ref=e5] [cursor=pointer]:
+        - /url: "#navigation"
+      - link "Skip to footer" [ref=e6] [cursor=pointer]:
+        - /url: "#footer"
+    - banner [ref=e7]:
+      - navigation [ref=e8]:
+        - generic [ref=e9]:
+          - link "Automatron.ai" [ref=e10] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e11]:
+            - generic [ref=e12]:
+              - link "Services" [ref=e13] [cursor=pointer]:
+                - /url: /services
+              - link "Work" [ref=e14] [cursor=pointer]:
+                - /url: /work
+              - link "About" [ref=e15] [cursor=pointer]:
+                - /url: /about
+              - link "Contact" [ref=e16] [cursor=pointer]:
+                - /url: /contact
+            - generic [ref=e17]:
+              - button "Change language" [ref=e18] [cursor=pointer]:
+                - generic [ref=e19] [cursor=pointer]: 🇺🇸
+                - img [ref=e20] [cursor=pointer]
+              - button "Toggle theme" [ref=e24] [cursor=pointer]: Dark
+            - link "Save My Hours Now" [ref=e25] [cursor=pointer]:
+              - /url: /contact
+              - button "Save My Hours Now" [ref=e26] [cursor=pointer]
+    - main [ref=e27]:
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - heading "Our Automation Services" [level=2] [ref=e34]
+          - paragraph [ref=e35]: Six specialized automation services designed to save you 2-5 hours per week ($200+ value). Safe scripts with dry-run testing — we move files, never delete them.
+          - generic [ref=e36]:
+            - generic [ref=e39]: 95%+ Success Rate
+            - generic [ref=e42]: 2-5 hours/week ($200+ value) Saved Weekly
+            - generic [ref=e45]: 1-7 days Turnaround
+        - generic [ref=e46]:
+          - heading "What's your quick win?" [level=3] [ref=e47]
+          - generic [ref=e48]:
+            - button "All services" [ref=e49] [cursor=pointer]
+            - button "Messy files" [ref=e50] [cursor=pointer]
+            - button "Messy inbox" [ref=e51] [cursor=pointer]
+            - button "Reports" [ref=e52] [cursor=pointer]
+            - button "Website" [ref=e53] [cursor=pointer]
+        - generic [ref=e54]:
+          - generic [ref=e58]:
+            - generic [ref=e60]: Recommended
+            - generic [ref=e62]:
+              - generic [ref=e63]:
+                - generic [ref=e64]: 🔧
+                - generic [ref=e65]:
+                  - heading "Clean Files, One Click" [level=3] [ref=e66]
+                  - paragraph [ref=e67]: Solo business owners
+              - generic [ref=e68]:
+                - paragraph [ref=e69]: $349-$599
+                - paragraph [ref=e70]: depending on scope
+            - paragraph [ref=e71]: File cleanup, archiving, CSV operations, and backup automation to streamline your daily tasks
+            - generic [ref=e72]:
+              - generic [ref=e73]:
+                - paragraph [ref=e74]: "Before:"
+                - paragraph [ref=e75]: Manually sorting hundreds of files. 2+ hours weekly.
+              - generic [ref=e76]:
+                - paragraph [ref=e77]: "After:"
+                - paragraph [ref=e78]: Auto-organized daily. Move-not-delete. Logs included.
+              - generic [ref=e80]: ⏱️ Saves 2-5 hrs/week ($200+ value)
+            - generic [ref=e81]:
+              - heading "What we automate:" [level=4] [ref=e82]
+              - list [ref=e83]:
+                - listitem [ref=e84]: File cleanup and archiving
+                - listitem [ref=e86]: CSV merge operations
+                - listitem [ref=e88]: Backup routines
+            - paragraph [ref=e91]: "Safe scripts: dry-run • move-not-delete • logs"
+            - link "Get My Script" [ref=e92] [cursor=pointer]:
+              - /url: /contact
+              - generic [ref=e93] [cursor=pointer]:
+                - img [ref=e94] [cursor=pointer]
+                - text: Get My Script
+          - generic [ref=e102]:
+            - generic [ref=e104]:
+              - generic [ref=e105]:
+                - generic [ref=e106]: 📧
+                - generic [ref=e107]:
+                  - heading "Inbox Rules That Work" [level=3] [ref=e108]
+                  - paragraph [ref=e109]: Busy professionals
+              - generic [ref=e110]:
+                - paragraph [ref=e111]: $299-$499
+                - paragraph [ref=e112]: depending on scope
+            - paragraph [ref=e113]: Inbox rules, attachment management, and folder organization to keep your digital workspace clean
+            - generic [ref=e114]:
+              - generic [ref=e115]:
+                - paragraph [ref=e116]: "Before:"
+                - paragraph [ref=e117]: Manually sorting hundreds of files. 2+ hours weekly.
+              - generic [ref=e118]:
+                - paragraph [ref=e119]: "After:"
+                - paragraph [ref=e120]: Auto-organized daily. Move-not-delete. Logs included.
+              - generic [ref=e122]: ⏱️ Saves 1-3 hrs/week ($150+ value)
+            - generic [ref=e123]:
+              - heading "What we automate:" [level=4] [ref=e124]
+              - list [ref=e125]:
+                - listitem [ref=e126]: File cleanup and archiving
+                - listitem [ref=e128]: CSV merge operations
+                - listitem [ref=e130]: Backup routines
+            - paragraph [ref=e133]: "Safe scripts: dry-run • move-not-delete • logs"
+            - link "Fix My Inbox" [ref=e134] [cursor=pointer]:
+              - /url: /contact
+              - generic [ref=e135] [cursor=pointer]:
+                - img [ref=e136] [cursor=pointer]
+                - text: Fix My Inbox
+          - generic [ref=e144]:
+            - generic [ref=e146]:
+              - generic [ref=e147]:
+                - generic [ref=e148]: 📊
+                - generic [ref=e149]:
+                  - heading "Reports Without Spreadsheets" [level=3] [ref=e150]
+                  - paragraph [ref=e151]: Data analysts
+              - generic [ref=e152]:
+                - paragraph [ref=e153]: $499-$799
+                - paragraph [ref=e154]: depending on scope
+            - paragraph [ref=e155]: CSV cleaning, Excel formatting, and PDF report generation with charts and data visualization
+            - generic [ref=e156]:
+              - generic [ref=e157]:
+                - paragraph [ref=e158]: "Before:"
+                - paragraph [ref=e159]: Manually sorting hundreds of files. 2+ hours weekly.
+              - generic [ref=e160]:
+                - paragraph [ref=e161]: "After:"
+                - paragraph [ref=e162]: Auto-organized daily. Move-not-delete. Logs included.
+              - generic [ref=e164]: ⏱️ Saves 3-6 hrs/week ($300+ value)
+            - generic [ref=e165]:
+              - heading "What we automate:" [level=4] [ref=e166]
+              - list [ref=e167]:
+                - listitem [ref=e168]: File cleanup and archiving
+                - listitem [ref=e170]: CSV merge operations
+                - listitem [ref=e172]: Backup routines
+            - paragraph [ref=e175]: "Safe scripts: dry-run • move-not-delete • logs"
+            - link "Automate Reports" [ref=e176] [cursor=pointer]:
+              - /url: /contact
+              - generic [ref=e177] [cursor=pointer]:
+                - img [ref=e178] [cursor=pointer]
+                - text: Automate Reports
+          - generic [ref=e186]:
+            - generic [ref=e188]:
+              - generic [ref=e189]:
+                - generic [ref=e190]: 🌐
+                - generic [ref=e191]:
+                  - heading "Online in Days, Not Weeks" [level=3] [ref=e192]
+                  - paragraph [ref=e193]: Small businesses
+              - generic [ref=e194]:
+                - paragraph [ref=e195]: $999-$1,499
+                - paragraph [ref=e196]: depending on scope
+            - paragraph [ref=e197]: Static sites, WordPress setups, contact forms, and SEO basics for your online presence
+            - generic [ref=e198]:
+              - generic [ref=e199]:
+                - paragraph [ref=e200]: "Before:"
+                - paragraph [ref=e201]: Manually sorting hundreds of files. 2+ hours weekly.
+              - generic [ref=e202]:
+                - paragraph [ref=e203]: "After:"
+                - paragraph [ref=e204]: Auto-organized daily. Move-not-delete. Logs included.
+              - generic [ref=e206]: ⏱️ Saves 10-20 hrs setup
+            - generic [ref=e207]:
+              - heading "What we automate:" [level=4] [ref=e208]
+              - list [ref=e209]:
+                - listitem [ref=e210]: File cleanup and archiving
+                - listitem [ref=e212]: CSV merge operations
+                - listitem [ref=e214]: Backup routines
+            - paragraph [ref=e217]: "Safe scripts: dry-run • move-not-delete • logs"
+            - link "Build My Site" [ref=e218] [cursor=pointer]:
+              - /url: /contact
+              - generic [ref=e219] [cursor=pointer]:
+                - img [ref=e220] [cursor=pointer]
+                - text: Build My Site
+          - generic [ref=e228]:
+            - generic [ref=e230]:
+              - generic [ref=e231]:
+                - generic [ref=e232]: 💻
+                - generic [ref=e233]:
+                  - heading "New PCs Ready, One Click" [level=3] [ref=e234]
+                  - paragraph [ref=e235]: IT administrators
+              - generic [ref=e236]:
+                - paragraph [ref=e237]: $399-$699
+                - paragraph [ref=e238]: depending on scope
+            - paragraph [ref=e239]: Setup scripts for app installation, shortcuts, and system configuration for Windows & Mac systems
+            - generic [ref=e240]:
+              - generic [ref=e241]:
+                - paragraph [ref=e242]: "Before:"
+                - paragraph [ref=e243]: Manually sorting hundreds of files. 2+ hours weekly.
+              - generic [ref=e244]:
+                - paragraph [ref=e245]: "After:"
+                - paragraph [ref=e246]: Auto-organized daily. Move-not-delete. Logs included.
+              - generic [ref=e248]: ⏱️ Saves 4-8 hrs per system
+            - generic [ref=e249]:
+              - heading "What we automate:" [level=4] [ref=e250]
+              - list [ref=e251]:
+                - listitem [ref=e252]: File cleanup and archiving
+                - listitem [ref=e254]: CSV merge operations
+                - listitem [ref=e256]: Backup routines
+            - paragraph [ref=e259]: "Safe scripts: dry-run • move-not-delete • logs"
+            - link "Setup Systems" [ref=e260] [cursor=pointer]:
+              - /url: /contact
+              - generic [ref=e261] [cursor=pointer]:
+                - img [ref=e262] [cursor=pointer]
+                - text: Setup Systems
+          - generic [ref=e270]:
+            - generic [ref=e272]:
+              - generic [ref=e273]:
+                - generic [ref=e274]: 📋
+                - generic [ref=e275]:
+                  - heading "Templates That Adapt" [level=3] [ref=e276]
+                  - paragraph [ref=e277]: All business types
+              - generic [ref=e278]:
+                - paragraph [ref=e279]: $199-$399
+                - paragraph [ref=e280]: depending on scope
+            - paragraph [ref=e281]: Customizable automation templates and scripts that you can adapt for recurring business needs
+            - generic [ref=e282]:
+              - generic [ref=e283]:
+                - paragraph [ref=e284]: "Before:"
+                - paragraph [ref=e285]: Manually sorting hundreds of files. 2+ hours weekly.
+              - generic [ref=e286]:
+                - paragraph [ref=e287]: "After:"
+                - paragraph [ref=e288]: Auto-organized daily. Move-not-delete. Logs included.
+              - generic [ref=e290]: ⏱️ Saves 2-4 hrs per task
+            - generic [ref=e291]:
+              - heading "What we automate:" [level=4] [ref=e292]
+              - list [ref=e293]:
+                - listitem [ref=e294]: File cleanup and archiving
+                - listitem [ref=e296]: CSV merge operations
+                - listitem [ref=e298]: Backup routines
+            - paragraph [ref=e301]: "Safe scripts: dry-run • move-not-delete • logs"
+            - link "Get Templates" [ref=e302] [cursor=pointer]:
+              - /url: /contact
+              - generic [ref=e303] [cursor=pointer]:
+                - img [ref=e304] [cursor=pointer]
+                - text: Get Templates
+        - generic [ref=e310]:
+          - heading "Quick Questions" [level=3] [ref=e311]
+          - generic [ref=e312]:
+            - group [ref=e313]:
+              - generic "Safety Dry run. Move-not-delete. Logs." [ref=e314] [cursor=pointer]:
+                - generic [ref=e315] [cursor=pointer]:
+                  - generic [ref=e316] [cursor=pointer]: Safety
+                  - generic [ref=e317] [cursor=pointer]: Dry run. Move-not-delete. Logs.
+                - img [ref=e318] [cursor=pointer]
+            - group [ref=e320]:
+              - generic "Timeline Most deliver in 2–5 days." [ref=e321] [cursor=pointer]:
+                - generic [ref=e322] [cursor=pointer]:
+                  - generic [ref=e323] [cursor=pointer]: Timeline
+                  - generic [ref=e324] [cursor=pointer]: Most deliver in 2–5 days.
+                - img [ref=e325] [cursor=pointer]
+            - group [ref=e327]:
+              - generic "What's included Script, runbook, 1 tweak, 7-day bug fix." [ref=e328] [cursor=pointer]:
+                - generic [ref=e329] [cursor=pointer]:
+                  - generic [ref=e330] [cursor=pointer]: What's included
+                  - generic [ref=e331] [cursor=pointer]: Script, runbook, 1 tweak, 7-day bug fix.
+                - img [ref=e332] [cursor=pointer]
+        - generic [ref=e335]:
+          - heading "Why these prices make sense" [level=3] [ref=e336]
+          - paragraph [ref=e337]: Think of Automatron as "time on sale." If a $349 script saves 5 hours/month and your time is $30/hr, that's $150/month back—the script pays for itself in weeks.
+        - generic [ref=e339]:
+          - heading "Ready to save 2–5 hours per week?" [level=3] [ref=e340]
+          - paragraph [ref=e341]: Get a free automation assessment (EN/ES). We'll identify your fastest win in 15 minutes.
+          - generic [ref=e342]:
+            - link "Save My Hours Now" [ref=e343] [cursor=pointer]:
+              - /url: /contact
+            - link "View all services" [ref=e345] [cursor=pointer]:
+              - /url: /services
+          - paragraph [ref=e347]: No upfront cost • 7-day money-back guarantee
+    - contentinfo [ref=e348]:
+      - generic [ref=e349]:
+        - generic [ref=e350]:
+          - generic [ref=e351]:
+            - heading "Services" [level=3] [ref=e352]
+            - list [ref=e353]:
+              - listitem [ref=e354]:
+                - link "Basic Scripting" [ref=e355] [cursor=pointer]:
+                  - /url: /services/basic-scripting
+              - listitem [ref=e356]:
+                - link "Email Automation" [ref=e357] [cursor=pointer]:
+                  - /url: /services/email-automation
+              - listitem [ref=e358]:
+                - link "Reporting" [ref=e359] [cursor=pointer]:
+                  - /url: /services/reporting
+          - generic [ref=e360]:
+            - heading "Company" [level=3] [ref=e361]
+            - list [ref=e362]:
+              - listitem [ref=e363]:
+                - link "About" [ref=e364] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=e365]:
+                - link "Contact" [ref=e366] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=e367]:
+            - heading "Legal" [level=3] [ref=e368]
+            - list [ref=e369]:
+              - listitem [ref=e370]:
+                - link "Privacy Policy" [ref=e371] [cursor=pointer]:
+                  - /url: /privacy
+              - listitem [ref=e372]:
+                - link "Terms of Service" [ref=e373] [cursor=pointer]:
+                  - /url: /terms
+          - generic [ref=e374]:
+            - heading "Newsletter" [level=3] [ref=e375]
+            - generic [ref=e376]:
+              - textbox "Email address" [ref=e377]
+              - button "Subscribe" [ref=e378] [cursor=pointer]
+        - generic [ref=e379]:
+          - paragraph [ref=e381]: "Hours saved for clients this quarter: 126"
+          - paragraph [ref=e382]: © 2024 Automatron. All rights reserved.
+  - generic:
+    - button "Open chat":
+      - generic:
+        - img
+  - region "Notifications (F8)":
+    - list
+  - generic [ref=e383]:
+    - generic [ref=e384]: Performance
+    - generic [ref=e385]:
+      - generic [ref=e386]: "LCP: 1912ms"
+      - generic [ref=e387]: "TTFB: 475ms"
+      - generic [ref=e388]: "CLS: 0.000"
+  - alert [ref=e389]
+  - generic [ref=e393]:
+    - img [ref=e394]
+    - generic [ref=e396]: 1 error
+    - button "Hide Errors" [ref=e397]:
+      - img [ref=e398]
+```

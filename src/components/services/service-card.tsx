@@ -46,22 +46,14 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
   return (
     <div
       className={cn(
-        // Base card styles - removed overflow-hidden to show recommended tag
-        'group relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md',
-        // Glassmorphism effect
-        'shadow-glass hover:shadow-glass-dark',
-        // Hover animations
-        'transition-all duration-300 ease-out-back',
-        'hover:scale-[1.02] hover:border-white/20 hover:bg-white/10',
-        // Dark mode support
-        'dark:border-white/10 dark:bg-black/5 dark:hover:bg-black/10',
+        'group relative card card-hover transition-transform duration-200 ease-out',
         className
       )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-500/10 via-transparent to-automation-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-500/8 via-transparent to-automation-500/8 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       
       {/* Card content */}
       <div className="relative z-10 p-6 lg:p-8">
@@ -105,10 +97,10 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
                 {service.icon}
               </div>
               <div>
-                <h3 className="text-[20px] lg:text-xl font-semibold text-gray-900 dark:text-white leading-[1.25]">
+                <h3 className="text-[20px] lg:text-xl font-semibold text-text leading-[1.25]">
                   {pricing?.outcomeHeadline || service.name}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-muted">
                   {service.targetAudience[0]}
                 </p>
               </div>
@@ -127,7 +119,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
         </div>
 
         {/* Description */}
-        <p className="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p className="mb-6 text-text leading-relaxed">
           {service.description}
         </p>
 
@@ -170,19 +162,19 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
 
         {/* Use cases - max 3 bullets, ≤6 words each */}
         <div className="mb-6">
-          <h4 className="mb-3 text-sm font-semibold text-gray-900 dark:text-white">
+          <h4 className="mb-3 text-sm font-semibold text-text">
             What we automate:
           </h4>
           <ul className="space-y-1">
-            <li className="flex items-center text-sm text-gray-600 dark:text-gray-400">
+            <li className="flex items-center text-sm text-muted">
               <div className="mr-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
               File cleanup and archiving
             </li>
-            <li className="flex items-center text-sm text-gray-600 dark:text-gray-400">
+            <li className="flex items-center text-sm text-muted">
               <div className="mr-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
               CSV merge operations
             </li>
-            <li className="flex items-center text-sm text-gray-600 dark:text-gray-400">
+            <li className="flex items-center text-sm text-muted">
               <div className="mr-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
               Backup routines
             </li>

@@ -66,8 +66,7 @@ export const SECURITY_CONFIG = {
     ],
     STYLE_SRC: [
       "'self'",
-      "'nonce-{NONCE}'",
-      "'unsafe-inline'" // Required for Tailwind CSS
+      ...(process.env.NODE_ENV === 'test' || process.env.CI ? ["'unsafe-inline'"] : ["'nonce-{NONCE}'", "'unsafe-inline'"])
     ],
     IMG_SRC: ["'self'", "data:", "blob:", "https:"],
     FONT_SRC: ["'self'", "data:"],

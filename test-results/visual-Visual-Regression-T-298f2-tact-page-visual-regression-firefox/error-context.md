@@ -1,0 +1,170 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+      - link "Skip to navigation" [ref=e5] [cursor=pointer]:
+        - /url: "#navigation"
+      - link "Skip to footer" [ref=e6] [cursor=pointer]:
+        - /url: "#footer"
+    - banner [ref=e7]:
+      - navigation [ref=e8]:
+        - generic [ref=e9]:
+          - link "Automatron.ai" [ref=e10] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e11]:
+            - generic [ref=e12]:
+              - link "Services" [ref=e13] [cursor=pointer]:
+                - /url: /services
+              - link "Work" [ref=e14] [cursor=pointer]:
+                - /url: /work
+              - link "About" [ref=e15] [cursor=pointer]:
+                - /url: /about
+              - link "Contact" [ref=e16] [cursor=pointer]:
+                - /url: /contact
+            - generic [ref=e17]:
+              - button "Change language" [ref=e18] [cursor=pointer]:
+                - generic [ref=e19] [cursor=pointer]: 🇺🇸
+                - img [ref=e20] [cursor=pointer]
+              - button "Toggle theme" [ref=e27] [cursor=pointer]: Dark
+            - link "Save My Hours Now" [ref=e28] [cursor=pointer]:
+              - /url: /contact
+              - button "Save My Hours Now" [ref=e29] [cursor=pointer]
+    - main [ref=e30]:
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - heading "Start Your Automation Project" [level=1] [ref=e34]
+          - paragraph [ref=e35]: Ready to save 2-5 hours per week? Tell us about your current processes and we'll create a custom automation solution for you.
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - generic [ref=e38]:
+              - generic [ref=e39]:
+                - heading "Get In Touch" [level=3] [ref=e40]:
+                  - img [ref=e41]
+                  - generic [ref=e43]: Get In Touch
+                - paragraph [ref=e44]: We're here to help you automate your workflows and save valuable time.
+              - generic [ref=e45]:
+                - generic [ref=e46]:
+                  - img [ref=e47]
+                  - generic [ref=e50]:
+                    - paragraph [ref=e51]: Email
+                    - paragraph [ref=e52]: contact@automatron.ai
+                - generic [ref=e53]:
+                  - img [ref=e54]
+                  - generic [ref=e57]:
+                    - paragraph [ref=e58]: Response Time
+                    - paragraph [ref=e59]: Within 24 hours
+            - generic [ref=e60]:
+              - heading "What Happens Next?" [level=3] [ref=e62]
+              - generic [ref=e64]:
+                - generic [ref=e65]:
+                  - generic [ref=e67]: "1"
+                  - generic [ref=e68]:
+                    - paragraph [ref=e69]: Requirements Review
+                    - paragraph [ref=e70]: We analyze your current process and automation needs
+                - generic [ref=e71]:
+                  - generic [ref=e73]: "2"
+                  - generic [ref=e74]:
+                    - paragraph [ref=e75]: Custom Proposal
+                    - paragraph [ref=e76]: Detailed solution with timeline and pricing
+                - generic [ref=e77]:
+                  - generic [ref=e79]: "3"
+                  - generic [ref=e80]:
+                    - paragraph [ref=e81]: Quick Call
+                    - paragraph [ref=e82]: Brief discussion to finalize details and answer questions
+                - generic [ref=e83]:
+                  - generic [ref=e85]: "4"
+                  - generic [ref=e86]:
+                    - paragraph [ref=e87]: Implementation
+                    - paragraph [ref=e88]: We build and deliver your automation solution
+            - generic [ref=e90]:
+              - heading "Free Automation Assessment" [level=3] [ref=e91]
+              - paragraph [ref=e92]: Not sure where to start? We offer a free 15-minute consultation to identify your best automation opportunities and potential time savings.
+          - form [ref=e95]:
+            - generic [ref=e96]:
+              - generic [ref=e97]: Name *
+              - textbox "Name *" [ref=e98]
+            - generic [ref=e99]:
+              - generic [ref=e100]: Email *
+              - textbox "Email *" [ref=e101]
+            - generic [ref=e102]:
+              - generic [ref=e103]: Message *
+              - textbox "Message *" [ref=e104]
+            - button "Send Message" [ref=e105] [cursor=pointer]
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - heading "Frequently Asked Questions" [level=3] [ref=e109]
+            - paragraph [ref=e110]: Common questions about our automation services and process
+          - generic [ref=e112]:
+            - generic [ref=e113]:
+              - heading "How long does it take to get started?" [level=4] [ref=e114]
+              - paragraph [ref=e115]: Most projects can start within 1-2 days after requirements are finalized. Simple automations are often completed within a week.
+            - generic [ref=e116]:
+              - heading "What if I'm not technical?" [level=4] [ref=e117]
+              - paragraph [ref=e118]: Perfect! Our solutions are designed for non-technical users. We provide simple instructions and can walk you through everything.
+            - generic [ref=e119]:
+              - heading "Do you offer ongoing support?" [level=4] [ref=e120]
+              - paragraph [ref=e121]: Yes, our Care Plan packages include ongoing support, updates, and new automation requests for a monthly fee.
+            - generic [ref=e122]:
+              - heading "What if the automation doesn't work as expected?" [level=4] [ref=e123]
+              - paragraph [ref=e124]: All packages include revisions and we guarantee our solutions work as specified. We also provide comprehensive testing and documentation.
+    - contentinfo [ref=e125]:
+      - generic [ref=e126]:
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - heading "Services" [level=3] [ref=e129]
+            - list [ref=e130]:
+              - listitem [ref=e131]:
+                - link "Basic Scripting" [ref=e132] [cursor=pointer]:
+                  - /url: /services/basic-scripting
+              - listitem [ref=e133]:
+                - link "Email Automation" [ref=e134] [cursor=pointer]:
+                  - /url: /services/email-automation
+              - listitem [ref=e135]:
+                - link "Reporting" [ref=e136] [cursor=pointer]:
+                  - /url: /services/reporting
+          - generic [ref=e137]:
+            - heading "Company" [level=3] [ref=e138]
+            - list [ref=e139]:
+              - listitem [ref=e140]:
+                - link "About" [ref=e141] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=e142]:
+                - link "Contact" [ref=e143] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=e144]:
+            - heading "Legal" [level=3] [ref=e145]
+            - list [ref=e146]:
+              - listitem [ref=e147]:
+                - link "Privacy Policy" [ref=e148] [cursor=pointer]:
+                  - /url: /privacy
+              - listitem [ref=e149]:
+                - link "Terms of Service" [ref=e150] [cursor=pointer]:
+                  - /url: /terms
+          - generic [ref=e151]:
+            - heading "Newsletter" [level=3] [ref=e152]
+            - generic [ref=e153]:
+              - textbox "Email address" [ref=e154]
+              - button "Subscribe" [ref=e155] [cursor=pointer]
+        - generic [ref=e156]:
+          - paragraph [ref=e158]: "Hours saved for clients this quarter: 126"
+          - paragraph [ref=e159]: © 2024 Automatron. All rights reserved.
+  - generic:
+    - button "Open chat":
+      - generic:
+        - img
+  - region "Notifications (F8)":
+    - list
+  - generic [ref=e160]:
+    - generic [ref=e161]: Performance
+    - generic [ref=e163]: "TTFB: 101ms"
+  - alert [ref=e164]
+  - generic [ref=e168]:
+    - img [ref=e169]
+    - generic [ref=e173]: 1 error
+    - button "Hide Errors" [ref=e174]:
+      - img [ref=e175]
+```

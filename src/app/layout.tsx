@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Manrope } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
 import { PerformanceMonitor } from '@/components/performance/performance-monitor'
 
-// Optimized font loading: Inter Variable for everything
-const inter = Inter({ 
+// Optimized font loading: Manrope Variable for everything
+const manrope = Manrope({
   subsets: ['latin'],
+  weight: ['400', '600', '700'], // keep it tight
   display: 'swap',
   variable: '--font-sans'
 })
@@ -37,7 +38,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} font-sans`}>
+      <body className={`${manrope.variable} font-sans`}>
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="system"

@@ -17,7 +17,11 @@ function getLocaleFromPath(): string {
   return 'en'
 }
 
-export function Header() {
+interface HeaderProps {
+  className?: string
+}
+
+export function Header({ className }: HeaderProps = {}) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
@@ -53,8 +57,9 @@ export function Header() {
   return (
     <header 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 border-b bg-background/80 backdrop-blur-md transition-all duration-300",
-        isScrolled ? "py-2 shadow-md" : "py-4"
+        "fixed top-0 left-0 right-0 z-50 border-b bg-surface/95 transition-all duration-300",
+        isScrolled ? "py-2 shadow-md" : "py-4",
+        className
       )}
     >
       <nav role="navigation" className="container mx-auto px-4">
@@ -143,7 +148,7 @@ export function Header() {
 
         {/* Mobile Navigation Menu - Only show when menu is open and on mobile */}
         {isMobileMenuOpen && isMobile && (
-          <div className="mt-4 pb-4 border-t bg-background/95 backdrop-blur-sm">
+          <div className="mt-4 pb-4 border-t bg-surface">
             <div className="flex flex-col space-y-3 pt-4">
               <Link 
                 href="/services" 

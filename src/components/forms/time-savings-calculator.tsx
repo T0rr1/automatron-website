@@ -3,7 +3,11 @@
 import React, { useState } from 'react'
 import { Button } from '@/components/ui/button'
 
-export function TimeSavingsCalculator() {
+interface TimeSavingsCalculatorProps {
+  className?: string
+}
+
+export function TimeSavingsCalculator({ className }: TimeSavingsCalculatorProps = {}) {
   const [hours, setHours] = useState('')
   const [result, setResult] = useState<number | null>(null)
   const [error, setError] = useState('')
@@ -26,7 +30,7 @@ export function TimeSavingsCalculator() {
   }
 
   return (
-    <div className="p-6 border rounded-lg">
+    <div className={`p-6 border rounded-lg ${className || ''}`}>
       <h3 className="text-lg font-semibold mb-4">Time Savings Calculator</h3>
       
       <form onSubmit={calculateSavings} className="space-y-4">

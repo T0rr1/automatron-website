@@ -4,7 +4,11 @@ import React, { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { submitContactForm } from '@/lib/api'
 
-export function ContactForm() {
+interface ContactFormProps {
+  preselectedService?: string | null
+}
+
+export function ContactForm({ preselectedService }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
