@@ -1,8 +1,9 @@
 'use client'
 
 import * as React from 'react'
+import { Header } from './header'
+import { Footer } from './footer'
 
-// Re-export ScrollSpyNav from scroll-spy-nav
 export { 
   ScrollSpyNav,
   FloatingScrollSpyNav,
@@ -25,30 +26,21 @@ export function useScrollSpy(
   React.useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + offset
-
-      // Find the section that's currently in view
       for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const sectionId = sectionIds[i]
-        const element = document.getElementById(sectionId)
-        
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          const elementTop = rect.top + window.scrollY
-          const elementHeight = rect.height
-          
-          // Check if the section is in view based on threshold
-          if (scrollPosition >= elementTop - offset && 
-              scrollPosition < elementTop + elementHeight * threshold) {
-            setActiveSection(sectionId)
-            break
-          }
+        const el = document.getElementById(sectionIds[i])
+        if (!el) continue
+        const rect = el.getBoundingClientRect()
+        const top = rect.top + window.scrollY
+        const height = rect.height
+        if (scrollPosition >= top - offset && scrollPosition < top + height * (1 - (1 - threshold))) {
+          setActiveSection(sectionIds[i])
+          return
         }
       }
+      setActiveSection(null)
     }
 
-    // Initial check
     handleScroll()
-
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [sectionIds, offset, threshold])
@@ -69,7 +61,6 @@ export function scrollToSection(sectionId: string, offset: number = 100) {
   }
 }
 
-// Layout component
 interface LayoutProps {
   children: React.ReactNode
   className?: string
@@ -78,51 +69,38 @@ interface LayoutProps {
 export function Layout({ children, className }: LayoutProps) {
   return (
     <div className={className}>
-      {children}
+      <Header />
+      <main>{children}</main>
+      <Footer />
+      <BackToTop />
     </div>
   )
 }
 
-// Back to top component
 interface BackToTopProps {
   className?: string
   showAfter?: number
 }
 
-export function BackToTop({ className, showAfter = 400 }: BackToTopProps) {
-  const [isVisible, setIsVisible] = React.useState(false)
-
+export function BackToTop({ className = '', showAfter = 400 }: BackToTopProps) {
+  const [visible, setVisible] = React.useState(false)
   React.useEffect(() => {
-    const handleScroll = () => {
-      setIsVisible(window.scrollY > showAfter)
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setVisible(window.scrollY > showAfter)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [showAfter])
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
-  }
-
-  if (!isVisible) return null
+  if (!visible) return null
 
   return (
     <button
-      onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 z-50 p-3 bg-accent text-accent-foreground rounded-full shadow-lg hover:opacity-90 transition-opacity ${className}`}
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      className={`fixed bottom-6 right-6 z-50 p-3 rounded-full shadow-lg transition-opacity bg-accent text-accent-foreground hover:opacity-90 ${className}`}
       aria-label="Back to top"
     >
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
       </svg>
     </button>
   )

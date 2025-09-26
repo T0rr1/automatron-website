@@ -75,8 +75,8 @@ function getClientIP(request: NextRequest): string {
   if (realIP) return realIP;
   if (forwarded) return forwarded.split(',')[0].trim();
   
-  // Fallback to request IP
-  return request.ip || 'unknown';
+  // Fallback - Edge Runtime doesn't have request.ip
+  return 'unknown';
 }
 
 function cleanupExpiredEntries(now: number) {
