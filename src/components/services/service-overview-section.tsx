@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { ServiceCard } from './service-card'
 import { serviceCategories, successMetrics } from '@/lib/constants/services'
+import { Reveal } from '@/components/utils/Reveal'
 import { cn } from '@/lib/utils'
 import { trackPillSelect } from '@/lib/analytics-events'
 
@@ -82,36 +83,42 @@ export function ServiceOverviewSection({ className }: ServiceOverviewSectionProp
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="mb-16 text-center animate-fade-in-up">
-          <h1 className="mb-4 text-3xl font-bold tracking-tight text-text sm:text-4xl lg:text-5xl">
-            Our Automation Services
-          </h1>
-          <p className="mx-auto max-w-3xl text-lg text-muted leading-relaxed">
-            Six specialized automation services designed to save you 2-5 hours per week ($200+ value).
-            Safe scripts with dry-run testing — we move files, never delete them.
-          </p>
+        <div className="mb-16 text-center">
+          <Reveal>
+            <h1 className="h-display mb-4 text-3xl font-bold tracking-tight text-text sm:text-4xl lg:text-5xl">
+              Our Automation Services
+            </h1>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="mx-auto max-w-3xl text-lg text-muted leading-relaxed">
+              Six specialized automation services designed to save you 2-5 hours per week ($200+ value).
+              Safe scripts with dry-run testing — we move files, never delete them.
+            </p>
+          </Reveal>
           
-          {/* Success metrics */}
-          <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm">
-            <div className="flex items-center space-x-2">
-              <div className="h-2 w-2 rounded-full bg-automation-500" />
-              <span className="font-semibold text-automation-600 dark:text-automation-400">
-                {successMetrics.successRate} Success Rate
-              </span>
+          <Reveal delay={150}>
+            {/* Success metrics */}
+            <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+              <div className="flex items-center space-x-2">
+                <div className="h-2 w-2 rounded-full bg-automation-500" />
+                <span className="h-display font-semibold text-automation-600 dark:text-automation-400">
+                  {successMetrics.successRate} Success Rate
+                </span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="h-2 w-2 rounded-full bg-brand-500" />
+                <span className="h-display font-semibold text-brand-600 dark:text-brand-400">
+                  {successMetrics.averageTimeSaved} Saved Weekly
+                </span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="h-2 w-2 rounded-full bg-gray-500" />
+                <span className="h-display font-semibold text-muted">
+                  {successMetrics.typicalTurnaround} Turnaround
+                </span>
+              </div>
             </div>
-            <div className="flex items-center space-x-2">
-              <div className="h-2 w-2 rounded-full bg-brand-500" />
-              <span className="font-semibold text-brand-600 dark:text-brand-400">
-                {successMetrics.averageTimeSaved} Saved Weekly
-              </span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="h-2 w-2 rounded-full bg-gray-500" />
-              <span className="font-semibold text-muted">
-                {successMetrics.typicalTurnaround} Turnaround
-              </span>
-            </div>
-          </div>
+          </Reveal>
         </div>
 
         {/* Quick win selector with horizontal scroll on mobile */}
@@ -249,19 +256,20 @@ export function ServiceOverviewSection({ className }: ServiceOverviewSectionProp
           {filteredServices
             .sort((a, b) => (a.order || 0) - (b.order || 0))
             .map((service, index) => (
-              <div
-                key={service.id}
-                id={service.slug}
-                data-index={index}
-                className={cn(
-                  'service-card transition-all duration-500 ease-out',
-                  'opacity-100 translate-y-0', // Always show filtered cards
-                  // Make cards slightly larger when there are fewer of them
-                  filteredServices.length <= 2 && "transform scale-105"
-                )}
-              >
-                <ServiceCard service={service} />
-              </div>
+              <Reveal key={service.id} delay={80 * index}>
+                <div
+                  id={service.slug}
+                  data-index={index}
+                  className={cn(
+                    'service-card transition-all duration-500 ease-out',
+                    'opacity-100 translate-y-0', // Always show filtered cards
+                    // Make cards slightly larger when there are fewer of them
+                    filteredServices.length <= 2 && "transform scale-105"
+                  )}
+                >
+                  <ServiceCard service={service} />
+                </div>
+              </Reveal>
             ))}
         </div>
 

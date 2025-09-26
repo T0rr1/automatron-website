@@ -374,6 +374,7 @@ const config = {
   				'100%': { opacity: '1', transform: 'translateY(0)' },
   			},
   			pop: { '0%': { transform: 'scale(.98)' }, '100%': { transform: 'scale(1)' } },
+		shine: { '0%': { transform: 'translateX(-200%)' }, '100%': { transform: 'translateX(200%)' } },
   			aurora: {
   				'0%': { transform: 'translateY(0) rotate(0deg)' },
   				'100%': { transform: 'translateY(-4%) rotate(360deg)' },

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { ServiceCategory } from '@/types'
 import { serviceScenarios, categoryPricing } from '@/lib/constants/services'
+import { FancyCard } from '@/components/ui/FancyCard'
 import { cn } from '@/lib/utils'
 
 // Safe locale detection function
@@ -44,19 +45,11 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
     : (pricing?.ctaText || 'Save My Hours Now')
 
   return (
-    <div
-      className={cn(
-        'group relative card card-hover transition-transform duration-200 ease-out',
-        className
-      )}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {/* Background gradient overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-500/8 via-transparent to-automation-500/8 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-      
-      {/* Card content */}
-      <div className="relative z-10 p-6 lg:p-8">
+    <FancyCard className={className}>
+      <div
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         {/* Recommended tag for best seller only */}
         {service.slug === 'basic-scripting' && (
           <div className="absolute -top-3 -right-3 z-20">
@@ -81,7 +74,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
               ⏱️ {pricing?.valueStatement || `Saves 2-5 hrs/week`}
             </div>
             <div className="pricing text-right">
-              <p className="price text-sm">
+              <p className="h-display price text-sm font-semibold">
                 {pricing?.priceRange || '$349-$599'}
               </p>
             </div>
@@ -108,7 +101,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
             
             {/* Desktop pricing - hidden on mobile */}
             <div className="text-right hidden lg:block">
-              <p className="price text-sm">
+              <p className="h-display price text-sm font-semibold">
                 {pricing?.priceRange || '$349-$599'}
               </p>
               <p className="text-xs text-gray-400 dark:text-gray-500">
@@ -122,43 +115,6 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
         <p className="mb-6 text-text leading-relaxed">
           {service.description}
         </p>
-
-        {/* Before/After scenario - mobile optimized */}
-        {scenario && (
-          <div className="mb-6 space-y-3">
-            <div className="rounded-lg bg-red-50/50 p-3 dark:bg-red-900/10">
-              <p className="text-sm font-medium text-red-700 dark:text-red-400 mb-1">
-                Before:
-              </p>
-              <p className="text-sm text-red-600 dark:text-red-300">
-                Manually sorting hundreds of files. 2+ hours weekly.
-              </p>
-            </div>
-            
-            <div className="rounded-lg bg-green-50/50 p-3 dark:bg-green-900/10">
-              <p className="text-sm font-medium text-green-700 dark:text-green-400 mb-1">
-                After:
-              </p>
-              <p className="text-sm text-green-600 dark:text-green-300">
-                Auto-organized daily. Move-not-delete. Logs included.
-              </p>
-            </div>
-            
-            {/* Desktop time saved indicator - hidden on mobile since it's in header */}
-            <div className="hidden lg:flex items-center justify-center">
-              <div 
-                className="px-4 py-2 text-sm font-bold rounded-full shadow-sm"
-                style={{ 
-                  backgroundColor: 'rgba(16,185,129,.12)', 
-                  color: '#34D399',
-                  border: '1px solid rgba(16,185,129,.2)'
-                }}
-              >
-                ⏱️ {pricing?.valueStatement || `Saves 2-5 hrs/week ($200+ value)`}
-              </div>
-            </div>
-          </div>
-        )}
 
         {/* Use cases - max 3 bullets, ≤6 words each */}
         <div className="mb-6">
@@ -204,10 +160,6 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
           <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-white/20 to-transparent opacity-0 transition-opacity duration-200 group-hover/btn:opacity-100" />
         </Link>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-gradient-to-br from-brand-500/20 to-automation-500/20 blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-      <div className="absolute -bottom-4 -left-4 h-16 w-16 rounded-full bg-gradient-to-tr from-automation-500/20 to-brand-500/20 blur-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-    </div>
+    </FancyCard>
   )
 }

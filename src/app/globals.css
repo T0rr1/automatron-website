@@ -30,12 +30,18 @@
   
   /* Accent gradients */
   --gradient-accent: linear-gradient(135deg, hsl(156 72% 45%) 0%, hsl(192 74% 44%) 100%);
+  --gradient-iris: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(192 74% 44%) 100%);
   --gradient-aurora: conic-gradient(from 180deg at 50% 50%,
     hsl(156 72% 45% / .25),
     hsl(192 74% 44% / .20),
     hsl(262 83% 58% / .15),
     hsl(156 72% 45% / .25)
   );
+  
+  /* Spotlight variables */
+  --spot-x: 50%;
+  --spot-y: 50%;
+  --spot-c: hsl(156 72% 45% / .12);
   
   color-scheme: light;
 }
@@ -65,10 +71,10 @@ html[data-theme="dark"] {
   color-scheme: dark;
 }
 
-/* Font variable */
+/* Font variables */
 :root {
-  --font-sans: "Sora", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-               Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --font-sans: "Urbanist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Space Grotesk", var(--font-sans);
 }
 
 /* Base usage */
@@ -76,6 +82,11 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
+}
+
+.h-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
 }
 
 /* Prevent theme flash during load */
@@ -191,6 +202,57 @@ a:focus-visible,
 
 /* Scroll-reveal helper */
 .reveal-in { animation: fadeUp .6s ease-out forwards; }
+
+/* Fancy border + gloss (use on featured cards) */
+.fancy {
+  position: relative;
+  border-radius: 14px;
+  padding: 1px; /* for border */
+  background: var(--gradient-accent);
+}
+
+.fancy > .inner {
+  border-radius: 13px;
+  background: var(--surface);
+  border: 1px solid color-mix(in oklab, var(--border), transparent 40%);
+  position: relative;
+  overflow: hidden;
+}
+
+.fancy > .inner::before {
+  /* diagonal subtle gloss line */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgb(255 255 255 / .06) 50%, transparent 100%);
+  transform: translateY(-60%);
+  pointer-events: none;
+}
+
+/* Grid backdrop (super subtle) */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--border), transparent 75%) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--border), transparent 75%) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Film grain (crisp, low-cost) */
+.bg-noise {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-noise::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background-image: radial-gradient(rgb(255 255 255 / .05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: .3;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
 
 /* Motion safety */
 @media (prefers-reduced-motion: reduce) {

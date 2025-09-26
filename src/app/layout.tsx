@@ -1,14 +1,21 @@
 import type { Metadata } from 'next'
-import { Sora } from 'next/font/google'
+import { Urbanist, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
 import { PerformanceMonitor } from '@/components/performance/performance-monitor'
 
-const sora = Sora({
+const urbanist = Urbanist({
   subsets: ["latin"],
-  weight: ["400","500","600","700"],
-  display: "swap",
   variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+})
+
+const grotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["500", "600", "700"],
+  display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -37,7 +44,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={sora.variable}>
+      <body className={`${urbanist.variable} ${grotesk.variable}`}>
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="system"
