@@ -3,7 +3,13 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
 
-const inter = Inter({ subsets: ['latin'] })
+// Optimized font loading: only weights we use, with display swap
+const inter = Inter({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-inter'
+})
 
 export const metadata: Metadata = {
   title: 'Automatron - Save Time with Automation',
@@ -18,22 +24,24 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Optimized theme script - prevents flash */}
+        {/* Instant theme script - prevents flash */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              (() => {
-                const key = 'theme';
-                const saved = localStorage.getItem(key);
-                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const theme = saved || (systemDark ? 'dark' : 'light');
-                document.documentElement.setAttribute('data-theme', theme);
+              (function(){
+                try {
+                  var key='theme';
+                  var saved=localStorage.getItem(key);
+                  var systemDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var theme = saved || (systemDark ? 'dark' : 'light');
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch(e){}
               })();
             `,
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.variable} font-sans`}>
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="system"
@@ -46,18 +54,10 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              // Mark interactive to enable transitions after first paint
+              // Enable transitions after first paint
               window.addEventListener('DOMContentLoaded', () => {
                 document.documentElement.classList.add('theme-ready');
               });
-              
-              // Theme toggle function (available globally)
-              window.toggleTheme = function() {
-                const html = document.documentElement;
-                const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-                html.setAttribute('data-theme', next);
-                localStorage.setItem('theme', next);
-              };
             `,
           }}
         />
