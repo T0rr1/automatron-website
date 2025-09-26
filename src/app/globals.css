@@ -48,11 +48,11 @@
 
 /* Dark theme (toggled on <html data-theme="dark">) */
 html[data-theme="dark"] {
-  --bg: hsl(222 47% 6%);      /* page */
+  --bg: hsl(224 52% 6%);      /* page */
   --surface: hsl(220 40% 12%); /* card surface (+2% L) */
   --text: hsl(210 40% 98%);
   --muted: hsl(215 16% 72%);
-  --border: hsl(215 14% 28%);  /* hairline a bit crisper */
+  --border: hsl(215 14% 28%);  /* crisper hairline */
   --accent: hsl(156 72% 45%);
   --accent-foreground: hsl(0 0% 100%);
   --ring: hsl(156 72% 45% / 40%);
@@ -254,9 +254,59 @@ a:focus-visible,
   pointer-events: none;
 }
 
+/* Scroll animation for logos */
+@keyframes scroll {
+  from { transform: translateX(0) }
+  to { transform: translateX(-50%) }
+}
+
+/* Scroll-driven accent (progressive enhancement) */
+@supports (animation-timeline: view()) {
+  .hero-aurora { 
+    animation: moveBg 1 linear both; 
+    animation-timeline: view(); 
+  }
+  @keyframes moveBg { 
+    from { background-position: 0% 0% } 
+    to { background-position: 100% 50% } 
+  }
+}
+
+/* Premium animation utilities */
+.animate-entrance { animation: fadeUp 550ms ease-out forwards; }
+.hover-lift { transition: transform 150ms ease-out; }
+.hover-lift:hover { transform: translateY(-2px); }
+
+/* Section dividers */
+.section-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+}
+
+/* Gradient underline for headlines */
+.gradient-underline {
+  position: relative;
+  display: inline-block;
+}
+.gradient-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  border-radius: 2px;
+  background: var(--gradient-accent);
+}
+
 /* Motion safety */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
+  .group > div { animation: none !important; }
+  .animate-entrance { animation: none !important; }
+  .hover-lift { transition: none !important; }
+  .hover-lift:hover { transform: none !important; }
 }
 
 /* ========================================

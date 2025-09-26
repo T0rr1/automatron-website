@@ -74,7 +74,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
               ⏱️ {pricing?.valueStatement || `Saves 2-5 hrs/week`}
             </div>
             <div className="pricing text-right">
-              <p className="h-display price text-sm font-semibold">
+              <p className="h-display price text-sm font-semibold text-text">
                 {pricing?.priceRange || '$349-$599'}
               </p>
             </div>
@@ -101,10 +101,10 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
             
             {/* Desktop pricing - hidden on mobile */}
             <div className="text-right hidden lg:block">
-              <p className="h-display price text-sm font-semibold">
+              <p className="h-display price text-sm font-semibold text-text">
                 {pricing?.priceRange || '$349-$599'}
               </p>
-              <p className="text-xs text-gray-400 dark:text-gray-500">
+              <p className="text-xs text-muted">
                 depending on scope
               </p>
             </div>
@@ -147,7 +147,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
         {/* Enhanced CTA Button - Mobile optimized */}
         <Link
           href="/contact"
-          className="w-full group/btn relative flex items-center justify-center rounded-xl px-6 font-bold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] transform-gpu focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500/50 text-white h-[56px] bg-emerald-600 hover:bg-emerald-700 border border-emerald-600 hover:border-emerald-700 my-4"
+          className="w-full group/btn relative flex items-center justify-center rounded-xl px-6 font-bold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] transform-gpu focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ring text-accent-foreground h-[56px] bg-accent hover:shadow-glow border border-accent my-4"
         >
           <span className="relative z-10 flex items-center">
             <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -157,7 +157,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
           </span>
           
           {/* Button shine effect */}
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-white/20 to-transparent opacity-0 transition-opacity duration-200 group-hover/btn:opacity-100" />
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-accent-foreground/20 to-transparent opacity-0 transition-opacity duration-200 group-hover/btn:opacity-100" />
         </Link>
       </div>
     </FancyCard>

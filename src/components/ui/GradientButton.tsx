@@ -24,8 +24,8 @@ export function GradientButton({
         aria-hidden
         className="pointer-events-none absolute inset-0 overflow-hidden rounded-md"
       >
-        <span className="absolute inset-y-0 -left-1/4 w-1/3 rotate-12 bg-white/35 blur-md will-change-transform
-                         [mask-image:linear-gradient(90deg,transparent,white,transparent)]"
+        <span className="absolute inset-y-0 -left-1/4 w-1/3 rotate-12 bg-accent-foreground/35 blur-md will-change-transform
+                         [mask-image:linear-gradient(90deg,transparent,hsl(0_0%_100%),transparent)]"
               style={{ transform: "translateX(-100%)" }} />
       </span>
     </button>

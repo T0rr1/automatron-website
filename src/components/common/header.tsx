@@ -109,7 +109,7 @@ export function Header({ className }: HeaderProps = {}) {
             {/* Primary CTA */}
             <Link href="/contact">
               <Button 
-                className="font-bold px-6 py-2 shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105 text-white bg-emerald-600 hover:bg-emerald-700 border-emerald-600 hover:border-emerald-700"
+                className="font-bold px-6 py-2 shadow-md hover:shadow-glow transition-all duration-200 hover:scale-105 text-accent-foreground bg-accent hover:shadow-glow border-accent"
                 size="sm"
               >
                 {ctaText}
@@ -124,7 +124,7 @@ export function Header({ className }: HeaderProps = {}) {
             <LanguageSwitcher />
             <Link href="/contact" className="hidden sm:block">
               <Button 
-                className="font-bold px-3 py-2 text-xs text-white bg-emerald-600 hover:bg-emerald-700 border-emerald-600 hover:border-emerald-700"
+                className="font-bold px-3 py-2 text-xs text-accent-foreground bg-accent hover:shadow-glow border-accent"
                 size="sm"
               >
                 {locale === 'es' ? 'Ahorra Horas' : 'Save Hours'}

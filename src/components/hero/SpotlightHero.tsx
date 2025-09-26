@@ -71,7 +71,7 @@ export function SpotlightHero() {
           </Reveal>
           <Reveal delay={250}>
             <div className="text-center trust-line px-4 w-full">
-              <p className="text-xs text-gray-500 dark:text-gray-400 text-center block w-full">
+              <p className="text-xs text-muted text-center block w-full">
                 Dry-run first • Move-not-delete • 7-day bug fix
               </p>
             </div>
