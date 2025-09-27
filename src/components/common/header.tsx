@@ -87,11 +87,11 @@ export function Header({ className }: HeaderProps = {}) {
               {/* Navigation Links */}
               <div className="flex items-center space-x-6">
                 <Link
-                  href={`/${locale}/services/custom-scripts`}
+                  href={`/${locale}/services`}
                   className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 transition-colors font-medium"
                   style={{ color: 'var(--text, #374151)' }}
                 >
-                  Custom Scripts
+                  Services
                 </Link>
                 <Link
                   href={`/${locale}/work`}
@@ -171,12 +171,12 @@ export function Header({ className }: HeaderProps = {}) {
           >
             <div className="flex flex-col space-y-3 pt-4">
               <Link
-                href={`/${locale}/services/custom-scripts`}
+                href={`/${locale}/services`}
                 className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
                 style={{ color: 'var(--text, #374151)' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Custom Scripts
+                Services
               </Link>
               <Link
                 href={`/${locale}/work`}

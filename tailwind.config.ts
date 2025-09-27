@@ -424,6 +424,7 @@ const config = {
   plugins: [
     // @ts-ignore
     require("tailwindcss-animate"),
+    require("@tailwindcss/line-clamp"),
   ],
 } satisfies Config
 

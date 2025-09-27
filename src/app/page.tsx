@@ -1,4 +1,5 @@
 import { Layout } from '@/components/common'
+import { ServicesGrid } from '@/components/sections/services-grid'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 
@@ -22,36 +23,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-muted/50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 bg-background rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Custom Scripts</h3>
-              <p className="text-muted-foreground mb-4">
-                Automate repetitive tasks with custom scripts and workflows.
-              </p>
-              <p className="font-semibold">Starting at $150</p>
-            </div>
-            
-            <div className="p-6 bg-background rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Email Automation</h3>
-              <p className="text-muted-foreground mb-4">
-                Set up automated email workflows and responses.
-              </p>
-              <p className="font-semibold">Starting at $175</p>
-            </div>
-            
-            <div className="p-6 bg-background rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Reporting</h3>
-              <p className="text-muted-foreground mb-4">
-                Generate automated reports and data analysis.
-              </p>
-              <p className="font-semibold">Starting at $200</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServicesGrid />
     </Layout>
   )
 }

@@ -1,16 +1,31 @@
-import { Metadata } from 'next'
 import { Layout } from '@/components/common'
-import { ServiceOverviewSection } from '@/components/services'
+import { ServicesGrid } from '@/components/sections/services-grid'
 
-export const metadata: Metadata = {
-  title: 'Automation Services | Automatron.ai',
-  description: 'Discover our six specialized automation service categories designed to save you 2-5 hours per week. From file management to report generation.',
+interface ServicesPageProps {
+  params: { locale: string }
 }
 
-export default function ServicesPage() {
+export default function ServicesPage({ params }: ServicesPageProps) {
+  const { locale } = params
+  const isSpanish = locale === 'es'
+
   return (
     <Layout>
-      <ServiceOverviewSection />
+      <div className="py-16 px-4 text-center">
+        <div className="container mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            {isSpanish ? 'Nuestros Servicios' : 'Our Services'}
+          </h1>
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            {isSpanish 
+              ? 'Soluciones de automatización profesionales diseñadas para ahorrar tiempo y aumentar la productividad.'
+              : 'Professional automation solutions designed to save time and increase productivity.'
+            }
+          </p>
+        </div>
+      </div>
+
+      <ServicesGrid />
     </Layout>
   )
 }
